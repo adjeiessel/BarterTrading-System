@@ -1,6 +1,7 @@
 module.exports = function(app, dbconnection) {
 //   GET home page.
   app.get('/ViewOffersServices', isLoggedIn, function (req, res) {
+    var customerid=req.user.id;
     //select productCategory and assign to option select field for seach
     dbconnection.query('SELECT CategoryName from ProductCategories ', function (err, Catrows) {
       if (err) {
@@ -12,12 +13,12 @@ module.exports = function(app, dbconnection) {
           console.log("Error Selecting : %s ", err);
         }
           //select all listed productsoffers and show
-          dbconnection.query("Select * from ProductOffers As P Join Customers As C on P.CustomerID=C.CustomerID Join ProductCategories As PC on PC.CategoryID=P.CategoryID ", function (err, rows) {
+          dbconnection.query("Select * from ProductOffers As P Join Customers As C on P.CustomerID=C.CustomerID Join ProductCategories As PC on PC.CategoryID=P.CategoryID where C.CustomerID !=",[customerid], function (err, rows) {
             if (err) {
               console.log("Error Selecting : %s ", err);
             }
             //select all listed serviceoffers and show
-            dbconnection.query("Select * from ServiceOffers As S Join ServiceCategory As SC on SC.ServiceCatID=S.ServiceCatID Join Customers As C on S.CustomerID=C.CustomerID ", function (err, ServiceRows) {
+            dbconnection.query("Select * from ServiceOffers As S Join ServiceCategory As SC on SC.ServiceCatID=S.ServiceCatID Join Customers As C on S.CustomerID=C.CustomerID where C.CustomerID != ",[customerid], function (err, ServiceRows) {
               if (err) {
                 console.log("Error Selecting : %s ", err);
               }
@@ -40,7 +41,7 @@ module.exports = function(app, dbconnection) {
       res.end(JSON.stringify(data));
       console.log(JSON.stringify(data));
     });
-  })
+  });
   function isLoggedIn(req, res, next) {
     // if user is authenticated in the session, carry on
     if (req.isAuthenticated())
@@ -48,4 +49,4 @@ module.exports = function(app, dbconnection) {
     // if they aren't redirect them to the home page   res.redirect('/');
     res.redirect('/logins');
   }
-}
+};
