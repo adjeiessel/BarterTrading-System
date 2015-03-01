@@ -131,8 +131,8 @@ module.exports = function(app,dbconnection) {
               var ProducttoPeerData = {
                 ProductOfferID: prows.insertId,
                 TradeDate: new Date(),
-                TradeStatus: "0",
-                TraderPartnersID: PartnersID
+                TradeStatus: "Pending",
+                FriendListID: PartnersID
               }
               dbconnection.query('Insert into PeerTrade set?', [ProducttoPeerData], function (errs) {
                 if (errs) {

@@ -91,7 +91,7 @@ require('./routes/GroupTrading')(app,dbconnection);
 require('./routes/NearbyTrading')(app,dbconnection);
 require('./routes/PrivateMessages')(app,dbconnection,transporter);
 require('./routes/OfferService')(app,dbconnection);
-require('./routes/PeerTrade')(app,dbconnection);
+require('./routes/OfferPeerTrade')(app,dbconnection);
 require('./routes/Reputation')(app,dbconnection);
 require('./routes/WishList')(app,dbconnection);
 require('./routes/ViewOffersServices')(app,dbconnection);
