@@ -1,0 +1,97 @@
+<%include ../partials/header %>
+<%include ../partials/navigation %>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script  type="text/javascript" src="/javascripts/typeahead.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input.typeahead').typeahead({
+            order:"asc",
+            name: 'countries',
+            remote: 'http://localhost:7000/search?key=%QUERY',
+            limit: 10
+        });
+        $("#typeahead").keydown(function() {
+            customername= $("#typeahead").val();
+            $.get("http://localhost:7000/searchemail", {name: customername}, function (data) {
+                if (data) {
+                    $("#to").val(data);
+                }
+            })
+        });
+        var myfile,to,subject,text;
+        $("#send_email").click(function(){
+            if(validateform()==false){
+                return;
+            };
+            to=$("#to").val();
+            subject=$("#subject").val();
+            text=$("#content").val();
+            myfile=$("#attach").path();
+            $("#message").text("Sending E-mail...Please wait");
+            $.get("http://localhost:7000/sendmessages",{to:to,subject:subject,text:text,attachment:myfile},function(data){
+                if(data=="sent")
+                {
+                    $("#message").empty().html("Email is been sent at "+to+" . Please check inbox !");
+                }
+                $("#message").empty().html("");
+
+            });
+        });
+    });
+    function validateform(){
+        if(document.getElementById("to").value==""){
+            alert('Please select customer you want to send message to');
+            return false
+
+        }else if(document.getElementById("subject").value==""){
+            alert('Please enter subject of your message');
+            return false
+        }else if(document.getElementById("message").value==""){
+            alert('Please enter message');
+            return false
+        }else{
+            return true
+        }
+
+    }
+    function clearForm() {
+        document.getElementById("contact").reset();
+    }
+</script>
+<div class="content">
+    <form class="contact_form">
+    <ul>
+        <li>
+            <h1>Private Message</h1>
+            <h3>Contacting... <%=Name%></h3>
+        </li>
+        <li class="bs-example">
+            <label for="tags" style="color:green;">Recipient Name*:</label>
+            <input type="text" id="typeahead" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for Customer">
+        </li>
+            <li>
+            <label for="tags">Recipient Email* :</label>
+          <!--  <input id="tags" name="tags">-->
+            <input id="to" name="to"type="text" style="color:black;" value="<%=Email%>" readonly="true" placeholder="Recipient E-mail ID"  required="true" title="Please email is required!"/>
+        <li>
+            <label for="Subject">Subject* :</label>
+            <input id="subject" type="text" placeholder="Write Subject" required="true" title="Please enter the subject of your message"/>
+        </li>
+        <li>
+            <label for="Message">Message* :</label>
+            <textarea class="private_text" id="content" required="true" title="Please message content cannot be empty" placeholder="Write what you want to send"></textarea>
+        </li>
+        <li>
+            <label for="Attach">Attachment :</label>
+            <input type="file" id="attach" name="attach"/>
+        </li>
+        <li class="submit">
+            <input type="button" name="clear" id="clear" value="Cancel" onclick="clearForm()" />
+            <input type="button" id="send_email" value="Send Mail"/>
+            <span id="message"></span>
+        </li>
+    </ul>
+    </form>
+</div>
+<% include ../partials/footer %>

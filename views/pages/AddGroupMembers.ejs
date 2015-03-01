@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<%include ../partials/header %>
+<%include ../partials/navigation %>
+<script  type="text/javascript" src="/javascripts/typeahead.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('input.typeahead').typeahead({
+            name: 'countries',
+            remote: 'http://localhost:7000/searchgroup?key=%QUERY',
+            limit: 10
+        });
+    });
+    function clearForm() {
+        document.getElementById("contact").reset();
+    }
+</script>
+<div class="content">
+<form id="contact" class="contact_form" method="post" action="/GroupMembers">
+    <ul>
+        <!-- show any messages that come back with authentication -->
+        <h2>Add Group Members</h2>
+        <li>
+            <label for="name">Select Group:</label>
+            <select name="GroupName">
+                <%for (var i in YourGroups){%>
+                <option><%=YourGroups[i]%>
+                    <%}%>
+            </select>
+
+        </li>
+
+        <li class="bs-example">
+            <label for="SelectFriend">Add Friends:</label>
+            <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for Customer">
+        </li>
+
+        <li class="submit">
+            <input type="button" name="Cancel" id="Cancel" value="Cancel" onclick="clearForm()" />
+            <input type="submit" name="submit" id="submit" value="Invite" />
+        </li>
+
+    </ul>
+</form>
+</div>
+<% include ../partials/footer %>

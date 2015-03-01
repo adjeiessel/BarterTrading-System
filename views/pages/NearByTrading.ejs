@@ -1,0 +1,102 @@
+<%include ../partials/header %>
+<%include ../partials/navigation %>
+<head>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+</head>
+<script type="text/javascript">
+    $(function() {
+
+        var Geo={};
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, error);
+        }
+
+        //Get the latitude and the longitude;
+        function success(position) {
+            Geo.lat = position.coords.latitude;
+            Geo.lng = position.coords.longitude;
+            populateHeader(Geo.lat, Geo.lng);
+        }
+
+        function error(){
+            console.log("Geocoder failed");
+        }
+
+        function populateHeader(lat, lng){
+            $('#txtLatitude').html(lat);
+            $('#txtLongitude').html(lng);
+        }
+
+    });
+
+    /*function GetLocation() {
+     if (navigator.geolocation) {
+     navigator.geolocation.getCurrentPosition(showPosition);
+     } else {
+     x.innerHTML = "Geolocation is not supported by this browser.";
+     y.innerHTML = "Geolocation is not supported by this browser.";
+     }
+     }
+     var Latitude, longitude;
+     function showPosition(position) {
+     document.getElementById("txtLatitude").value= position.coords.latitude;
+     Latitude=position.coords.latitude;
+     document.getElementById("txtLongitude").value= position.coords.longitude;
+     longitude=position.coords.longitude;
+     // x.innerHTML =position.coords.latitude;
+
+     // y.innerHTML= position.coords.longitude;
+     }
+     function GetAddress() {
+     //var lat = parseFloat(document.getElementById("txtLatitude").value);
+     //var lng = parseFloat(document.getElementById("txtLongitude").value);
+
+     var lat=Latitude;
+     var lng=longitude;
+     var latlng = new google.maps.LatLng(lat, lng);
+     var geocoder = geocoder = new google.maps.Geocoder();
+     geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+     if (status == google.maps.GeocoderStatus.OK) {
+     if (results[1]) {
+     alert("Location: " + results[1].formatted_address);
+     }
+     }
+     });
+     }
+     */
+</script>
+<div class="content">
+    <body>
+    Longitude:
+    <input type="text" id="txtLatitude" name="txtLatitude" />
+    Latitude:
+    <input type="text" id="txtLongitude" name ="txtLongitude"/>
+
+    <button onclick="GetLocation()">Get Location</button>
+    <input type="button" value="Get Address" onclick="GetAddress()" />
+    <div class="location_tbl">
+        <%
+        for (var i in OnlineTraders){
+        %>
+        <div class="location_block">
+
+            <img src="/images/<%= OnlineTraders[i].ProfilePicture %>">
+            <p>
+
+                <span class="dist">Status: Online</span><br>
+                <span class="dist"><a href="#">connect</a><br> 3km</span>
+                <span class="name"><%= OnlineTraders[i].FullName%></span><br>
+                <span class="location" id="Loc">Current Location: Kiel</span>
+            </p>
+        </div>
+        <%
+        }
+        %>
+    </div>
+
+    <div class="location_map"><img src="images/location.png" /></div>
+    </body>
+</div>
+</body>
+<% include ../partials/footer %>

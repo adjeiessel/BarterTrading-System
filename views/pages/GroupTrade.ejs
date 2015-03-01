@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<%include ../partials/header %>
+<%include ../partials/navigation %>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        //for showing and hiding the radion button
+        $('input[type="radio"]').click(function(){
+            if($(this).attr("value")=="Product"){
+                $("#ForService").hide();
+                $("#ForProduct").show();
+            }
+            if($(this).attr("value")=="Service"){
+                $("#ForProduct").hide();
+                $("#ForService").show();
+            }
+
+        });
+        $("#ForService").hide();
+
+        //for image uploads
+        $("#uploadPreview0").click(function ()
+        {
+            $("input[id='uploadImage0']").click();
+        });
+        $("#uploadPreview1").click(function ()
+        {
+            $("input[id='uploadImage1']").click();
+        });
+        $("#uploadPreview2").click(function ()
+        {
+            $("input[id='uploadImage2']").click();
+        });
+        $("#uploadPreview3").click(function ()
+        {
+            $("input[id='uploadImage3']").click();
+        });
+    });
+        function PreviewImage0() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("uploadImage0").files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("uploadPreview0").src = oFREvent.target.result;
+            };
+
+        };
+        function PreviewImage1() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("uploadImage1").files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("uploadPreview1").src = oFREvent.target.result;
+            };
+
+        };
+        function PreviewImage2() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("uploadImage2").files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("uploadPreview2").src = oFREvent.target.result;
+            };
+
+        };
+        function PreviewImage3() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("uploadImage3").files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("uploadPreview3").src = oFREvent.target.result;
+            };
+
+        };
+        function clearForm() {
+            document.getElementById("contact").reset();
+        }
+
+</script>
+<div class="content">
+<form id="contact" class="contact_form" method="post" action="/GroupTrading">
+    <fieldset>
+        <h1>Group Trade</h1>
+        <span class="required">Please select a group</span>
+        <li>
+            <label for="tags" style="color:green;">Select Group: *</label>
+            <select name="GroupName" style="background-color:#FCF5D8;"required="required" title="Please select any of your groups">
+                <%for (var i in YourGroups){%>
+                <option><%=YourGroups[i]%>
+                    <%}%>
+            </select>
+        </li>
+        <li>
+            <label for="name">Product/Service Name: *</label>
+            <input type="text" name="ProductServiceName" required="required" title="Please enter product or service name">
+        </li>
+        <li>
+            <label for="ProductServiceDetails">Product/Service Details: *</label>
+            <textarea rows="4" cols="45" name="ProductServiceDetails" required="required" title="Please enter the details of your product or service"></textarea>
+        </li>
+        <li class="rd_btn">
+            <label for ="TradeOption">Trade Option:</label>
+            <input type="radio" name="TradeOptionProduct" value="Product" checked>Product
+            <input type="radio" name="TradeOptionProduct" value="Service">Service
+
+        </li>
+        <li id="ForProduct">
+            <label for="ProductCategory">Product Category: *</label>
+            <select name="CategoryName" required="required" title="Please specify category">
+                <%for (var i in ProCategories){%>
+                <option><%=ProCategories[i]%>
+                    <%}%>
+            </select>
+        </li>
+        <li id="ForService">
+            <label for="ServiceCategory">Service Category: *</label>
+            <select name="ServiceCatName" required="required" title="Please specify category">
+                <%for (var i in ServiceCat){%>
+                <option><%=ServiceCat[i]%>
+                    <%}%>
+            </select>
+        </li>
+        <li>
+            <label for="PreferredProduct">Preferred Item/Product: *</label>
+            <input type="text" name="PreferredProduct" required="required" title="Please specify preferred product or service">
+        </li>
+        <li>
+            <span class="required_pht">Click to upload product images</span>
+            <label>Upload Product Images: *</label>
+            <img id="uploadPreview0" style="width: 100px; height: 100px;" border="0" />
+            <img id="uploadPreview1" style="width: 100px; height: 100px;" />
+            <img id="uploadPreview2" style="width: 100px; height: 100px;" />
+            <img id="uploadPreview3" style="width: 100px; height: 100px;" />
+            <input id="uploadImage0" type="file" name="myPhoto0" style="display: none;"  onchange="PreviewImage0();" required="required" title="Please upload an image of Photograph of Product" />
+            <input id="uploadImage1" type="file" name="myPhoto1" style="display: none;"  onchange="PreviewImage1();" />
+            <input id="uploadImage2" type="file" name="myPhoto2" style="display: none;"  onchange="PreviewImage2();" />
+            <input id="uploadImage3" type="file" name="myPhoto3" style="display: none;"  onchange="PreviewImage3();" />
+        </li>
+        <li class="submit">
+            <input type="button" name="clear" id="clear" value="Cancel" onclick="clearForm()" />
+        <input type="submit" name="submit" id="submit" value="Create Trade" />
+        </li>
+
+    </fieldset>
+</form>
+</div>
+<% include ../partials/footer %>

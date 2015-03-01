@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<%include ../partials/header %>
+<%include ../partials/navigation %>
+<div class="content">
+    <form id="contact" class="contact_form" method="post" action="">
+    <ul>
+        <h1>Wish List</h1>
+        <li>
+            <label for="name">List Name:</label>
+            <input type="text" name="ListName">
+        </li>
+        <li>
+            <label for="name">Product/Service Name:</label>
+            <input type="text" name="ProServiceName">
+        </li>
+        <li>
+            <label for="ProductDetails">Detail Description</label>
+            <input type="textarea" name="Description">
+        </li>
+
+        <li class="sg-chk">
+            <label for ="Negotiation">Negotiation:</label>
+            <input type="checkbox" name="Negotiation" checked>
+        </li>
+        <li class="sg-chk">
+            <label for ="Publish">Publish:</label>
+            <input type="checkbox" name="Publish"  checked>
+        </li>
+        <li class="submit">
+        <input type="button" name="submit" id="submit" value="Cancel" />
+        <input type="submit" name="submit" id="submit" value="Create List" />
+        </li>
+
+    </ul>
+</form>
+</div>
+<% include ../partials/footer %>
+
+
