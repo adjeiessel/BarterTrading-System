@@ -88,7 +88,6 @@ require('./routes/DelAccount')(app,dbconnection);
 require('./routes/AddGroup')(app,dbconnection);
 require('./routes/GroupMembers')(app,dbconnection,transporter,AddNotification,SaveActivity);
 require('./routes/GroupTrading')(app,dbconnection);
-require('./routes/NearbyTrading')(app,dbconnection);
 require('./routes/PrivateMessages')(app,dbconnection,transporter);
 require('./routes/OfferService')(app,dbconnection);
 require('./routes/OfferPeerTrade')(app, dbconnection, transporter, AddNotification, SaveActivity);

@@ -10,7 +10,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
         var peerTradeID = req.params.id;
         var tradestatus = 'Interested';
         //shows the PostedCutomerID
-        dbconnection.query("Select * from Customers As  C Join FriendsList As F on C.CustomerID=F.CustomerID Join PeerTrade As PT on PT.FriendListID=F.FriendListID Join ProductOffers AS P.ProductOfferID on PT.FirstFriendProductOfferID where PeerTradeID=? and TradeStatus=?", [peerTradeID, tradestatus], function (err, row) {
+        dbconnection.query("Select * from Customers As  C Join FriendsList As F on C.CustomerID=F.CustomerID Join PeerTrade As PT on PT.FriendListID=F.FriendListID Join ProductOffers AS P on P.ProductOfferID=PT.FirstFriendProductOfferID where PeerTradeID=? and TradeStatus=?", [peerTradeID, tradestatus], function (err, row) {
             if (err) {
                 console.log(err);
             }
@@ -23,7 +23,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                 }
             }
             //shows what the interested customer has to offer
-            dbconnection.query("Select * from  Customers As  C Join FriendsList As F on C.CustomerID=F.FriendID Join PeerTrade As PT on PT.FriendListID=F.FriendListID Join ProductOffers AS P on P.ProductOfferID on PT.SecondFriendProductOfferID where PeerTradeID=? and TradeStatus=?", [peerTradeID, tradestatus], function (err, rows) {
+            dbconnection.query("Select * from  Customers As  C Join FriendsList As F on C.CustomerID=F.FriendID Join PeerTrade As PT on PT.FriendListID=F.FriendListID Join ProductOffers AS P on P.ProductOfferID =PT.SecondFriendProductOfferID where PeerTradeID=? and TradeStatus=?", [peerTradeID, tradestatus], function (err, rows) {
                 if (err) {
                     console.log(err);
                 }
@@ -35,12 +35,12 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                         SID = row[i].CustomerID;
                     }
                 }
-                res.render('pages/AcceptOffers', {FirstCustomerResults: row, SecondCustomerResults: rows});
+                res.render('pages/AcceptPeerTrade', {FirstCustomerResults: row, SecondCustomerResults: rows});
             })
         })
     })
-    app.post('/AcceptOffers/:id', isLoggedIn, function (req, res) {
-        var pingID = req.params.id;
+    app.post('/AcceptPeerTrade/:id', isLoggedIn, function (req, res) {
+        var PeerID = req.params.id;
         var tradestatus, ProductStatus, Activity
         if (req.body.Decline == 'Declined') {
             tradestatus = 'Declined'
@@ -58,8 +58,8 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
         var mailOptions = {
             to: FirstCustomerEmail + ', ' + SecondCustomerEmail,// list of receivers
             subject: 'Peer Trade Completed', // Subject line
-            html: 'Hello<br><br> Your trade between' + FirstCustomerName + ' and ' + SecondCustomerName + ' has successfully been completed.<br>Please ' +
-            'be ready to ship the item/product to your friend.Shipping address can be found under their profile.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+            html: 'Hello, <br><br> Your trade between <b>' + FirstCustomerName + ' </b> and <b>' + SecondCustomerName + '</b> has successfully been completed.<br>Please ' +
+            'be ready to ship the item/product to your friend.<br>Shipping address can be found under their profile.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
         };
         // send mail with defined transport object
         transporter.sendMail(mailOptions, function (error, info) {
@@ -70,17 +70,17 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             }
         })
         var PeerTrade = {
-            TradeStatus: 'Traded Out'
+            TradeStatus: tradestatus
         }
         var ProductStatus = {
-            ProductStatus: "Traded Out"
+            ProductStatus: ProductStatus
         }
-        dbconnection.query('Update ProductOffers  As P Join PeerTrade As PT On PT.FirstFriendProductOfferID=P.ProductOfferID set? where PT.PeerTradeID=? ', [ProductStatus, PostData.PeerID], function (err) {
+        dbconnection.query('Update ProductOffers  As P Join PeerTrade As PT On PT.FirstFriendProductOfferID=P.ProductOfferID set? where PT.PeerTradeID=? ', [ProductStatus, PeerID], function (err) {
             if (err) throw err
             console.log('First Product Status Updated');
         })
-        dbconnection.query('Update PeerTrade set? where PeerTradeID=?', [PeerTrade, PostData.PeerID], function (errs, peerrows) {
-            if (err) throw err
+        dbconnection.query('Update PeerTrade set? where PeerTradeID=?', [PeerTrade, PeerID], function (errs) {
+            if (errs) throw errs
             console.log('Second Product Status Updated');
         })
         //save activity
