@@ -11,13 +11,13 @@
 <div class="content">
     <!--for showing product offers-->
     <div id="ProductContent" name="ProductContent" class="content">
-        <form class="contact_form" method="POST" action="/RespondPeerTrade" name="contact_form"
+        <form class="contact_form" method="POST" action="" name="contact_form"
               xmlns="http://www.w3.org/1999/html">
             <h1>Your Friend's Offer</h1>
             <% if(!PeerOffer.length){ %>
             <div class="records">
                 <strong>Offer Completed</strong><br>
-                <span>Offer/Transaction Completed</span>
+                <span>Offer/Transaction Completed !. Link expired</span>
             </div>
             <% } %>
             <% for (var i in PeerOffer){ %>
@@ -128,7 +128,7 @@
             <% } %>
             <div class="submit_offer">
                 <input type="text" value="" id="Decline" name="Decline" hidden="true">
-                <input type="submit" name="submit" id="submit" value="Accept Offer"/>
+                <input type="submit" name="submit" id="submit" value="Interested Offer"/>
                 <input type="submit" name="ChkDecline" id="ChkDecline" value="Decline Offer"/>
             </div>
         </form>

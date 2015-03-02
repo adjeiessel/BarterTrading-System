@@ -35,26 +35,44 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                 if (err) throw err
                 console.log('Peer Trade Rejected');
             })
+            //Think of removing it , if is not going to be neccessary or putting it at final agreement stage
             dbconnection.query('Update ProductOffers  As P Join PeerTrade As PT On PT.FirstFriendProductOfferID=P.ProductOfferID set? where PT.PeerTradeID=? ', [ProductStatus, PeerTradeID], function (err) {
                 if (err) throw err
                 console.log('product status updated');
             })
             res.redirect('/');
         } else {
+            //NB think of not updating yet because link expires if customer doesn't not offer immidiately
             var PeerTrade = {
                 TradeStatus: 'Accepted'
             }
             dbconnection.query('Update PeerTrade set? where PeerTradeID=? ', [PeerTrade, PeerTradeID], function (err) {
                 if (err) throw err
-                console.log('Peer Trade Accepted');
             })
-            dbconnection.query('Select * from Customer As  C Join FriendsList As F on C.CustomerID=F.FriendID Join PeerTrade As PT on FriendListID=F.FriendListID where PeerTradeID=? ', [PeerTradeID], function (err, rows) {
+            dbconnection.query('Select * from Customers As  C Join FriendsList As F on C.CustomerID=F.CustomerID Join PeerTrade As PT on PT.FriendListID=F.FriendListID where PeerTradeID=? ', [PeerTradeID], function (err, rows) {
                 if (err) throw err
-                console.log('Peer Trade Accepted');
 
-                //redirect to RespondPeerTrade to allow customer to also make an offer and notify customer via email and notification
-                res.render('pages/RespondPeerTrade', {CustomerDetails: rows});
-            })
+                //get all product categories from db into the select optionBox
+                dbconnection.query("Select * from productcategories", function (err, prorows) {
+                    if (err) {
+                        console.log("Error Selecting : %s ", err);
+                    }
+                    dbconnection.query("Select * from ServiceCategory", function (err, servicerows) {
+                        if (err) {
+                            console.log("Error Selecting : %s ", err);
+                        }
+                        console.log('Peer Trade Accepted');
+                        //redirect to RespondPeerTrade to allow customer to also make an offer and notify customer via email and notification
+                        res.render('pages/RespondPeerTrade', {
+                            CustomerDetails: rows,
+                            ProCategories: prorows,
+                            SerCategories: servicerows,
+                            PeerID: PeerTradeID
+                        });
+                    });
+                });
+            });
+
         }
     })
     /* app.get('/searchpeer', function (req, res) {

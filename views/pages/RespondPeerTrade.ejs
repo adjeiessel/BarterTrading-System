@@ -122,18 +122,21 @@
         </li>
     </ul>
     <div id="ProductContent" name="ProductContent" class="content">
-        <form class="contact_form" id="contact" method="Post" action="/OfferPeerTrade" enctype="multipart/form-data">
+        <form class="contact_form" id="contact" method="Post" action="/AcceptPeerTrade" enctype="multipart/form-data">
+            <% for (var i in CustomerDetails){ %>
             <ul>
                 <li>
-                    <h1>Trade Product with Friend</h1>
+                    <h1>
+                        Offer  <%= CustomerDetails[i].FirstName %> <%= CustomerDetails[i].LastName %> <%= CustomerDetails[i].MiddleName %></h1>
                     <input type="text" id="OptionProduct" name="OptionProduct" value="Product" required="required"
                            hidden="true" title="Opotion"/>
                     <span class="required">All the fields marked with * are required </span>
                 </li>
                 <li class="bs-example">
                     <label for="tags" style="color:green;">Search for Friends:</label>
-                    <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false"
-                           placeholder="Search for Customer">
+                    <input type="text" name="typeahead" class="typeahead tt-query"
+                           value="<%= CustomerDetails[i].FirstName %> <%= CustomerDetails[i].LastName %> <%= CustomerDetails[i].MiddleName %>"
+                           readonly="true" autocomplete="off" spellcheck="false" placeholder="Search for Customer">
                 </li>
                 <li>
                     <label for="name">Product/Item Name: *</label>
@@ -236,14 +239,16 @@
                            onchange="PreviewImage3();"/>
                 </li>
                 <li class="submit">
+                    <input type="text" name="PeerID" id="PeerID" value="<%= PeerID %>" onclick="clearForm()"/>
                     <input type="button" name="clear" id="clear" value="Cancel" onclick="clearForm()"/>
-                    <input type="submit" name="submit" id="submit" value="Publish"/>
+                    <input type="submit" name="submit" id="submit" value="Send Offer"/>
                 </li>
             </ul>
+            <% } %>
         </form>
     </div>
     <div id="ServiceContent" name="ServiceContent" class="content">
-        <form id="contact" class="contact_form" method="post" action="/PeerTrade">
+        <form id="contact" class="contact_form" method="post" action="/AcceptPeerTrade">
             <ul>
                 <li>
                     <h1>Offer Service to a Friend</h1>
@@ -298,7 +303,7 @@
                 </li>
                 <li class="submit">
                     <input type="button" name="Clear" id="clear" value="Cancel" onclick="clearForm()"/>
-                    <input type="submit" name="submit" id="submit" value="Publish"/>
+                    <input type="submit" name="submit" id="submit" value="Send Offer"/>
                 </li>
             </ul>
         </form>
