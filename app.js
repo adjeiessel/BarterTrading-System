@@ -116,7 +116,9 @@ require('./routes/ActivityLog')(app,dbconnection);
 require('./routes/PingOffers')(app,dbconnection,transporter,SaveActivity,AddNotification);
 require('./routes/PingResponse')(app,dbconnection,transporter,SaveActivity,AddNotification);
 require('./routes/AcceptOffers')(app,dbconnection,transporter,SaveActivity,AddNotification);
+require('./routes/AcceptPeerTrade')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/RespondPeerTrade')(app, dbconnection, transporter, SaveActivity, AddNotification);
+require('./routes/PeerInterest')(app, dbconnection, transporter, SaveActivity, AddNotification);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

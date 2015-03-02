@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Updated the ViewOffersServices to prevent it from showing items posted by the login customer">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/AcceptPeerTrade.js" />
-      <change type="DELETED" beforePath="C:\Users\ESSEL\.WebStorm9\BCommerce\views\pages\AcceptPeerOffers.ejs" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\ESSEL\.WebStorm9\BCommerce\views\pages\AcceptPeerOffers.ejs" afterPath="$PROJECT_DIR$/views/pages/PeerInterest.ejs" />
+      <change type="DELETED" beforePath="C:\Users\ESSEL\.WebStorm9\BCommerce\routes\test.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/AcceptPeerTrade.js" afterPath="$PROJECT_DIR$/routes/AcceptPeerTrade.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/PeerInterest.ejs" afterPath="$PROJECT_DIR$/views/pages/PeerInterest.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs" afterPath="$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/RespondPeerTrade.js" afterPath="$PROJECT_DIR$/routes/RespondPeerTrade.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BCommerce.iws" />
@@ -34,63 +35,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OfferPeerTrade.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/OfferPeerTrade.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="541" max-vertical-offset="2907">
-              <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
-              <folding>
-                <element signature="e#7925#10714#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PeerInterest.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/PeerInterest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1734">
-              <caret line="65" column="116" selection-start-line="65" selection-start-column="116" selection-end-line="65" selection-end-column="116" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1785">
+              <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
               <folding>
-                <element signature="e#5181#7970#0" expanded="false" />
-                <element signature="e#8126#8346#0" expanded="false" />
-                <element signature="e#8431#8658#0" expanded="false" />
+                <element signature="e#5249#8038#0" expanded="false" />
+                <element signature="e#8194#8414#0" expanded="false" />
+                <element signature="e#8499#8726#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AcceptPeerTrade.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs">
+      <file leaf-file-name="PeerInterest.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/PeerInterest.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="4233">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AcceptPeerTrade.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/AcceptPeerTrade.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1955">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1818" max-vertical-offset="2261">
-              <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
+            <state vertical-scroll-proportion="-3.2692308" vertical-offset="204" max-vertical-offset="2312">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
               <folding>
-                <element signature="e#5154#5232#0" expanded="false" />
-                <element signature="e#5235#5252#0" expanded="false" />
-                <element signature="e#5345#5538#0" expanded="false" />
-                <element signature="e#5539#5566#0" expanded="false" />
-                <element signature="e#5638#5758#0" expanded="false" />
+                <element signature="e#153#339#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -99,20 +64,25 @@
       <file leaf-file-name="RespondPeerTrade.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/RespondPeerTrade.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="1768">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1581">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="e#4148#4368#0" expanded="false" />
+                <element signature="e#4453#4680#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PeerInterest.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pages/PeerInterest.ejs">
+      <file leaf-file-name="AcceptPeerTrade.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/AcceptPeerTrade.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617" vertical-offset="1887" max-vertical-offset="2312">
-              <caret line="127" column="19" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.25872093" vertical-offset="115" max-vertical-offset="1683">
+              <caret line="12" column="185" selection-start-line="12" selection-start-column="185" selection-end-line="12" selection-end-column="185" />
               <folding>
-                <element signature="e#153#339#0#HTML" expanded="false" />
+                <element signature="e#4715#4915#0" expanded="false" />
+                <element signature="e#4954#5154#0" expanded="false" />
+                <element signature="e#5230#5471#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -121,8 +91,8 @@
       <file leaf-file-name="RespondPeerTrade.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-55.153847" vertical-offset="504" max-vertical-offset="3553">
-              <caret line="223" column="20" selection-start-line="223" selection-start-column="20" selection-end-line="223" selection-end-column="20" />
+            <state vertical-scroll-proportion="-8.307693" vertical-offset="294" max-vertical-offset="2567">
+              <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
               <folding>
                 <element signature="n#script#3;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -134,32 +104,36 @@
                 <element signature="n#style#0;n#input#1;n#li#12;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#2;n#li#12;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#3;n#li#12;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PeerTrade.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pages/PeerTrade.ejs">
+      <file leaf-file-name="OfferPeerTrade.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/OfferPeerTrade.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.730769" vertical-offset="2025" max-vertical-offset="3332">
-              <caret line="236" column="67" selection-start-line="236" selection-start-column="67" selection-end-line="236" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="2907">
+              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
               <folding>
-                <element signature="e#383#2013#0#HTML" expanded="false" />
-                <element signature="e#613#675#0#HTML" expanded="false" />
-                <element signature="e#733#795#0#HTML" expanded="false" />
-                <element signature="e#853#915#0#HTML" expanded="false" />
-                <element signature="e#973#1035#0#HTML" expanded="false" />
-                <element signature="e#1087#1747#0#HTML" expanded="false" />
-                <element signature="e#1907#2005#0#HTML" expanded="false" />
-                <element signature="e#2045#2320#0#HTML" expanded="false" />
-                <element signature="e#2351#2626#0#HTML" expanded="false" />
-                <element signature="e#2657#2932#0#HTML" expanded="false" />
-                <element signature="e#2963#3238#0#HTML" expanded="false" />
-                <element signature="e#3265#3324#0#HTML" expanded="false" />
-                <element signature="e#3352#4059#0#HTML" expanded="false" />
-                <element signature="e#4085#4144#0#HTML" expanded="false" />
+                <element signature="e#7925#10714#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1818" max-vertical-offset="2295">
+              <caret line="120" column="30" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
+              <folding>
+                <element signature="e#5351#5429#0" expanded="false" />
+                <element signature="e#5432#5449#0" expanded="false" />
+                <element signature="e#5542#5735#0" expanded="false" />
+                <element signature="e#5736#5763#0" expanded="false" />
+                <element signature="e#5835#5955#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -173,7 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/routes/EditOfferService.js" />
         <option value="$PROJECT_DIR$/views/pages/EditOfferService.ejs" />
         <option value="$PROJECT_DIR$/routes/DeleteOffers.js" />
         <option value="$PROJECT_DIR$/routes/DeleteService.js" />
@@ -216,14 +189,15 @@
         <option value="$PROJECT_DIR$/routes/PeerTrade.js" />
         <option value="$PROJECT_DIR$/views/partials/navigation.ejs" />
         <option value="$PROJECT_DIR$/routes/OfferPeerTrade.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/PingResponse.js" />
         <option value="$PROJECT_DIR$/views/pages/PeerTrade.ejs" />
-        <option value="$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs" />
-        <option value="$PROJECT_DIR$/routes/AcceptPeerTrade.js" />
         <option value="$PROJECT_DIR$/views/pages/AcceptPeerOffers.ejs" />
-        <option value="$PROJECT_DIR$/routes/RespondPeerTrade.js" />
+        <option value="$PROJECT_DIR$/views/pages/PeerInterest.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs" />
         <option value="$PROJECT_DIR$/routes/PeerInterest.js" />
+        <option value="$PROJECT_DIR$/routes/RespondPeerTrade.js" />
+        <option value="$PROJECT_DIR$/routes/AcceptPeerTrade.js" />
       </list>
     </option>
   </component>
@@ -308,24 +282,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BCommerce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BCommerce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -341,6 +297,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BCommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BCommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BCommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BCommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,7 +349,7 @@
     <property name="LayoutCode.rearrangeEntriesCSS" value="false" />
     <property name="LayoutCode.rearrangeEntriesEJS" value="false" />
     <property name="SearchEverywhereHistoryKey" value="insertedid&#9;null&#9;null" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="configurable.group.editor" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="82" />
@@ -508,7 +496,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425260690078</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated the ViewOffersServices to prevent it from showing items posted by the login customer">
+      <created>1425261418492</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1425261418492</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -607,13 +601,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/EditCustomer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="918">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/AddGroup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.45132744" vertical-offset="153" max-vertical-offset="765">
@@ -822,13 +809,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/all.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.107142" vertical-offset="21590" max-vertical-offset="23987">
-          <caret line="1285" column="12" selection-start-line="1285" selection-start-column="12" selection-end-line="1285" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/OfferProduct.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26757368" vertical-offset="1293" max-vertical-offset="3162">
@@ -889,28 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/AuthenticationConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="2533">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1818" max-vertical-offset="2261">
-          <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
-          <folding>
-            <element signature="e#5154#5232#0" expanded="false" />
-            <element signature="e#5235#5252#0" expanded="false" />
-            <element signature="e#5345#5538#0" expanded="false" />
-            <element signature="e#5539#5566#0" expanded="false" />
-            <element signature="e#5638#5758#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/AcceptOffers.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.26923078" vertical-offset="3920" max-vertical-offset="4233">
@@ -954,20 +912,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/OfferPeerTrade.js">
+    <entry file="file://$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="541" max-vertical-offset="2907">
-          <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4233">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/PeerInterest.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308" vertical-offset="204" max-vertical-offset="2312">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
           <folding>
-            <element signature="e#7925#10714#0" expanded="false" />
+            <element signature="e#153#339#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1818" max-vertical-offset="2295">
+          <caret line="120" column="30" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
+          <folding>
+            <element signature="e#5351#5429#0" expanded="false" />
+            <element signature="e#5432#5449#0" expanded="false" />
+            <element signature="e#5542#5735#0" expanded="false" />
+            <element signature="e#5736#5763#0" expanded="false" />
+            <element signature="e#5835#5955#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-55.153847" vertical-offset="504" max-vertical-offset="3553">
-          <caret line="223" column="20" selection-start-line="223" selection-start-column="20" selection-end-line="223" selection-end-column="20" />
+        <state vertical-scroll-proportion="-8.307693" vertical-offset="294" max-vertical-offset="2567">
+          <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
           <folding>
             <element signature="n#script#3;n#!!top" expanded="false" />
             <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -979,54 +959,70 @@
             <element signature="n#style#0;n#input#1;n#li#12;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#2;n#li#12;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#3;n#li#12;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/RespondPeerTrade.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/all.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="1768">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="21590" max-vertical-offset="23987">
+          <caret line="1285" column="12" selection-start-line="1285" selection-start-column="12" selection-end-line="1285" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/PeerInterest.ejs">
+    <entry file="file://$PROJECT_DIR$/routes/AuthenticationConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="1887" max-vertical-offset="2312">
-          <caret line="127" column="19" selection-start-line="127" selection-start-column="19" selection-end-line="127" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2533">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/OfferPeerTrade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1938" max-vertical-offset="2907">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
           <folding>
-            <element signature="e#153#339#0#HTML" expanded="false" />
+            <element signature="e#7925#10714#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/PeerInterest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1734">
-          <caret line="65" column="116" selection-start-line="65" selection-start-column="116" selection-end-line="65" selection-end-column="116" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1785">
+          <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
           <folding>
-            <element signature="e#5181#7970#0" expanded="false" />
-            <element signature="e#8126#8346#0" expanded="false" />
-            <element signature="e#8431#8658#0" expanded="false" />
+            <element signature="e#5249#8038#0" expanded="false" />
+            <element signature="e#8194#8414#0" expanded="false" />
+            <element signature="e#8499#8726#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs">
+    <entry file="file://$PROJECT_DIR$/routes/RespondPeerTrade.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4233">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1581">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#4148#4368#0" expanded="false" />
+            <element signature="e#4453#4680#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/AcceptPeerTrade.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1955">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.25872093" vertical-offset="115" max-vertical-offset="1683">
+          <caret line="12" column="185" selection-start-line="12" selection-start-column="185" selection-end-line="12" selection-end-column="185" />
+          <folding>
+            <element signature="e#4715#4915#0" expanded="false" />
+            <element signature="e#4954#5154#0" expanded="false" />
+            <element signature="e#5230#5471#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

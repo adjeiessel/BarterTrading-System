@@ -122,7 +122,7 @@
         </li>
     </ul>
     <div id="ProductContent" name="ProductContent" class="content">
-        <form class="contact_form" id="contact" method="Post" action="/AcceptPeerTrade" enctype="multipart/form-data">
+        <form class="contact_form" id="contact" method="Post" action="/PeerInterest" enctype="multipart/form-data">
             <% for (var i in CustomerDetails){ %>
             <ul>
                 <li>
@@ -138,6 +138,7 @@
                            value="<%= CustomerDetails[i].FirstName %> <%= CustomerDetails[i].LastName %> <%= CustomerDetails[i].MiddleName %>"
                            readonly="true" autocomplete="off" spellcheck="false" placeholder="Search for Customer">
                 </li>
+                <input type="text" name="Email" id="Email" value="<%= CustomerDetails[i].EmailAddress %>"/>
                 <li>
                     <label for="name">Product/Item Name: *</label>
                     <input type="text" name="ProductName" required="required" title="Please Enter Product Name:"/>
@@ -239,16 +240,17 @@
                            onchange="PreviewImage3();"/>
                 </li>
                 <li class="submit">
-                    <input type="text" name="PeerID" id="PeerID" value="<%= PeerID %>" onclick="clearForm()"/>
+                    <input type="text" name="PeerID" id="PeerID" value="<%= PeerID %>"/>
                     <input type="button" name="clear" id="clear" value="Cancel" onclick="clearForm()"/>
                     <input type="submit" name="submit" id="submit" value="Send Offer"/>
                 </li>
+
             </ul>
             <% } %>
         </form>
     </div>
     <div id="ServiceContent" name="ServiceContent" class="content">
-        <form id="contact" class="contact_form" method="post" action="/AcceptPeerTrade">
+        <form id="contact" class="contact_form" method="post" action="/PeerInterest">
             <ul>
                 <li>
                     <h1>Offer Service to a Friend</h1>

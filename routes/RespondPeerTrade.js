@@ -12,7 +12,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                 console.log("Error Selecting : %s ", err);
             }
             console.log(rows);
-            res.render('pages/AcceptPeerOffers', {PeerOffer: rows});
+            res.render('pages/PeerInterest', {PeerOffer: rows});
         });
     });
     //Respond to Offer(Accept or Decline)If Accepted the tradedetails should be updated and the
@@ -20,8 +20,10 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
     // If Declined, just send an email informing friend of unsuccessful trade but rather the item will show in general
     //offers
 
+    //Respond to peer offer from PeerInterest form
     app.post('/RespondPeerTrade/:id', function (req, res) {
         //
+
         var PeerTradeID = req.params.id;
         var urllink
         if (req.body.ChkDecline) {
@@ -44,14 +46,14 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
         } else {
             //NB think of not updating yet because link expires if customer doesn't not offer immidiately
             var PeerTrade = {
-                TradeStatus: 'Accepted'
+                TradeStatus: 'Interested'
             }
             dbconnection.query('Update PeerTrade set? where PeerTradeID=? ', [PeerTrade, PeerTradeID], function (err) {
                 if (err) throw err
             })
             dbconnection.query('Select * from Customers As  C Join FriendsList As F on C.CustomerID=F.CustomerID Join PeerTrade As PT on PT.FriendListID=F.FriendListID where PeerTradeID=? ', [PeerTradeID], function (err, rows) {
                 if (err) throw err
-
+                console.log(rows);
                 //get all product categories from db into the select optionBox
                 dbconnection.query("Select * from productcategories", function (err, prorows) {
                     if (err) {
@@ -61,7 +63,8 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                         if (err) {
                             console.log("Error Selecting : %s ", err);
                         }
-                        console.log('Peer Trade Accepted');
+                        console.log('Peer Interested');
+
                         //redirect to RespondPeerTrade to allow customer to also make an offer and notify customer via email and notification
                         res.render('pages/RespondPeerTrade', {
                             CustomerDetails: rows,
