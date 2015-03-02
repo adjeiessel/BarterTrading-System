@@ -1,5 +1,6 @@
-module.exports = function (app, dbconnection) {
+module.exports = function (app, dbconnection, transporter, AddNotification, SaveActivity) {
 //   GET home page.
+
     app.get('/OfferPeerTrade', isLoggedIn, function (req, res) {
         var LogincustomerID = req.user.id;
         //get all product categories from db into the select optionBox
@@ -11,22 +12,15 @@ module.exports = function (app, dbconnection) {
                 if (err) {
                     console.log("Error Selecting : %s ", err);
                 }
-                dbconnection.query('Select CONCAT(FirstName," ",LastName," ",MiddleName) As FullName from customers As C Join FriendsList As F on C.CustomerID=F.FriendID where F.CustomerID=? and Status=?', [LogincustomerID, '1'], function (err, Friendrows) {
-                    if (err) {
-                        console.log("Error Selecting : %s ", err);
-                    }
-                    console.log(Friendrows);
                     res.render('pages/PeerTrade', {
                         ProCategories: rows,
-                        SerCategories: servicerows,
-                        MyFriends: Friendrows
+                        SerCategories: servicerows
                     });
                 });
             });
-        })
     })
-    app.get('/search', function (req, res) {
-        dbconnection.query('SELECT FirstName,LastName,MiddleName from customers where FirstName like "%' + req.query.key + '%"', function (err, rows) {
+    app.get('/searchpeer', function (req, res) {
+        dbconnection.query('Select FirstName,LastName,MiddleName from FriendsList  As F Join Customers As C on F.FriendID=C.CustomerID where ( Status="' + 1 + '" and F.CustomerID="' + req.user.id + '" )and FirstName like "%' + req.query.key + '%"', function (err, rows) {
             if (err) throw err;
             var data = [];
             for (i = 0; i < rows.length; i++) {
@@ -47,11 +41,11 @@ module.exports = function (app, dbconnection) {
             ServiceCatName: req.body.ServiceCatName,
             OptionP: req.body.OptionProduct,
             OptionS: req.body.OptionService,
-            FriendName: req.body.tags
+            FriendName: req.body.typeahead
         }
         //GetFriendID(LogincustomerID,PostData.FriendName);
         //Get friendID from the Peer Table and use this to get the FriendID to save transaction between two friends
-        dbconnection.query('Select FriendID,EmailAddress from FriendsList  As F Join Customers As C on F.CustomerID=C.CustomerID where F.CustomerID=? and CONCAT(FirstName," ",lastName," ",MiddleName)=?', [LogincustomerID, PostData.FriendName], function (err, row) {
+        dbconnection.query('Select FriendID,EmailAddress from FriendsList  As F Join Customers As C on F.FriendID=C.CustomerID where F.CustomerID=? and CONCAT(FirstName," ",lastName," ",MiddleName)=?', [LogincustomerID, PostData.FriendName], function (err, row) {
             if (err) {
                 console.log(err);
             } else {
@@ -116,13 +110,23 @@ module.exports = function (app, dbconnection) {
                                 TradeDate: new Date(),
                                 TradeStatus: "Pending"
                             }
-                            dbconnection.query('Insert into PeerTrade set?', [ProducttoPeerData], function (errs) {
+                            dbconnection.query('Insert into PeerTrade set?', [ProducttoPeerData], function (errs, peerrows) {
                                 if (errs) {
                                     console.log("Error Inserting data", errs)
                                 } else {
                                     console.log("Peer trade saved");
+                                    var PeerTradeID = peerrows.insertId
+                                    var urllink = "http://" + req.get('host') + "/RespondPeerTrade/" + PeerTradeID
+                                    //send mail
+                                    var mailOptions = {
+                                        to: Email, // list of receivers
+                                        subject: 'Peer Trade', // Subject line
+                                        html: 'Hello ' + PostData.FriendName + ',<br><br> ' + req.user.FN + ' wants to trade ' + PostProductData.ProductName + ' with you.<br>Please ' +
+                                        'open the link below to see if you are interested to trade any item/product with him for that offer.<br><br><a href="' + urllink + '">Click to check offer from friend</a><br><br>Thank you!<br>Barter Trading Team </br>'
+                                    };
+                                    sendemail(mailOptions);
                                     //save activity log
-                                    AddActivityLog(PostActivity = {
+                                    SaveActivity(PostActivity = {
                                         CustomerID: req.user.id,
                                         ActivityName: 'Sent product offer to friend',
                                         ActivityDateTime: new Date()
@@ -132,6 +136,7 @@ module.exports = function (app, dbconnection) {
                         })
                     })
                 }
+                //NOT TOUCHED YET
                 else if (PostData.OptionS == "Service") {
                     dbconnection.query('select ServiceCatID from ServiceCategory where ServiceCatName=?', [PostData.ServiceCatName], function (errs, results) {
                         if (errs) {
@@ -197,10 +202,14 @@ module.exports = function (app, dbconnection) {
         res.redirect('/logins');
     }
 
-    function AddActivityLog(activityData) {
-        dbconnection.query('Insert  into ActivityLogs set? ', [activityData], function (err) {
-            if (err) throw err
-            console.log('Activity Saved');
+    // send mail with defined transport object
+    function sendemail(mailOptions) {
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Message sent:');
+            }
         })
     }
 }

@@ -91,7 +91,7 @@ require('./routes/GroupTrading')(app,dbconnection);
 require('./routes/NearbyTrading')(app,dbconnection);
 require('./routes/PrivateMessages')(app,dbconnection,transporter);
 require('./routes/OfferService')(app,dbconnection);
-require('./routes/OfferPeerTrade')(app,dbconnection);
+require('./routes/OfferPeerTrade')(app, dbconnection, transporter, AddNotification, SaveActivity);
 require('./routes/Reputation')(app,dbconnection);
 require('./routes/WishList')(app,dbconnection);
 require('./routes/ViewOffersServices')(app,dbconnection);
@@ -116,6 +116,7 @@ require('./routes/ActivityLog')(app,dbconnection);
 require('./routes/PingOffers')(app,dbconnection,transporter,SaveActivity,AddNotification);
 require('./routes/PingResponse')(app,dbconnection,transporter,SaveActivity,AddNotification);
 require('./routes/AcceptOffers')(app,dbconnection,transporter,SaveActivity,AddNotification);
+require('./routes/RespondPeerTrade')(app, dbconnection, transporter, SaveActivity, AddNotification);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

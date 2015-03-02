@@ -23,7 +23,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             }
             //Get the details of the interested Customer( email,productname and the first name of the customer who posted the item the
             // responding customer is interested in)
-            var EmailAdd, fname, productname, pingID, PostedCustomerID, urllink;
+            var EmailAdd, fname, productname, PostedCustomerID, urllink;
             dbconnection.query('Select EmailAddress,FirstName,ProductName, P.CustomerID As ID from Customers As C Join ProductOffers As P on C.CustomerID=P.CustomerID where ProductOfferID=?', [interestedproductID], function (err, rows) {
                 if (err) throw err
                 if (rows) {

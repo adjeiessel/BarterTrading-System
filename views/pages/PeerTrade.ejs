@@ -7,7 +7,7 @@
     $(document).ready(function() {
         $('input.typeahead').typeahead({
             name: 'countries',
-            remote: 'http://localhost:7000/search?key=%QUERY',
+            remote: 'http://localhost:7000/searchpeer?key=%QUERY',
             limit: 10
         });
         $("#uploadPreview0").click(function ()
