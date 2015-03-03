@@ -42,6 +42,8 @@ module.exports = function(app, dbconnection) {
       console.log(JSON.stringify(data));
     });
   });
+    //Remember to fix the find button
+    //Remember to fix the ajax searcj with the customrID
   function isLoggedIn(req, res, next) {
     // if user is authenticated in the session, carry on
     if (req.isAuthenticated())

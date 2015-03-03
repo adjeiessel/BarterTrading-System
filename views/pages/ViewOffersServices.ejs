@@ -134,9 +134,8 @@
                         <span><%= ServiceData[i].ServiceDescription %></span>
                         <span><%= ServiceData[i].ServiceCatName %></span>
                         <span>Preferred Service:<%=ServiceData[i].PreferredService %></span>
-                        <span>Duration:<%=ServiceData[i].Duration %></span>
+                        <span>Duration:<%= ServiceData[i].Duration %></span><br>
                         <span class="spl-chr">Posted By:<a href="/profile/<%= ServiceData[i].CustomerID%>"><%= ServiceData[i].FirstName %></a></span>
-                        <span class="spl-chr">Reputation:<%= ServiceData[i].Reputation %></span>
                     </div>
                     </p>
                 </li>
