@@ -19,7 +19,7 @@
                 <strong>Offer Completed</strong><br>
                 <span>Offer/Transaction Completed !. Link expired</span>
             </div>
-            <% } %>
+            <% }else{ %>
             <% for (var i in PeerOffer){ %>
             <!--  <div class="member">-->
             <div class="member mem_format">
@@ -131,6 +131,7 @@
                 <input type="submit" name="submit" id="submit" value="Interested"/>
                 <input type="submit" name="ChkDecline" id="ChkDecline" value="Decline Offer"/>
             </div>
+            <% } %>
         </form>
     </div>
 </div>

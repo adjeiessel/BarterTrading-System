@@ -18,7 +18,7 @@
                 <strong>Offer Completed</strong><br>
                 <span>Offer/Transaction Completed</span>
             </div>
-            <% } %>
+            <% }else{ %>
             <% for (var i in FirstCustomerResults){ %>
             <!--  <div class="member">-->
             <div class="member mem_format">
@@ -238,6 +238,8 @@
                 <input type="submit" name="submit" id="submit" value="Accept Offer"/>
                 <input type="submit" name="ChkDecline" id="ChkDecline" value="Decline Offer"/>
             </div>
+            <% } %>
+
         </form>
     </div>
 </div>

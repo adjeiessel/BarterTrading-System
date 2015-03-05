@@ -87,7 +87,7 @@ require('./routes/CheckTransaction')(app,dbconnection);
 require('./routes/DelAccount')(app,dbconnection);
 require('./routes/AddGroup')(app,dbconnection);
 require('./routes/GroupMembers')(app,dbconnection,transporter,AddNotification,SaveActivity);
-require('./routes/GroupTrading')(app,dbconnection);
+require('./routes/GroupTrading')(app, dbconnection, SaveActivity, AddNotification, transporter);
 require('./routes/PrivateMessages')(app,dbconnection,transporter);
 require('./routes/OfferService')(app,dbconnection);
 require('./routes/OfferPeerTrade')(app, dbconnection, transporter, AddNotification, SaveActivity);
@@ -118,6 +118,7 @@ require('./routes/AcceptOffers')(app,dbconnection,transporter,SaveActivity,AddNo
 require('./routes/AcceptPeerTrade')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/RespondPeerTrade')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/PeerInterest')(app, dbconnection, transporter, SaveActivity, AddNotification);
+require('./routes/GroupOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

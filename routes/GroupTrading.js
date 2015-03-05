@@ -1,57 +1,71 @@
-module.exports = function (app, dbconnection) {
+module.exports = function (app, dbconnection, SaveActivity, AddNotfication, transporter) {
 //   GET home page.
+
     app.get('/GroupTrade', isLoggedIn, function (req, res) {
-        var categories = [],servicecategory=[];
-        var LogincustomerID = req.user.id;
+        //based on his/her ID customerID
+        var CustomerId = req.user.id;
         var GroupName = [];
-        var Count = 0;
-        dbconnection.query("Select * from Groups where CustomerID=?", [LogincustomerID], function (err, rows) {
-            if (err) throw err
+        dbconnection.query("Select * from Groups where CustomerID=?", [CustomerId], function (err, rows) {
+            if (err) {
+                console.log(err);
+            }
             if (rows) {
                 for (var i in rows) {
                     GroupName[i] = rows[i].GroupName;
-                    Count = rows.length;
                 }
                 console.log(GroupName);
             }
+            res.render('pages/GroupTrade', {YourGroups: GroupName});
         });
-        dbconnection.query("Select * from productcategories", function (err, rows) {
-            if (err) throw err
-            if (rows) {
-                for (var i in rows) {
-                    categories[i] = rows[i].CategoryName;
-                }
-                console.log(categories);
-            }
-        })
-        dbconnection.query("Select * from ServiceCategory", function (err, rows) {
-
-            if (err) throw err
-            if (rows) {
-                for (var i in rows) {
-                    servicecategory[i] = rows[i].ServiceCatName;
-                }
-                console.log(categories);
-            }
-            res.render('pages/GroupTrade', {ProCategories: categories, YourGroups: GroupName,ServiceCat:servicecategory});
-        })
     });
+
+    app.get('/searchproduct', function (req, res) {
+        var ProductStatus = 'Available';
+        var CustomerId = req.user.id;
+        dbconnection.query('Select ProductName from ProductOffers where (CustomerID="' + CustomerId + '" and ProductStatus="' + ProductStatus + '")and ProductName like "%' + req.query.key + '%"', function (err, rows) {
+            if (err) throw err;
+            var data = [];
+            for (var i = 0; i < rows.length; i++) {
+                data.push(rows[i].ProductName);
+            }
+            res.end(JSON.stringify(data));
+            console.log(JSON.stringify(data));
+        });
+    })
+    app.get('/searchservice', function (req, res) {
+        var ServiceStatus = 'Available';
+        var CustomerId = req.user.id;
+        dbconnection.query('Select ServiceName from ServiceOffers where (CustomerID="' + CustomerId + '" and ServiceStatus="' + ServiceStatus + '")and ServiceName like "%' + req.query.key + '%"', function (err, rows) {
+            if (err) throw err;
+            var data = [];
+            for (var i = 0; i < rows.length; i++) {
+                data.push(rows[i].ServiceName);
+            }
+            res.end(JSON.stringify(data));
+            console.log(JSON.stringify(data));
+        });
+    })
     app.post('/GroupTrade', function (req, res) {
-        var GID, CatID, ServCatID;
+        var GID, EmailAddress = [], productofferID, serviceofferID;
         var PostData = {
             GroupName: req.body.GroupName,
-            ProductCatName: req.body.CategoryName,
-            ServiceCatName: req.body.ServiceCatName,
-            CheckService:req.body.TradeOptionProduct
+            ProductName: req.body.typeahead,
+            ServiceName: req.body.typeaheadservice,
+            OptionP: req.body.option,
+            OptionS: req.body.optionS
         };
-        dbconnection.query('select CategoryID from ProductCategories where CategoryName=?', [PostData.ProductCatName], function (err, rows) {
-            if (err) throw err
-            if (rows) {
-                for (var k in rows) {
-                    CatID = rows[k].CategoryID;
-                    console.log('Category ID', CatID);
+        if (PostData.OptionP == "Product") {
+            //Get Email
+            dbconnection.query('Select EmailAddress from Customers As C Join GroupMembers As GM On C.CustomerID=GM.MemberID Join Groups As G on G.GroupID=GM.GroupID Where GroupName=?', [PostData.GroupName], function (err, myemails) {
+                if (err)throw err
+                if (myemails) {
+                    for (var i in myemails) {
+                        EmailAddress.push(myemails[i].EmailAddress);
+                        console.log(EmailAddress);
+                    }
                 }
-            }
+
+                //Get GroupID
             dbconnection.query('select GroupID from Groups where GroupName=?', [PostData.GroupName], function (errs, results) {
                 if (errs) throw errs
                 if (results) {
@@ -60,40 +74,94 @@ module.exports = function (app, dbconnection) {
                         console.log('GroupID', GID);
                     }
                 }
-                dbconnection.query('select ServiceCatID from ServiceCategory where ServiceCatName=?', [PostData.ServiceCatName], function (err, rows) {
-                    if (err) throw err
-                    if (rows) {
-                        for (var k in rows) {
-                            ServCatID = rows[k].ServiceCatID;
-                            console.log('ServiceID', ServCatID);
+                //Get ProductID
+                dbconnection.query('select ProductOfferID from ProductOffers where ProductName=?', [PostData.ProductName], function (errs, results) {
+                    if (errs) throw errs
+                    if (results) {
+                        for (var a in results) {
+                            productofferID = results[a].ProductOfferID;
+                            console.log('productOfferID', productofferID);
                         }
-                    }
-                    //Check which service is selected and allow for it's foreign key
-                    if(PostData.CheckService=="Product"){
-                       ServCatID=0;
-                    }else if(PostData.CheckService=="Service"){
-                        CatID=0;
                     }
                     //Create an object that will be submitted to the database
                     var SubmitAllData = {
                         GroupID: GID,
-                        ProductService_Name: req.body.ProductServiceName,
-                        ProductService_Details: req.body.ProductServiceDetails,
-                        TradeSuccess: '0',
-                        TradeDate: new Date(),
-                        CategoryID: CatID,
-                        ServiceCatID: ServCatID
+                        ProductOfferID: productofferID,
+                        TradeStatus: 'Pending',
+                        TradeDate: new Date()
+                    };
+                    dbconnection.query('Insert  into GroupTrade set? ', [SubmitAllData], function (err, Grows) {
+                        if (err) throw err
+                        console.log('Group Trade has Saved Successfully Created for product');
+                        var GroupTradeID = Grows.insertId;
 
+                        var urllink = "http://" + req.get('host') + "/GroupOffer/" + GroupTradeID
+
+                        var mailOptions = {
+                            from: 'B-Commerce <adjeiessel@gmail.com',
+                            to: EmailAddress, // list of receivers
+                            subject: 'Group Offer', // Subject line
+                            html: 'Hello ,<br><br> ' + req.user.FN + ' wants to trade ' + PostData.ProductName + ' with you in and other group members.<br><br>Please ' +
+                            'open the link below to see if you are interested<br> to trade any item/product with him for that offer.<br><br><a href="' + urllink + '">Click to check offer</a><br><br>Thank you!<br>Barter Trading Team </br>'
+                        };
+                        sendemail(mailOptions);
+
+                        //save activity log
+                        SaveActivity(PostActivity = {
+                            CustomerID: req.user.id,
+                            ActivityName: 'Offered to trade your product with your group members: ',
+                            ActivityDateTime: new Date()
+                        });
+                    });
+                });
+            });
+            });
+        } else if (PostData.OptionS == "Service") {
+            dbconnection.query('select GroupID from Groups where GroupName=?', [PostData.GroupName], function (errs, results) {
+                if (errs) throw errs
+                if (results) {
+                    for (var a in results) {
+                        GID = results[a].GroupID;
+                        console.log('GroupID', GID);
+                    }
+                }
+                dbconnection.query('select ServiceOfferID from ServiceOffers where ServiceName=?', [PostData.ServiceName], function (errs, results) {
+                    if (errs) throw errs
+                    if (results) {
+                        for (var a in results) {
+                            serviceofferID = results[a].ServiceOfferID;
+                            console.log('serviceofferID', serviceofferID);
+                        }
+                    }
+                    //Create an object that will be submitted to the database
+                    var SubmitAllData = {
+                        GroupID: GID,
+                        ProductOfferID: productofferID,
+                        TradeStatus: 'Pending',
+                        TradeDate: new Date()
                     };
                     dbconnection.query('Insert  into GroupTrade set? ', [SubmitAllData], function (err) {
                         if (err) throw err
-                            console.log('Group Trade has Saved Successfully Created');
+                        console.log('Group Trade has Saved Successfully Created for Service');
+                        /*
+                         var mailOptions = {
+                         to: EmailAddress, // list of receivers
+                         subject: 'Peer Trade', // Subject line
+                         html: 'Hello ' + PostData.FriendName + ',<br><br> ' + req.user.FN + ' wants to trade ' + PostProductData.ProductName + ' with you.<br>Please ' +
+                         'open the link below to see if you are interested to trade any item/product with him for that offer.<br><br><a href="' + urllink + '">Click to check offer from friend</a><br><br>Thank you!<br>Barter Trading Team </br>'
+                         };
+                         */
+                        //  sendemail(mailOptions);
                         //save activity log
-                        AddActivityLog(PostActivity={CustomerID:req.user.id,ActivityName:'Traded and item/service with your groupmembers: '+SubmitAllData.ProductService_Name,ActivityDateTime:new Date()});
-                    })
-                })
-            })
-        })
+                        SaveActivity(PostActivity = {
+                            CustomerID: req.user.id,
+                            ActivityName: 'placed  service with your group members: ',
+                            ActivityDateTime: new Date()
+                        });
+                    });
+                });
+            });
+        }
         res.redirect('/');
     });
     function isLoggedIn(req, res, next) {
@@ -103,12 +171,16 @@ module.exports = function (app, dbconnection) {
         // if they aren't redirect them to the home page   res.redirect('/');
         res.redirect('/logins');
     }
-    function AddActivityLog(activityData){
-        dbconnection.query('Insert  into ActivityLogs set? ', [activityData], function (err) {
-            if (err) throw err
-            console.log('Activity Saved');
+
+    // send mail with defined transport object
+    function sendemail(mailOptions) {
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Message sent:');
+            }
         })
     }
-
 };
 

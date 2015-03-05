@@ -15,11 +15,15 @@
       <w>nodemailer</w>
       <w>prefered</w>
       <w>productname</w>
+      <w>productoffer</w>
       <w>reciepient</w>
       <w>resave</w>
+      <w>sendemail</w>
+      <w>serviceoffer</w>
       <w>serviceresults</w>
       <w>smtptransport</w>
       <w>tradestatus</w>
+      <w>typeahead</w>
       <w>urllink</w>
     </words>
   </dictionary>

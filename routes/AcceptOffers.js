@@ -46,6 +46,7 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
         })
     })
     app.post('/AcceptOffers/:id',isLoggedIn,function(req,res) {
+        //interested or decline offer
         var pingID = req.params.id;
         var tradestatus,ProductStatus,Activity
         if(req.body.Decline=='Declined'){
@@ -62,8 +63,9 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
             DecisionDate:new Date()
         }
         var mailOptions = {
+            from: 'B-Commerce <adjeiessel@gmail.com',
             to: interestedCustomerEmail, // list of receivers
-            subject: 'Offer Accepted', // Subject line
+            subject: 'Peer Response', // Subject line
             html:'Hello '+ InterestedCustomerName+',<br><br> '+  PostCustomerName +' has accepted to trade with you '+ PostedCustomerProduct +' for '+ InterestedCustomerProduct +'. Please ' +
             'be ready to ship the item to the customer. Customer shipping address can be found under their profile.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
         };
@@ -79,6 +81,7 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
             if(err) throw err
             console.log('Trade Completed');
         })
+        //update product status for each offer in the productoffer
         dbconnection.query('Update ProductOffers set ProductStatus=? where ProductOfferID =?', [ProductStatus,PostedCusProductID], function (err) {
             if(err) throw err
             console.log('First Product Status Updated');

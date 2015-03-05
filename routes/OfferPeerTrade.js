@@ -201,7 +201,6 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
         // if they aren't redirect them to the home page
         res.redirect('/logins');
     }
-
     // send mail with defined transport object
     function sendemail(mailOptions) {
         transporter.sendMail(mailOptions, function (error, info) {
