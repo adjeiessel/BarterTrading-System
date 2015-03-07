@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<% include ../partials/header %>
+<% include ../partials/navigation %>
+<div class="content">
+    <ul class="rd_transactions">
+        <li>
+            <label for="TradeOption">Transactions For:</label>
+            <input type="radio" Id="TradeOption" name="TradeOption" onchange="clearForm()"
+                   value="">Product Offers
+            <input type="radio" id="TradeOption" name="TradeOption" onchange="clearForm()"
+                   value="">Service Offers
+            <input type="radio" id="TradeOption" name="TradeOption" onchange="clearForm()"
+                   value="">Group Offers
+            <input type="radio" id="TradeOption" name="TradeOption" onchange="clearForm()"
+                   value="">Peer Trade Offers
+        </li>
+    </ul>
+    <!--For Products-->
+    <div id="ProductOffers" name="ProductOffers" class="content">
+        <h1>My Transactions</h1>
+
+        <h3 style="color: #ff0000">My Product Offers</h3>
+
+        <div class="add_mem">
+            <table id="example" width="100%" height="300em">
+                <tr class="act_log">
+                    <th>Product Name</th>
+                    <th>Category Name</th>
+                    <th>Offer Details</th>
+                    <th>Offer Date</th>
+                    <th>Product Status</th>
+                </tr>
+                <% for (var i in ProductOffers){ %>
+                <tr>
+                    <td> <%= ProductOffers[i].ProductName %></td>
+                    <td><%= ProductOffers[i].CategoryName %></td>
+                    <td><%= ProductOffers[i].OfferDetails %></td>
+                    <td><%= ProductOffers[i].OfferDate.toLocaleDateString() %></td>
+                    <td><%= ProductOffers[i].ProductStatus %></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+    <!--For Service-->
+    <div id="ServiceOffers" name="ServiceOffers" class="content">
+        <h1>My Transactions</h1>
+
+        <h3 style="color: #ff0000">My Service Offers</h3>
+
+        <div class="add_mem">
+            <table id="example" width="100%" height="300em">
+                <tr class="act_log">
+                    <th>Product Name</th>
+                    <th>Category Name</th>
+                    <th>Offer Details</th>
+                    <th>Offer Date</th>
+                    <th>Product Status</th>
+                </tr>
+                <% for (var i in ProductOffers){ %>
+                <tr>
+                    <td> <%= ProductOffers[i].ProductName %></td>
+                    <td><%= ProductOffers[i].CategoryName %></td>
+                    <td><%= ProductOffers[i].OfferDetails %></td>
+                    <td><%= ProductOffers[i].OfferDate.toLocaleString() %></td>
+                    <td><%= ProductOffers[i].ProductStatus %></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+
+    <!--For Group Offers-->
+    <div id="GroupOffers" name="GroupOffers" class="content">
+        <h1>My Transactions</h1>
+
+        <h3 style="color: #ff0000">My Group Offers</h3>
+
+        <div class="add_mem">
+            <table id="example" width="100%" height="300em">
+                <tr class="act_log">
+                    <th>Product Name</th>
+                    <th>Category Name</th>
+                    <th>Offer Details</th>
+                    <th>Offer Date</th>
+                    <th>Product Status</th>
+                </tr>
+                <% for (var i in ProductOffers){ %>
+                <tr>
+                    <td> <%= ProductOffers[i].ProductName %></td>
+                    <td><%= ProductOffers[i].CategoryName %></td>
+                    <td><%= ProductOffers[i].OfferDetails %></td>
+                    <td><%= ProductOffers[i].OfferDate.toLocaleString() %></td>
+                    <td><%= ProductOffers[i].ProductStatus %></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+
+    <!--For PeerOffers-->
+    <div id="PeerOffers" name="ServiceOffers" class="content">
+        <h1>My Transactions</h1>
+
+        <h3 style="color: #ff0000">My Peer Offers</h3>
+
+        <div class="add_mem">
+            <table id="example" width="100%" height="300em">
+                <tr class="act_log">
+                    <th>Product Name</th>
+                    <th>Category Name</th>
+                    <th>Offer Details</th>
+                    <th>Offer Date</th>
+                    <th>Product Status</th>
+                </tr>
+                <% for (var i in ProductOffers){ %>
+                <tr>
+                    <td> <%= ProductOffers[i].ProductName %></td>
+                    <td><%= ProductOffers[i].CategoryName %></td>
+                    <td><%= ProductOffers[i].OfferDetails %></td>
+                    <td><%= ProductOffers[i].OfferDate.toLocaleString() %></td>
+                    <td><%= ProductOffers[i].ProductStatus %></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+<% include ../partials/footer %>

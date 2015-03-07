@@ -83,7 +83,7 @@ require('./routes/CreateAccount')(app,passport);
 require('./routes/profile')(app,dbconnection);
 require('./routes/OfferProduct')(app, dbconnection);
 require('./routes/Chatting')(app,myio,dbconnection);
-require('./routes/CheckTransaction')(app,dbconnection);
+require('./routes/ViewTransaction')(app, dbconnection);
 require('./routes/DelAccount')(app,dbconnection);
 require('./routes/AddGroup')(app,dbconnection);
 require('./routes/GroupMembers')(app,dbconnection,transporter,AddNotification,SaveActivity);
@@ -121,6 +121,7 @@ require('./routes/PeerInterest')(app, dbconnection, transporter, SaveActivity, A
 require('./routes/GroupOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/GroupMemberOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/AcceptMemberOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
+require('./routes/ViewTransaction')(app, dbconnection, transporter, SaveActivity, AddNotification);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

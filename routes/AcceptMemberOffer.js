@@ -5,8 +5,8 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
     var MemberEmail;
     var MemberName;
     var GroupOwner;
-    var GroupOwnerProductOffer;
-    var MemberProductOffer;
+    var GroupOwnerProductOffer, GroupOwnerProductID, GroupOwnerID;
+    var MemberProductOffer, MemberProductID;
     var TradeID;
     app.get('/MemberOffer/:id', isLoggedIn, function (req, res) {
         //Get the member offerID
@@ -27,8 +27,9 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             if (row) {
                 for (var i in row) {
                     GroupTradeID = row[i].GroupTradeID;
-                    GroupOwnerProductOffer = row[i].ProductName;
                     TradeID = GroupTradeID;
+                    GroupOwnerProductOffer = row[i].ProductName;
+                    GroupOwnerProductID = row[i].ProductOfferID;
                     console.log('Group Trade ID' + GroupTradeID);
                 }
             }
@@ -40,7 +41,8 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                 }
                 if (rows) {
                     for (var i in rows) {
-                        MemberProductOffer[i].ProductName;
+                        MemberProductOffer = rows[i].ProductName;
+                        MemberProductID = rows[i].ProductOfferID;
                     }
                 }
                 dbconnection.query("Select FirstName,LastName,MiddleName from Customers As C Join Groups As G On C.CustomerID=G.CustomerID Join GroupTrade As T  On T.GroupID=G.GroupID where GroupTradeID=?", [GroupTradeID], function (error, Gropownerrows) {
@@ -51,6 +53,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                         for (var i in Gropownerrows) {
                             Groupownername = Gropownerrows[i].FirstName + ' ' + Gropownerrows[i].LastName + ' ' + Gropownerrows[i].MiddleName
                             GroupOwner = Groupownername;
+                            GroupOwnerID = Gropownerrows[i].CustomerID;
                         }
                     }
                     //Get Member name
@@ -97,8 +100,8 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
         var mailOptions = {
             from: 'B-Commerce <adjeiessel@gmail.com',
             to: MemberEmail, // list of receivers
-            subject: 'Group Trade', // Subject line
-            html: 'Hello ' + MemberName + ',<br><br> ' + GroupOwner + ' has accepted to trade with you ' + GroupOwnerProductOffer + ' for ' + MemberProductOffer + '. Please ' +
+            subject: 'Group Trade Completed', // Subject line
+            html: 'Hello ' + MemberName + ',<br><br> <b>' + GroupOwner + '</b> has accepted to trade with you <b>' + GroupOwnerProductOffer + '</b> for <b>' + MemberProductOffer + '</b>. Please ' +
             'be ready to ship the item to the customer. Customer shipping address can be found under their profile.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
         };
         // send mail with defined transport object
@@ -114,13 +117,13 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             console.log('Group Trade Completed');
         });
         //update product status for each offer in the productoffer
-        dbconnection.query('Update ProductOffers set ProductStatus=? where ProductOfferID =?', [ProductStatus, PostedCusProductID], function (err) {
+        dbconnection.query('Update ProductOffers set ProductStatus=? where ProductOfferID =?', [ProductStatus, GroupOwnerProductID], function (err) {
             if (err) throw err
             console.log('First Product Status Updated');
         })
-        dbconnection.query('Update ProductOffers set ProductStatus=? where ProductOfferID =?', [ProductStatus, InterCusProductID], function (err) {
+        dbconnection.query('Update ProductOffers set ProductStatus=? where ProductOfferID =?', [ProductStatus, MemberProductID], function (err) {
             if (err) throw err
-            console.log('Second Product Status Updated');
+            console.log('Member Product Status Updated');
         })
         //save activity
         SaveActivity(PostActivity = {CustomerID: req.user.id, ActivityName: Activity, ActivityDateTime: new Date()})
@@ -129,12 +132,12 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             CustomerID: req.user.id,
             NotificationDetails: 'Accepted your offer',
             FlagAsShown: '0',
-            ToCustomerID: InterestedCustomerID,
+            ToCustomerID: GroupOwnerID,
             NotificationDate: new Date()
 
         })
         res.redirect('/');
-        */
+
     })
     function isLoggedIn(req, res, next) {
         // if user is authenticated in the session, carry on

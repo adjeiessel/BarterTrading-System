@@ -868,9 +868,20 @@ display: block;
 	background: #D5DDE5;
 	width: 267px;
 	border-radius: 20px;
-	margin: 30px 0 0 0;
+    margin: 3px 0 0 0;
 	list-style: none;
 	padding: 15px 11px;
+}
+
+.rd_transactions {
+    background: #D5DDE5;
+    width: 550px;
+    border-radius: 20px;
+    margin: 3px 0 0 0;
+    list-style: none;
+    padding: 20px 15px;
+    font-family: "Roboto", helvetica, arial, sa;
+
 }
 .rd_btn1 li, .rd_trade li{
 	list-style: none;
@@ -1185,7 +1196,7 @@ margin-bottom: 10px;
 
 }
 .article .head{
-	font: "Lucida Console";
+    font-family: "Lucida Console";
 	color: darkslategray;
 	font-size: 12px;
 	font-weight: bold;

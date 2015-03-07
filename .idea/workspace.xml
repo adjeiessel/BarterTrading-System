@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Updated the ViewOffersServices to prevent it from showing items posted by the login customer">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pages/AcceptMemberOffer.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/AcceptMemberOffer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pages/GroupMemberOffer.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/GroupMemberOffer.js" />
-      <change type="DELETED" beforePath="C:\Users\ESSEL\.WebStorm9\BCommerce\routes\paginationtest.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/ESSEL.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ESSEL.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/GroupOffer.js" afterPath="$PROJECT_DIR$/routes/GroupOffer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/GroupTrade.ejs" afterPath="$PROJECT_DIR$/views/pages/GroupTrade.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/GroupTrading.js" afterPath="$PROJECT_DIR$/routes/GroupTrading.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/OfferPeerTrade.js" afterPath="$PROJECT_DIR$/routes/OfferPeerTrade.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/ViewTransaction.js" />
+      <change type="DELETED" beforePath="C:\Users\ESSEL\.WebStorm9\BCommerce\routes\CheckTransaction.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/AcceptMemberOffer.js" afterPath="$PROJECT_DIR$/routes/AcceptMemberOffer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/ViewTransactions.ejs" afterPath="$PROJECT_DIR$/views/pages/ViewTransactions.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/WishList.ejs" afterPath="$PROJECT_DIR$/views/pages/WishList.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/all.css" afterPath="$PROJECT_DIR$/public/stylesheets/all.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/footer.ejs" afterPath="$PROJECT_DIR$/views/partials/footer.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/header.ejs" afterPath="$PROJECT_DIR$/views/partials/header.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/navigation.ejs" afterPath="$PROJECT_DIR$/views/partials/navigation.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -43,94 +39,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="AcceptMemberOffer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/AcceptMemberOffer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1904">
+              <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+              <folding>
+                <element signature="e#4473#4620#0" expanded="false" />
+                <element signature="e#4626#4774#0" expanded="false" />
+                <element signature="e#4914#5475#0" expanded="false" />
+                <element signature="e#5593#5746#0" expanded="false" />
+                <element signature="e#5861#5953#0" expanded="false" />
+                <element signature="e#6171#6270#0" expanded="false" />
+                <element signature="e#6416#6516#0" expanded="false" />
+                <element signature="e#6723#6939#0" expanded="false" />
+                <element signature="e#7016#7257#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewTransaction.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/ViewTransaction.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+              <caret line="8" column="187" selection-start-line="8" selection-start-column="187" selection-end-line="8" selection-end-column="187" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewTransactions.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/pages/ViewTransactions.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9255014" vertical-offset="153" max-vertical-offset="2176">
+              <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+              <folding>
+                <element signature="e#915#937#0#HTML" expanded="true" />
+                <element signature="e#2039#2061#0#HTML" expanded="true" />
+                <element signature="e#3081#3103#0#HTML" expanded="true" />
+                <element signature="e#4120#4142#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="GroupTrade.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/GroupTrade.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0" vertical-offset="1408" max-vertical-offset="1921">
-              <caret line="130" column="64" selection-start-line="130" selection-start-column="64" selection-end-line="130" selection-end-column="64" />
-              <folding>
-                <element signature="e#456#590#0#HTML" expanded="false" />
-                <element signature="e#635#767#0#HTML" expanded="false" />
-                <element signature="e#815#1341#0#HTML" expanded="false" />
-                <element signature="e#1395#2054#0#HTML" expanded="false" />
-                <element signature="e#1772#2043#0#HTML" expanded="false" />
-                <element signature="e#2168#2227#0#HTML" expanded="false" />
-                <element signature="e#3057#3079#0#HTML" expanded="true" />
-                <element signature="e#3755#3777#0#HTML" expanded="true" />
-                <element signature="e#3846#3881#0#HTML" expanded="true" />
-                <element signature="e#4858#4880#0#HTML" expanded="true" />
-                <element signature="e#5418#5440#0#HTML" expanded="true" />
-                <element signature="e#5505#5540#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupOffer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/GroupOffer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1768">
-              <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-              <folding>
-                <element signature="e#3918#4097#0" expanded="false" />
-                <element signature="e#4343#4563#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupMemberOffer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/GroupMemberOffer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2023">
-              <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AcceptMemberOffer.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pages/AcceptMemberOffer.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-101.34615" vertical-offset="0" max-vertical-offset="3978">
-              <caret line="155" column="69" selection-start-line="155" selection-start-column="69" selection-end-line="155" selection-end-column="69" />
-              <folding>
-                <element signature="e#1008#1030#0#HTML" expanded="true" />
-                <element signature="e#5537#5559#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OfferPeerTrade.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/OfferPeerTrade.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2224" max-vertical-offset="2652">
-              <caret line="138" column="66" selection-start-line="138" selection-start-column="66" selection-end-line="138" selection-end-column="66" />
-              <folding>
-                <element signature="e#7958#10747#0" expanded="false" />
-                <element signature="e#10929#11149#0" expanded="false" />
-                <element signature="e#11233#11460#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AcceptMemberOffer.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/AcceptMemberOffer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.009202454" vertical-offset="1221" max-vertical-offset="2465">
-              <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AcceptOffers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/AcceptOffers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1037" max-vertical-offset="2006">
-              <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+            <state vertical-scroll-proportion="-6.9615383" vertical-offset="907" max-vertical-offset="2567">
+              <caret line="64" column="13" selection-start-line="60" selection-start-column="4" selection-end-line="69" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -139,53 +97,39 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1553" max-vertical-offset="1989">
-              <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1553" max-vertical-offset="2006">
+              <caret line="143" column="32" selection-start-line="143" selection-start-column="32" selection-end-line="143" selection-end-column="32" />
               <folding>
                 <element signature="e#1445#1558#0" expanded="false" />
                 <element signature="e#1630#1739#0" expanded="false" />
                 <element signature="e#2056#2225#0" expanded="false" />
                 <element signature="e#2361#2442#0" expanded="false" />
-                <element signature="e#5640#5718#0" expanded="false" />
-                <element signature="e#5721#5738#0" expanded="false" />
-                <element signature="e#5831#6024#0" expanded="false" />
-                <element signature="e#6025#6052#0" expanded="false" />
-                <element signature="e#6124#6244#0" expanded="false" />
+                <element signature="e#5739#5817#0" expanded="false" />
+                <element signature="e#5820#5837#0" expanded="false" />
+                <element signature="e#5930#6123#0" expanded="false" />
+                <element signature="e#6124#6151#0" expanded="false" />
+                <element signature="e#6223#6343#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupMemberOffer.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pages/GroupMemberOffer.ejs">
+      <file leaf-file-name="WishList.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/WishList.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.9615383" vertical-offset="1298" max-vertical-offset="2380">
-              <caret line="87" column="43" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="49" />
-              <folding>
-                <element signature="e#2785#2807#0#HTML" expanded="true" />
-                <element signature="e#3364#3386#0#HTML" expanded="true" />
-                <element signature="e#3659#3681#0#HTML" expanded="true" />
-                <element signature="e#4633#4655#0#HTML" expanded="true" />
-                <element signature="e#4782#4804#0#HTML" expanded="true" />
-                <element signature="e#5423#5445#0#HTML" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-2.6153846" vertical-offset="17" max-vertical-offset="782">
+              <caret line="5" column="68" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="68" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupTrading.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/GroupTrading.js">
+      <file leaf-file-name="AcceptOffers.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/AcceptOffers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="2295">
-              <caret line="167" column="0" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
-              <folding>
-                <element signature="e#171#732#0" expanded="false" />
-                <element signature="e#786#1366#0" expanded="false" />
-                <element signature="e#1418#1998#0" expanded="false" />
-                <element signature="e#5434#5672#0" expanded="false" />
-                <element signature="e#8423#8664#0" expanded="false" />
-                <element signature="e#8748#8975#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="1634" max-vertical-offset="2006">
+              <caret line="112" column="1" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -194,15 +138,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/routes/AuthenticationConfig.js" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/node_modules/nodemailer/lib/wellknown.js" />
-        <option value="$PROJECT_DIR$/views/pages/Messages.ejs" />
-        <option value="$PROJECT_DIR$/views/pages/ServiceDetails.ejs" />
         <option value="$PROJECT_DIR$/views/pages/ProductDetails.ejs" />
         <option value="$PROJECT_DIR$/views/pages/FriendRequest.ejs" />
         <option value="$PROJECT_DIR$/routes/PrivateMessages.js" />
@@ -236,9 +180,6 @@
         <option value="$PROJECT_DIR$/views/pages/PeerInterest.ejs" />
         <option value="$PROJECT_DIR$/routes/PeerInterest.js" />
         <option value="$PROJECT_DIR$/routes/AcceptOffers.js" />
-        <option value="$PROJECT_DIR$/views/partials/navigation.ejs" />
-        <option value="$PROJECT_DIR$/public/stylesheets/all.css" />
-        <option value="$PROJECT_DIR$/views/partials/header.ejs" />
         <option value="$PROJECT_DIR$/views/pages/GroupOffer.ejs" />
         <option value="$PROJECT_DIR$/views/pages/GroupMemberOffer.ejs" />
         <option value="$PROJECT_DIR$/routes/GroupOffer.js" />
@@ -246,9 +187,17 @@
         <option value="$PROJECT_DIR$/routes/GroupMemberOffer.js" />
         <option value="$PROJECT_DIR$/routes/GroupTrading.js" />
         <option value="$PROJECT_DIR$/views/pages/GroupTrade.ejs" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/pages/AcceptMemberOffer.ejs" />
         <option value="$PROJECT_DIR$/routes/AcceptMemberOffer.js" />
+        <option value="$PROJECT_DIR$/views/partials/navigation.ejs" />
+        <option value="$PROJECT_DIR$/views/partials/footer.ejs" />
+        <option value="$PROJECT_DIR$/views/partials/header.ejs" />
+        <option value="$PROJECT_DIR$/views/pages/WishList.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/CheckTransaction.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/all.css" />
+        <option value="$PROJECT_DIR$/routes/ViewTransaction.js" />
+        <option value="$PROJECT_DIR$/views/pages/ViewTransactions.ejs" />
       </list>
     </option>
   </component>
@@ -557,7 +506,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425578846137</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated the ViewOffersServices to prevent it from showing items posted by the login customer">
+      <created>1425738608593</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1425738608594</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -582,7 +537,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5014881" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -592,10 +547,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22023809" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41091493" sideWeight="0.5037202" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41091493" sideWeight="0.49627978" order="2" side_tool="true" content_ui="tabs" x="-11" y="443" width="1344" height="231" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33226323" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" x="-11" y="443" width="1344" height="231" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39967898" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33814102" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33707866" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -651,46 +606,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="206" />
+      <option name="time" value="209" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/pages/Messages.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6538463" vertical-offset="392" max-vertical-offset="1751">
-          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/PrivateMessages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="35" max-vertical-offset="408">
-          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ejs-locals/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="2146" max-vertical-offset="7854">
-          <caret line="133" column="6" selection-start-line="133" selection-start-column="6" selection-end-line="133" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/profile.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2159">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/MyFriendList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/profile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="850">
@@ -723,13 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1173">
           <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/ActivityLog.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57596374" vertical-offset="256" max-vertical-offset="697">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="0" selection-end-line="35" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -927,14 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/all.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.5172415" vertical-offset="3753" max-vertical-offset="24021">
-          <caret line="237" column="23" selection-start-line="237" selection-start-column="23" selection-end-line="237" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/PeerInterest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
@@ -950,26 +855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/navigation.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8461539" vertical-offset="303" max-vertical-offset="663">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/MyGroups.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
           <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2848837" vertical-offset="0" max-vertical-offset="884">
-          <caret line="26" column="52" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -1000,47 +889,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/GroupMemberOffer.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.9615383" vertical-offset="1298" max-vertical-offset="2380">
-          <caret line="87" column="43" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="49" />
+        <state vertical-scroll-proportion="-6.9615383" vertical-offset="1332" max-vertical-offset="2448">
+          <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="49" />
           <folding>
-            <element signature="e#2785#2807#0#HTML" expanded="true" />
-            <element signature="e#3364#3386#0#HTML" expanded="true" />
-            <element signature="e#3659#3681#0#HTML" expanded="true" />
-            <element signature="e#4633#4655#0#HTML" expanded="true" />
-            <element signature="e#4782#4804#0#HTML" expanded="true" />
-            <element signature="e#5423#5445#0#HTML" expanded="true" />
+            <element signature="e#2789#2811#0#HTML" expanded="false" />
+            <element signature="e#3368#3390#0#HTML" expanded="false" />
+            <element signature="e#3692#3714#0#HTML" expanded="false" />
+            <element signature="e#4695#4717#0#HTML" expanded="false" />
+            <element signature="e#4844#4866#0#HTML" expanded="false" />
+            <element signature="e#5509#5531#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/GroupOffer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="981" max-vertical-offset="1768">
-          <caret line="37" column="37" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1751">
+          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
           <folding>
-            <element signature="e#3918#4097#0" expanded="false" />
-            <element signature="e#4343#4563#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/GroupTrade.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0" vertical-offset="1408" max-vertical-offset="1921">
-          <caret line="130" column="64" selection-start-line="130" selection-start-column="64" selection-end-line="130" selection-end-column="64" />
-          <folding>
-            <element signature="e#456#590#0#HTML" expanded="false" />
-            <element signature="e#635#767#0#HTML" expanded="false" />
-            <element signature="e#815#1341#0#HTML" expanded="false" />
-            <element signature="e#1395#2054#0#HTML" expanded="false" />
-            <element signature="e#1772#2043#0#HTML" expanded="false" />
-            <element signature="e#2168#2227#0#HTML" expanded="false" />
-            <element signature="e#3057#3079#0#HTML" expanded="true" />
-            <element signature="e#3755#3777#0#HTML" expanded="true" />
-            <element signature="e#3846#3881#0#HTML" expanded="true" />
-            <element signature="e#4858#4880#0#HTML" expanded="true" />
-            <element signature="e#5418#5440#0#HTML" expanded="true" />
-            <element signature="e#5505#5540#0#HTML" expanded="true" />
+            <element signature="e#3921#4100#0" expanded="false" />
+            <element signature="e#4350#4570#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1080,48 +948,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1553" max-vertical-offset="1989">
-          <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
-          <folding>
-            <element signature="e#1445#1558#0" expanded="false" />
-            <element signature="e#1630#1739#0" expanded="false" />
-            <element signature="e#2056#2225#0" expanded="false" />
-            <element signature="e#2361#2442#0" expanded="false" />
-            <element signature="e#5640#5718#0" expanded="false" />
-            <element signature="e#5721#5738#0" expanded="false" />
-            <element signature="e#5831#6024#0" expanded="false" />
-            <element signature="e#6025#6052#0" expanded="false" />
-            <element signature="e#6124#6244#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/AcceptMemberOffer.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-101.34615" vertical-offset="0" max-vertical-offset="3978">
           <caret line="155" column="69" selection-start-line="155" selection-start-column="69" selection-end-line="155" selection-end-column="69" />
           <folding>
-            <element signature="e#1008#1030#0#HTML" expanded="true" />
-            <element signature="e#5537#5559#0#HTML" expanded="true" />
+            <element signature="e#1021#1043#0#HTML" expanded="false" />
+            <element signature="e#5561#5583#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/AcceptMemberOffer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1904">
+          <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+          <folding>
+            <element signature="e#4473#4620#0" expanded="false" />
+            <element signature="e#4626#4774#0" expanded="false" />
+            <element signature="e#4914#5475#0" expanded="false" />
+            <element signature="e#5593#5746#0" expanded="false" />
+            <element signature="e#5861#5953#0" expanded="false" />
+            <element signature="e#6171#6270#0" expanded="false" />
+            <element signature="e#6416#6516#0" expanded="false" />
+            <element signature="e#6723#6939#0" expanded="false" />
+            <element signature="e#7016#7257#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/AcceptOffers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="2006">
-          <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1634" max-vertical-offset="2006">
+          <caret line="112" column="1" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/AcceptMemberOffer.js">
+    <entry file="file://$PROJECT_DIR$/views/partials/loginForm.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.009202454" vertical-offset="1221" max-vertical-offset="2465">
-          <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="867">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/footer.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="385">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/navigation.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="11.692307" vertical-offset="304" max-vertical-offset="663">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/WishList.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846" vertical-offset="17" max-vertical-offset="782">
+          <caret line="5" column="68" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1553" max-vertical-offset="2006">
+          <caret line="143" column="32" selection-start-line="143" selection-start-column="32" selection-end-line="143" selection-end-column="32" />
+          <folding>
+            <element signature="e#1445#1558#0" expanded="false" />
+            <element signature="e#1630#1739#0" expanded="false" />
+            <element signature="e#2056#2225#0" expanded="false" />
+            <element signature="e#2361#2442#0" expanded="false" />
+            <element signature="e#5739#5817#0" expanded="false" />
+            <element signature="e#5820#5837#0" expanded="false" />
+            <element signature="e#5930#6123#0" expanded="false" />
+            <element signature="e#6124#6151#0" expanded="false" />
+            <element signature="e#6223#6343#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/GroupTrade.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.9615383" vertical-offset="907" max-vertical-offset="2567">
+          <caret line="64" column="13" selection-start-line="60" selection-start-column="4" selection-end-line="69" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/all.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6793003" vertical-offset="14744" max-vertical-offset="24191">
+          <caret line="881" column="47" selection-start-line="881" selection-start-column="47" selection-end-line="881" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/ActivityLog.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6069364" vertical-offset="283" max-vertical-offset="697">
+          <caret line="29" column="10" selection-start-line="15" selection-start-column="3" selection-end-line="33" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ViewTransaction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+          <caret line="8" column="187" selection-start-line="8" selection-start-column="187" selection-end-line="8" selection-end-column="187" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/ViewTransactions.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9255014" vertical-offset="153" max-vertical-offset="2176">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+          <folding>
+            <element signature="e#915#937#0#HTML" expanded="true" />
+            <element signature="e#2039#2061#0#HTML" expanded="true" />
+            <element signature="e#3081#3103#0#HTML" expanded="true" />
+            <element signature="e#4120#4142#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
