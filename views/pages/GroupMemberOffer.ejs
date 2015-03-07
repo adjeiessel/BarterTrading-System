@@ -11,13 +11,6 @@
             remote: 'http://localhost:7000/searchproduct?key=%QUERY',
             limit: 10
         });
-
-        $('#typeaheadservice').typeahead({
-            name: 'service',
-            remote: 'http://localhost:7000/searchservice?key=%QUERY',
-            limit: 10
-        })
-
         $('#submit').on('click', function () {
             var isChecked = $('#TradeOptionProduct').prop('checked')
             if (isChecked !== true) {
@@ -29,6 +22,7 @@
                         200,// Velocity of notification
                         2000 // (optional) Time of delay to close automatically
                 );
+                return;
             }
         });
         $('input[type="radio"]').click(function () {
@@ -61,42 +55,40 @@
     <ul class="rd_trade">
         <li>
             <label for="TradeOption">Trade Option:</label>
-            <input type="radio" Id="TradeOptionProduct" name="TradeOptionProduct" onchange="clearForm()"
+            <input type="radio" id="TradeOptionProduct" name="TradeOptionProduct" onchange="clearForm()"
                    value="Product">Product
             <input type="radio" id="TradeOptionProduct" name="TradeOptionProduct" onchange="clearForm()"
                    value="Service">Service
         </li>
-
     </ul>
     <div id="ProductContent" name="ProductContent" class="content">
-        <form id="contact" class="contact_form" method="post" action="/GroupTrade">
+        <form id="contact" class="contact_form" method="post" action="/GroupMemberOffer">
             <fieldset>
                 <h1>Group Trade</h1>
                 <li>
-                    <h2>Offer Product</h2>
+                    <h2 style="color: #ff0000">Offer Group Member: Product</h2>
                 </li>
-
                 <li class="bs-example">
                     <label for="tags" style="color:#00b7ff;">Search Product:</label>
                     <input type="text" ID="typeahead" name="typeahead" class="typeahead tt-query" autocomplete="off"
                            spellcheck="false"
                            placeholder="Search for your products" required="true" title="No product searched">
-
                 </li>
                 <br>
                 <li>
-                    <input type="text" id="option" name="option" value="" required="true"
-                           title="Please Select and Option" hidden="true"/>
+                    <label for="tags" style="color:#00b7ff;">Group Name:</label>
+                    <input type="text" id="GroupName" name="GroupName" value="<%= GroupName %>" readonly="true"
+                           required="true" title="No Group Name"/>
+                </li>
+                <br>
+                <li>
+                    <label for="tags" style="color:#00b7ff;">Offer Member:</label>
+                    <input type="text" id="MemberName" name="MemberName" value="<%= Name %>" readonly="true"
+                           required="true" title="No Member"/>
                 </li>
                 <li>
-                    <span class="required">Select a group</span>
-                    <label for="tags" style="color:#00b7ff;">Offer Group: *</label>
-                    <select name="GroupName" style="background-color:lightcyan;" required="required"
-                            title="Please select any of your groups">
-                        <% for (var i in YourGroups){ %>
-                        <option><%= YourGroups[i] %>
-                            <% } %>
-                    </select>
+                    <input type="text" id="option" name="option" value="" required="true"
+                           title="Please Select and Option" hidden="true"/>
                 </li>
                 <br><br>
                 <li class="submit">
@@ -108,12 +100,11 @@
         </form>
     </div>
     <div id="ServiceContent" name="ServiceContent" class="content">
-        <form id="contact" class="contact_form" method="post" action="/GroupTrade">
+        <form id="contact" class="contact_form" method="post" action="/GroupMemberOffer">
             <h1>Group Trade</h1>
-
-            <h2>Offer Service</h2>
-
-            <span class="required">Please select a group</span>
+            <li>
+                <h2 style="color: #ff0000">Offer Group Member: Service</h2>
+            </li>
             <li class="bs-example">
                 <label for="typeahead" style="color:#00b7ff;">Search Service:</label>
                 <input type="text" id="typeaheadservice" name="typeaheadservice" class="typeahead tt-query"
@@ -122,17 +113,19 @@
             </li>
             <br>
             <li>
-                <input type="text" id="optionS" name="optionS" value="" hidden="true" required="true"
-                       title="Please Select and Option"/>
+                <label for="tags" style="color:#00b7ff;">Group Name:</label>
+                <input type="text" id="GroupName" name="GroupName" value="<%= GroupName %>" readonly="true"
+                       required="true" title="No Group Name"/>
+            </li>
+            <br>
+            <li>
+                <label for="tags" style="color:#00b7ff;">Offer Member:</label>
+                <input type="text" id="MemberName" name="MemberName" value="<%= Name %>" readonly="true" required="true"
+                       title="No Member"/>
             </li>
             <li>
-                <label for="tags" style="color:#00b7ff;">Offer Group: *</label>
-                <select name="GroupName" style="background-color:lightcyan;" required="required"
-                        title="Please select any of your groups">
-                    <% for (var i in YourGroups){ %>
-                    <option><%= YourGroups[i] %>
-                        <% } %>
-                </select>
+                <input type="text" id="option" name="option" value="" required="true"
+                       title="Please Select and Option" hidden="true"/>
             </li>
             <br><br>
             <li class="submit">

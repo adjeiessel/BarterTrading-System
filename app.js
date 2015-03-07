@@ -119,7 +119,8 @@ require('./routes/AcceptPeerTrade')(app, dbconnection, transporter, SaveActivity
 require('./routes/RespondPeerTrade')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/PeerInterest')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/GroupOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
-
+require('./routes/GroupMemberOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
+require('./routes/AcceptMemberOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

@@ -136,7 +136,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                         })
                     })
                 }
-                //NOT TOUCHED YET
+                //NOT TOUCHED YET: Complete peer trade for service
                 else if (PostData.OptionS == "Service") {
                     dbconnection.query('select ServiceCatID from ServiceCategory where ServiceCatName=?', [PostData.ServiceCatName], function (errs, results) {
                         if (errs) {

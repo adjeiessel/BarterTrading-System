@@ -45,6 +45,7 @@ module.exports = function (app, dbconnection, SaveActivity, AddNotfication, tran
             console.log(JSON.stringify(data));
         });
     })
+
     app.post('/GroupTrade', function (req, res) {
         var GID, EmailAddress = [], productofferID, serviceofferID;
         var PostData = {
@@ -101,7 +102,7 @@ module.exports = function (app, dbconnection, SaveActivity, AddNotfication, tran
                             from: 'B-Commerce <adjeiessel@gmail.com',
                             to: EmailAddress, // list of receivers
                             subject: 'Group Offer', // Subject line
-                            html: 'Hello ,<br><br> ' + req.user.FN + ' wants to trade ' + PostData.ProductName + ' with you in and other group members.<br><br>Please ' +
+                            html: 'Hello ,<br><br> ' + req.user.FN + ' wants to trade <b>' + PostData.ProductName + '</b> with you and other group members.<br>Please ' +
                             'open the link below to see if you are interested<br> to trade any item/product with him for that offer.<br><br><a href="' + urllink + '">Click to check offer</a><br><br>Thank you!<br>Barter Trading Team </br>'
                         };
                         sendemail(mailOptions);
@@ -164,6 +165,7 @@ module.exports = function (app, dbconnection, SaveActivity, AddNotfication, tran
         }
         res.redirect('/');
     });
+
     function isLoggedIn(req, res, next) {
         // if user is authenticated in the session, carry on
         if (req.isAuthenticated())
@@ -171,7 +173,6 @@ module.exports = function (app, dbconnection, SaveActivity, AddNotfication, tran
         // if they aren't redirect them to the home page   res.redirect('/');
         res.redirect('/logins');
     }
-
     // send mail with defined transport object
     function sendemail(mailOptions) {
         transporter.sendMail(mailOptions, function (error, info) {

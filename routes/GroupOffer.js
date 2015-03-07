@@ -16,29 +16,34 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
     });
     app.post('/GroupOffer/:id', isLoggedIn, function (req, res) {
         //Accept or declined
-        //Get the name of the user who is interested in the offer
+
         var GroupTradeID = req.params.id;
         var CustomerID = req.user.id;
-        var GroupName, EmailAddress;
-        dbconnection.query('Select GroupName,EmailAddress from Customers As C Join GroupMembers As GM On C.CustomerID=GM.MemberID ' +
-        'Join Groups As G on G.GroupID=GM.GroupID Join GroupTrade As T On T.GroupID=G.GroupID Where GroupTradeID=?', [GroupTradeID], function (error, rows) {
+        var GroupName, EmailAddress, FullName;
+        //Select customer who posted the product for the interested member to send an offer to
+
+
+        //Get the name of the user who is interested in the offer
+        dbconnection.query('Select GroupName,FirstName,LastName,MiddleName,EmailAddress from Customers As C Join Groups As G On C.CustomerID=G.CustomerID ' +
+        'Join GroupTrade As T On T.GroupID=G.GroupID Where GroupTradeID=?', [GroupTradeID], function (error, rows) {
             if (error)throw error
             if (rows) {
                 for (var i in rows) {
                     GroupName = rows[i].GroupName;
                     EmailAddress = rows[i].EmailAddress;
+                    FullName = rows[i].FirstName + ' ' + rows[i].LastName + ' ' + rows[i].MiddleName;
                 }
             }
-            if (req.body.Decline == 'Decline') {
+            var Option = req.body.Decline;
+            if (Option == 'Declined') {
 
-                var TradeStatus = 'Declined';
+                var TradeStatus = "Declined";
 
-                dbconnection.query("Update GroupTrade set? where GroupTradeID=?", [TradeStatus, GroupTradeID], function (err) {
+                dbconnection.query("Update GroupTrade set TradeStatus=? where GroupTradeID=?", [TradeStatus, GroupTradeID], function (err) {
                     if (err)throw err
-                    console.log('Update group trade');
+                    console.log('Update group trade Declined');
                 })
-                //send link to all members about the interest and for them to also see what a member also has to offer
-                var urllink = "http://" + req.get('host') + "/GroupOffer/" + GroupTradeID
+
                 var mailOptions = {
                     from: 'B-Commerce <adjeiessel@gmail.com',
                     to: EmailAddress, // list of receivers
@@ -47,29 +52,27 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                     'Thank you!<br>Barter Trading Team </br>'
                 };
                 sendemail(mailOptions);
+
                 //save activity log
                 SaveActivity(PostActivity = {
                     CustomerID: req.user.id,
                     ActivityName: 'Declined offer in group',
                     ActivityDateTime: new Date()
                 });
-            } else {
-                var TradeStatus = 'Interested';
-                dbconnection.query("Update GroupTrade set? where GroupTradeID=?", [TradeStatus, GroupTradeID], function (err) {
+                res.redirect('/');
+            }
+            else {
+                var TradeStatus = "Interested";
+                dbconnection.query("Update GroupTrade set TradeStatus=? where GroupTradeID=?", [TradeStatus, GroupTradeID], function (err) {
                     if (err)throw err
-                    console.log('Update group trade');
+                    console.log('Update group trade interested');
                 })
-                //send link to all members about the interest and for them to also see what a member also has to offer
-                var urllink = "http://" + req.get('host') + "/GroupOffer/" + GroupTradeID
 
                 var mailOptions = {
                     from: 'B-Commerce <adjeiessel@gmail.com',
                     to: EmailAddress, // list of receivers
                     subject: 'Group Member Response', // Subject line
-                    html: 'Hello ' + GroupName + 'Group Members<br><br>' + req.user.FN + ' is interested in the product/item you offered to the group. <br><br>Please' +
-                    'open the link below to see what he/she also has to offer if you are interested<br> to trade your product/item for that offer.' +
-                    '<br><br><a href="' + urllink + '">Click to check offer</a><br><br>' +
-                    'Thank you!<br>Barter Trading Team </br>'
+                    html: 'Hello <b>' + GroupName + '</b> Group Members,<br><br>' + req.user.FN + ' is interested in the product/item you offered to the group.<br><br> Thank you!<br>Barter Trading Team </br>'
                 };
                 sendemail(mailOptions);
                 //save activity log
@@ -78,8 +81,8 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                     ActivityName: 'Interested in offer to Group',
                     ActivityDateTime: new Date()
                 });
+                res.render('pages/GroupMemberOffer', {Name: FullName, GroupName: GroupName});
             }
-
         })
     })
     // for checking if user is logged in before allowing user to access the page
@@ -90,7 +93,6 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
         // if they aren't redirect them to the home page
         res.redirect('/logins');
     }
-
     // send mail with defined transport object
     function sendemail(mailOptions) {
         transporter.sendMail(mailOptions, function (error, info) {
