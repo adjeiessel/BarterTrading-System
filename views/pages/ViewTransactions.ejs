@@ -1,26 +1,83 @@
 <!DOCTYPE html>
 <% include ../partials/header %>
 <% include ../partials/navigation %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type="radio"]').click(function () {
+            if ($(this).attr("value") == "Product") {
+                $("#ServiceOffers").hide();
+                $("#GroupOffers").hide();
+                $("#PeerOfferss").hide();
+                $("#ProductOffers").show();
+                document.getElementById("option").value = "Product";
+            }
+            if ($(this).attr("value") == "Service") {
+                $("#ProductOffers").hide();
+                $("#GroupOffers").hide();
+                $("#PeerOffers").hide();
+                $("#ServiceOffers").show();
+                document.getElementById("optionS").value = "Service";
+            }
+            if ($(this).attr("value") == "Group") {
+                $("#ProductOffers").hide();
+                $("#ServiceOffers").hide();
+                $("#PeerOffers").hide();
+                $("#GroupOffers").show();
+                document.getElementById("optionS").value = "Group";
+            }
+            if ($(this).attr("value") == "Peer") {
+                $("#ProductOffers").hide();
+                $("#ServiceOffers").hide();
+                $("#GroupOffers").hide();
+                $("#PeerOffers").show();
+                document.getElementById("optionS").value = "Peer";
+            }
+
+        });
+        $("#ServiceOffers").hide();
+        $("#GroupOffers").hide();
+        $("#PeerOffers").hide();
+    });
+
+    function clearForm() {
+        document.getElementById("contact").reset();
+    }
+</script>
 <div class="content">
     <ul class="rd_transactions">
         <li>
             <label for="TradeOption">Transactions For:</label>
             <input type="radio" Id="TradeOption" name="TradeOption" onchange="clearForm()"
-                   value="">Product Offers
+                   value="Product">Product Offers
             <input type="radio" id="TradeOption" name="TradeOption" onchange="clearForm()"
-                   value="">Service Offers
+                   value="Service">Service Offers
             <input type="radio" id="TradeOption" name="TradeOption" onchange="clearForm()"
-                   value="">Group Offers
+                   value="Group">Group Offers
             <input type="radio" id="TradeOption" name="TradeOption" onchange="clearForm()"
-                   value="">Peer Trade Offers
+                   value="Peer">Peer Trade Offers
         </li>
+
     </ul>
+    <br><br>
+
+
     <!--For Products-->
     <div id="ProductOffers" name="ProductOffers" class="content">
-        <h1>My Transactions</h1>
+        <form id="contact" class="contact_form" method="post" action="/ViewTransaction">
+            <h1>My Transactions</h1>
 
-        <h3 style="color: #ff0000">My Product Offers</h3>
-
+            <h3 style="color: #ff0000">My Product Offers</h3>
+            <li>
+                <label for="FromDate" style="color: deepskyblue">From:</label>
+                <input type="date" name="FromDate" id="FromDate" required="true" title="Please specify start date"/>
+            </li>
+            <li>
+                <label for="ToDate" style="color: deepskyblue">To:</label>
+                <input type="date" name="ToDate" id="ToDate" required="true" title="Please specify end date"/>
+            </li>
+            <li>
+                <input type="submit" id="find" name="find" value="Search"/>
+            </li>
         <div class="add_mem">
             <table id="example" width="100%" height="300em">
                 <tr class="act_log">
@@ -41,13 +98,25 @@
                 <% } %>
             </table>
         </div>
+        </form>
     </div>
     <!--For Service-->
     <div id="ServiceOffers" name="ServiceOffers" class="content">
+        <form id="contact" class="contact_form" method="post" action="/ViewTransaction">
         <h1>My Transactions</h1>
 
         <h3 style="color: #ff0000">My Service Offers</h3>
-
+            <li>
+                <label for="FromDate" style="color: deepskyblue">From:</label>
+                <input type="date" name="FromDate" id="FromDate" required="true" title="Please specify start date"/>
+            </li>
+            <li>
+                <label for="ToDate" style="color: deepskyblue">To:</label>
+                <input type="date" name="ToDate" id="ToDate" required="true" title="Please specify end date "/>
+            </li>
+            <li>
+                <input type="submit" id="find" name="find" value="Search"/>
+            </li>
         <div class="add_mem">
             <table id="example" width="100%" height="300em">
                 <tr class="act_log">
@@ -59,23 +128,35 @@
                 </tr>
                 <% for (var i in ProductOffers){ %>
                 <tr>
-                    <td> <%= ProductOffers[i].ProductName %></td>
+                    <td><%= ProductOffers[i].ProductName %></td>
                     <td><%= ProductOffers[i].CategoryName %></td>
                     <td><%= ProductOffers[i].OfferDetails %></td>
-                    <td><%= ProductOffers[i].OfferDate.toLocaleString() %></td>
+                    <td><%= ProductOffers[i].OfferDate.toLocaleDateString() %></td>
                     <td><%= ProductOffers[i].ProductStatus %></td>
                 </tr>
                 <% } %>
             </table>
         </div>
+        </form>
     </div>
 
     <!--For Group Offers-->
     <div id="GroupOffers" name="GroupOffers" class="content">
+        <form id="contact" class="contact_form" method="post" action="/ViewTransaction">
         <h1>My Transactions</h1>
 
         <h3 style="color: #ff0000">My Group Offers</h3>
-
+            <li>
+                <label for="FromDate" style="color: deepskyblue">From:</label>
+                <input type="date" name="FromDate" id="FromDate" required="true" title="Please specify start date"/>
+            </li>
+            <li>
+                <label for="ToDate" style="color: deepskyblue">To:</label>
+                <input type="date" name="ToDate" id="ToDate" required="true" title="Please specify end date"/>
+            </li>
+            <li>
+                <input type="submit" id="find" name="find" value="Search"/>
+            </li>
         <div class="add_mem">
             <table id="example" width="100%" height="300em">
                 <tr class="act_log">
@@ -90,20 +171,31 @@
                     <td> <%= ProductOffers[i].ProductName %></td>
                     <td><%= ProductOffers[i].CategoryName %></td>
                     <td><%= ProductOffers[i].OfferDetails %></td>
-                    <td><%= ProductOffers[i].OfferDate.toLocaleString() %></td>
+                    <td><%= ProductOffers[i].OfferDate.toLocaleDateString() %></td>
                     <td><%= ProductOffers[i].ProductStatus %></td>
                 </tr>
                 <% } %>
             </table>
         </div>
+        </form>
     </div>
 
     <!--For PeerOffers-->
-    <div id="PeerOffers" name="ServiceOffers" class="content">
+    <div id="PeerOffers" name="PeerOffers" class="content">
+        <form id="contact" class="contact_form" method="post" action="/ViewTransaction"/>
         <h1>My Transactions</h1>
-
         <h3 style="color: #ff0000">My Peer Offers</h3>
-
+        <li>
+            <label for="FromDate" style="color: deepskyblue">From:</label>
+            <input type="date" name="FromDate" id="FromDate" required="true" title="Please specify start date"/>
+        </li>
+        <li>
+            <label for="ToDate" style="color: deepskyblue">To:</label>
+            <input type="date" name="ToDate" id="ToDate" required="true" title="Please specify end date"/>
+        </li>
+        <li>
+            <input type="submit" id="find" name="find" value="Search"/>
+        </li>
         <div class="add_mem">
             <table id="example" width="100%" height="300em">
                 <tr class="act_log">
@@ -118,14 +210,13 @@
                     <td> <%= ProductOffers[i].ProductName %></td>
                     <td><%= ProductOffers[i].CategoryName %></td>
                     <td><%= ProductOffers[i].OfferDetails %></td>
-                    <td><%= ProductOffers[i].OfferDate.toLocaleString() %></td>
+                    <td><%= ProductOffers[i].OfferDate.toLocaleDateString() %></td>
                     <td><%= ProductOffers[i].ProductStatus %></td>
                 </tr>
                 <% } %>
             </table>
         </div>
+        </form>
     </div>
-
-
 </div>
 <% include ../partials/footer %>
