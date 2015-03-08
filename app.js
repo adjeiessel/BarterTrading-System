@@ -55,7 +55,7 @@ var transporter = nodemailer.createTransport("SMTP", {
 });
 
 //function AddActivityLog (activityData) {
-var SaveActivity=function(activityData) {
+var SaveActivity = function (activityData) {
     dbconnection.query('Insert  into ActivityLogs set? ', [activityData], function (err) {
     if (err) throw err
     console.log('Activity Saved');
@@ -87,7 +87,7 @@ require('./routes/ViewTransaction')(app, dbconnection);
 require('./routes/DelAccount')(app,dbconnection);
 require('./routes/AddGroup')(app,dbconnection);
 require('./routes/GroupMembers')(app,dbconnection,transporter,AddNotification,SaveActivity);
-require('./routes/GroupTrading')(app, dbconnection, SaveActivity, AddNotification, transporter);
+require('./routes/GroupTrading')(app, dbconnection, SaveActivity, transporter);
 require('./routes/PrivateMessages')(app,dbconnection,transporter);
 require('./routes/OfferService')(app,dbconnection);
 require('./routes/OfferPeerTrade')(app, dbconnection, transporter, AddNotification, SaveActivity);
@@ -118,7 +118,7 @@ require('./routes/AcceptOffers')(app,dbconnection,transporter,SaveActivity,AddNo
 require('./routes/AcceptPeerTrade')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/RespondPeerTrade')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/PeerInterest')(app, dbconnection, transporter, SaveActivity, AddNotification);
-require('./routes/GroupOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
+require('./routes/GroupOffer')(app, dbconnection, transporter, SaveActivity);
 require('./routes/GroupMemberOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/AcceptMemberOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/ViewTransaction')(app, dbconnection, transporter, SaveActivity, AddNotification);

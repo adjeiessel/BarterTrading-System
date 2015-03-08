@@ -868,7 +868,7 @@ display: block;
 	background: #D5DDE5;
 	width: 267px;
 	border-radius: 20px;
-    margin: 3px 0 0 0;
+    margin: 30px 0 0 0;
 	list-style: none;
 	padding: 15px 11px;
 }
@@ -1196,7 +1196,7 @@ margin-bottom: 10px;
 
 }
 .article .head{
-    font-family: "Lucida Console";
+    font: "Lucida Console";
 	color: darkslategray;
 	font-size: 12px;
 	font-weight: bold;

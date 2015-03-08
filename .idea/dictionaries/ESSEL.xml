@@ -25,6 +25,7 @@
       <w>smtptransport</w>
       <w>tradestatus</w>
       <w>typeahead</w>
+      <w>typeaheadservice</w>
       <w>urllink</w>
     </words>
   </dictionary>

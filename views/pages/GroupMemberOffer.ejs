@@ -11,9 +11,15 @@
             remote: 'http://localhost:7000/searchproduct?key=%QUERY',
             limit: 10
         });
+        $('#typeaheadservice').typeahead({
+            name: 'service',
+            remote: 'http://localhost:7000/searchservice?key=%QUERY',
+            limit: 10
+        })
         $('#submit').on('click', function () {
             var isChecked = $('#TradeOptionProduct').prop('checked')
-            if (isChecked !== true) {
+            var isCheckedS = $('#TradeOptionService').prop('checked')
+            if ((isChecked !== true) && (isCheckedS !== true)) {
                 $(this).notifyMe(
                         'bottom', // Position
                         'error', // Type
@@ -55,12 +61,13 @@
     <ul class="rd_trade">
         <li>
             <label for="TradeOption">Trade Option:</label>
-            <input type="radio" id="TradeOptionProduct" name="TradeOptionProduct" onchange="clearForm()"
+            <input type="radio" id="TradeOptionProduct" name="TradeOptionProduct" checked="true" onchange="clearForm()"
                    value="Product">Product
             <input type="radio" id="TradeOptionProduct" name="TradeOptionProduct" onchange="clearForm()"
                    value="Service">Service
         </li>
     </ul>
+    <!--for product-->
     <div id="ProductContent" name="ProductContent" class="content">
         <form id="contact" class="contact_form" method="post" action="/GroupMemberOffer">
             <fieldset>
@@ -99,6 +106,7 @@
             </fieldset>
         </form>
     </div>
+    <!--for service-->
     <div id="ServiceContent" name="ServiceContent" class="content">
         <form id="contact" class="contact_form" method="post" action="/GroupMemberOffer">
             <h1>Group Trade</h1>
@@ -124,7 +132,7 @@
                        title="No Member"/>
             </li>
             <li>
-                <input type="text" id="option" name="option" value="" required="true"
+                <input type="text" id="optionS" name="optionS" value="" required="true"
                        title="Please Select and Option" hidden="true"/>
             </li>
             <br><br>
