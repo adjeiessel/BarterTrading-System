@@ -1,6 +1,8 @@
 module.exports = function (app, dbconnection, transporter, AddNotification, SaveActivity) {
-//   GET home page.
+    //GET home page.
+    //OFFERING PEER TRADING
 
+    //Get product and service categories
     app.get('/OfferPeerTrade', isLoggedIn, function (req, res) {
         var LogincustomerID = req.user.id;
         //get all product categories from db into the select optionBox
@@ -12,27 +14,30 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                 if (err) {
                     console.log("Error Selecting : %s ", err);
                 }
-                    res.render('pages/PeerTrade', {
-                        ProCategories: rows,
-                        SerCategories: servicerows
-                    });
+                res.render('pages/PeerTrade', {
+                    ProCategories: rows,
+                    SerCategories: servicerows
                 });
             });
-    })
+        });
+    });
+
+    //Perform Ajax search of friend/peer
     app.get('/searchpeer', function (req, res) {
         dbconnection.query('Select FirstName,LastName,MiddleName from FriendsList  As F Join Customers As C on F.FriendID=C.CustomerID where ( Status="' + 1 + '" and F.CustomerID="' + req.user.id + '" )and FirstName like "%' + req.query.key + '%"', function (err, rows) {
             if (err) throw err;
             var data = [];
-            for (i = 0; i < rows.length; i++) {
+            for (var i = 0; i < rows.length; i++) {
                 data.push(rows[i].FirstName + ' ' + rows[i].LastName + ' ' + rows[i].MiddleName);
             }
             res.end(JSON.stringify(data));
             console.log(JSON.stringify(data));
         });
     })
-    //
+
+    //save offer and send to friend
     app.post('/OfferPeerTrade', function (req, res) {
-        var CID, SID,Email, FriendID, PartnersID;
+        var CID, SID, Email, FriendID, PartnersID;
         //Get current logged in user ID from the session
         var LogincustomerID = req.user.id;
         //Get Data
@@ -51,7 +56,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
             } else {
                 for (var a in row) {
                     FriendID = row[a].FriendID;
-                    Email=row[a].EmailAddress
+                    Email = row[a].EmailAddress
                     console.log('FriendID', FriendID);
                 }
             }
@@ -65,7 +70,10 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                         console.log('FriendListID', PartnersID);
                     }
                 }
-                if (PostData.OptionP == "Product") {
+                if (PostData.OptionP === "Product") {
+                    //if the offer is product
+
+                    //Get product categoryID
                     dbconnection.query('select CategoryID from ProductCategories where CategoryName=?', [PostData.CategoryName], function (errs, results) {
                         if (errs) {
                             console.log(errs);
@@ -75,6 +83,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                                 console.log('Product CategoryID', CID);
                             }
                         }
+                        //object to store the peer offer into the productoffers table
                         var PostProductData = {
                             //prepare to submit data into the database
                             ProductName: req.body.ProductName,
@@ -95,42 +104,60 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                             ShippingCost: req.body.ShippingCost,
                             ValueCurrency: req.body.CurrencyName,
                             shipCurrencyName: req.body.shipCurrencyName
-                        }
+                        };
                         //Save trade data into the database respective tabeles
                         dbconnection.query('Insert  into ProductOffers set? ', [PostProductData], function (err, prows) {
                             if (err) {
-                                console.log("Error Inserting data", err)
+                                console.log("Error Inserting data", err);
                             } else {
-                                console.log("products saved", prows)
+                                console.log("products saved", prows);
                             }
-                            //SAVE data into the peerTrade table as well
+                            //Save data(product) into the peerTrade table as well
                             var ProducttoPeerData = {
                                 FirstFriendProductOfferID: prows.insertId,
                                 FriendListID: PartnersID,
                                 TradeDate: new Date(),
                                 TradeStatus: "Pending"
-                            }
+                            };
                             dbconnection.query('Insert into PeerTrade set?', [ProducttoPeerData], function (errs, peerrows) {
                                 if (errs) {
-                                    console.log("Error Inserting data", errs)
+                                    console.log("Error Inserting data", errs);
                                 } else {
                                     console.log("Peer trade saved");
+                                    //Get the just inserted ID and pass it to the URL to send to the friend
                                     var PeerTradeID = peerrows.insertId
+
                                     var urllink = "http://" + req.get('host') + "/RespondPeerTrade/" + PeerTradeID
+
                                     //send mail
                                     var mailOptions = {
                                         to: Email, // list of receivers
                                         subject: 'Peer Trade', // Subject line
-                                        html: 'Hello ' + PostData.FriendName + ',<br><br> ' + req.user.FN + ' wants to trade ' + PostProductData.ProductName + ' with you.<br>Please ' +
-                                        'open the link below to see if you are interested to trade any item/product with him for that offer.<br><br><a href="' + urllink + '">Click to check offer from friend</a><br><br>Thank you!<br>Barter Trading Team </br>'
+                                        html: 'Hello ' + PostData.FriendName + ',<br><br> ' + req.user.FN + ' wants to trade ' + PostProductData.ProductName + ' with you.' +
+                                        '<br>Please open the link below to see if you are interested to trade any of your item(s)/product(s) with him for that offer.' +
+                                        '<br><br><a href="' + urllink + '">Click to check offer from friend</a><br><br>Thank you!<br>Barter Trading Team </br>'
                                     };
+                                    //send email
                                     sendemail(mailOptions);
+
                                     //save activity log
-                                    SaveActivity(PostActivity = {
+                                    var PostActivity = {
                                         CustomerID: req.user.id,
                                         ActivityName: 'Sent product offer to friend',
                                         ActivityDateTime: new Date()
-                                    });
+                                    }
+                                    SaveActivity(PostActivity);
+
+                                    //Send notification
+                                    var PostNotify = {
+                                        CustomerID: req.user.id,
+                                        NotificationDetails: 'wants to trade' + PostProductData.ProductName + ' with you',
+                                        FlagAsShown: '0',
+                                        ToCustomerID: FriendID,
+                                        NotificationDate: new Date()
+
+                                    }
+                                    AddNotification(PostNotify)
                                 }
                             })
                         })
@@ -138,6 +165,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                 }
                 //NOT TOUCHED YET: Complete peer trade for service
                 else if (PostData.OptionS == "Service") {
+                    //Get service categoryID
                     dbconnection.query('select ServiceCatID from ServiceCategory where ServiceCatName=?', [PostData.ServiceCatName], function (errs, results) {
                         if (errs) {
                             console.log(errs);
@@ -147,6 +175,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                                 console.log('ServiceID', SID);
                             }
                         }
+                        //Save service offer into the service offers table
                         var PostServiceData = {
                             ServiceName: req.body.ServiceName,
                             ServiceDescription: req.body.ServiceDescription,
@@ -166,31 +195,62 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                             } else {
                                 console.log("service data saved", rows)
                             }
-                        })
+
                         //SAVE data into the peerTrade table as well
-                        var ServicetoPeerData = {
+                            var ServiceToPeerData = {
                             ServiceOfferID: rows.insertId,
                             TradeDate: new Date(),
                             TradeStatus: '0',
                             TraderPartnersID: PartnersID
-                        }
-                        dbconnection.query('Insert into PeerTrade set ', [ServicetoPeerData], function (errs) {
+                            };
+                            dbconnection.query('Insert into PeerTrade set ', [ServiceToPeerData], function (errs, peerrows) {
                             if (errs) {
                                 console.log("Error Inserting data", errs)
                             } else {
                                 console.log("Peer trade saved");
+
+                                //Get the just inserted ID and pass it to the URL to send to the friend
+                                var PeerTradeID = peerrows.insertId;
+
+                                var urllink = "http://" + req.get('host') + "/RespondPeerTrade/" + PeerTradeID;
+
+                                //send mail
+                                var mailOptions = {
+                                    to: Email, // list of receivers
+                                    subject: 'Peer Trade:Service', // Subject line
+                                    html: 'Hello ' + PostData.FriendName + ',<br><br> ' + req.user.FN + ' wants to offer ' + PostServiceData.ServiceName + ' with you and other group members' +
+                                    '<br>Please open the link below to see if you are interested in offering any service to him for that offer.' +
+                                    '<br><br><a href="' + urllink + '">Click to check offer from friend</a><br><br>Thank you!<br>Barter Trading Team </br>'
+                                };
+                                //send email
+                                sendemail(mailOptions);
+
                                 //save activity log
-                                AddActivityLog(PostActivity = {
+                                var PostActivity = {
                                     CustomerID: req.user.id,
                                     ActivityName: 'Trade service with a friend:',
                                     ActivityDateTime: new Date()
-                                });
+                                }
+
+                                SaveActivity(PostActivity);
+
+                                //Send notification
+                                var PostNotify = {
+                                    CustomerID: req.user.id,
+                                    NotificationDetails: 'wants to trade' + PostServiceData.ServiceName + ' with you',
+                                    FlagAsShown: '0',
+                                    ToCustomerID: FriendID,
+                                    NotificationDate: new Date()
+
+                                }
+                                AddNotification(PostNotify)
                             }
-                        })
-                    })
+                            });
+                        });
+                    });
                 }
-            })
-        })
+            });
+        });
         res.redirect('/');
     })
     // for checking if user is logged in before allowing user to access the page
@@ -201,6 +261,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
         // if they aren't redirect them to the home page
         res.redirect('/logins');
     }
+
     // send mail with defined transport object
     function sendemail(mailOptions) {
         transporter.sendMail(mailOptions, function (error, info) {

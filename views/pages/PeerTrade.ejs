@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%include ../partials/header %>
 <%include ../partials/navigation %>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
@@ -112,9 +113,6 @@
         }
 
     }
-    function clearForm() {
-        document.getElementById("contact").reset();
-    }
 </script>
 <div class="content">
     <ul class="rd_trade">
@@ -134,7 +132,8 @@
             </li>
            <li class="bs-example">
                 <label for="tags" style="color:green;">Search for Friends:</label>
-                <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for Customer">
+               <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false"
+                      placeholder="Search for friend">
             </li>
             <li>
             <label for="name">Product/Item Name: *</label>
@@ -244,7 +243,8 @@
             </li>
             <li>
                 <label for="tags" style="color:green;">Search for Friends:</label>
-                <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for Customer">
+                <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false"
+                       placeholder="Search for friend">
             </li>
             <li>
                 <label for="name">Service Name: *</label>
