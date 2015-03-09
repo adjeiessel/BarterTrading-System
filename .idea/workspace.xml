@@ -4,15 +4,10 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Completed all offers and view transactions">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pages/AcceptPeerServiceTrade.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pages/PeerServiceInterest.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pages/RespondPeerService.ejs" />
+    <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="At this stage, Group Trade is completed for both Product and Service offers  and Peer Trade is also completed for both product and service offers&#10;I am left with General Trade for Services&#10;&#10;Then implement the chat system&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs" afterPath="$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/AcceptPeerTrade.js" afterPath="$PROJECT_DIR$/routes/AcceptPeerTrade.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/OfferPeerTrade.js" afterPath="$PROJECT_DIR$/routes/OfferPeerTrade.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/RespondPeerService.ejs" afterPath="$PROJECT_DIR$/views/pages/RespondPeerService.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs" afterPath="$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/RespondPeerTrade.js" afterPath="$PROJECT_DIR$/routes/RespondPeerTrade.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BCommerce.iws" />
@@ -43,8 +38,8 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="1944" max-vertical-offset="2907">
               <caret line="260" column="41" selection-start-line="260" selection-start-column="41" selection-end-line="260" selection-end-column="41" />
               <folding>
-                <element signature="e#243#802#0" expanded="false" />
-                <element signature="e#1240#7357#0" expanded="false" />
+                <element signature="e#245#804#0" expanded="false" />
+                <element signature="e#1242#7361#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -53,10 +48,9 @@
       <file leaf-file-name="RespondPeerService.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/RespondPeerService.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923" vertical-offset="340" max-vertical-offset="1615">
-              <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
+            <state vertical-scroll-proportion="-7.8461537" vertical-offset="1513" max-vertical-offset="1972">
+              <caret line="101" column="95" selection-start-line="101" selection-start-column="95" selection-end-line="101" selection-end-column="95" />
               <folding>
-                <element signature="e#697#1413#0#HTML" expanded="false" />
                 <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -67,8 +61,8 @@
       <file leaf-file-name="RespondPeerTrade.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.730769" vertical-offset="1219" max-vertical-offset="3638">
-              <caret line="82" column="147" selection-start-line="82" selection-start-column="147" selection-end-line="82" selection-end-column="147" />
+            <state vertical-scroll-proportion="-7.3846154" vertical-offset="3242" max-vertical-offset="3706">
+              <caret line="202" column="99" selection-start-line="202" selection-start-column="99" selection-end-line="202" selection-end-column="99" />
               <folding>
                 <element signature="n#style#0;n#label#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -91,27 +85,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AcceptPeerServiceTrade.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AcceptPeerServiceTrade.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/AcceptPeerServiceTrade.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36533332" vertical-offset="2736" max-vertical-offset="3111">
-              <caret line="169" column="72" selection-start-line="169" selection-start-column="72" selection-end-line="169" selection-end-column="85" />
+            <state vertical-scroll-proportion="-1.3461539" vertical-offset="2753" max-vertical-offset="3128">
+              <caret line="164" column="29" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
               <folding>
                 <element signature="e#616#638#0#HTML" expanded="true" />
-                <element signature="e#671#693#0#HTML" expanded="true" />
+                <element signature="e#672#694#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AcceptPeerTrade.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AcceptPeerTrade.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.807693" vertical-offset="3876" max-vertical-offset="4301">
-              <caret line="243" column="0" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.18133333" vertical-offset="816" max-vertical-offset="4046">
+              <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
               <folding>
                 <element signature="e#616#638#0#HTML" expanded="true" />
-                <element signature="e#671#693#0#HTML" expanded="true" />
+                <element signature="e#672#694#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,14 +148,14 @@
               <caret line="42" column="69" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
               <folding>
                 <element signature="e#371#2433#0" expanded="false" />
-                <element signature="e#2505#6092#0" expanded="false" />
-                <element signature="e#5555#5755#0" expanded="false" />
-                <element signature="e#5783#5983#0" expanded="false" />
-                <element signature="e#6183#8361#0" expanded="false" />
-                <element signature="e#8435#12023#0" expanded="false" />
-                <element signature="e#11460#11673#0" expanded="false" />
-                <element signature="e#11701#11914#0" expanded="false" />
-                <element signature="e#12066#12307#0" expanded="false" />
+                <element signature="e#2505#6095#0" expanded="false" />
+                <element signature="e#5558#5758#0" expanded="false" />
+                <element signature="e#5786#5986#0" expanded="false" />
+                <element signature="e#6186#8364#0" expanded="false" />
+                <element signature="e#8438#12028#0" expanded="false" />
+                <element signature="e#11465#11678#0" expanded="false" />
+                <element signature="e#11706#11919#0" expanded="false" />
+                <element signature="e#12071#12312#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -225,12 +219,12 @@
         <option value="$PROJECT_DIR$/views/pages/PeerInterest.ejs" />
         <option value="$PROJECT_DIR$/routes/RespondPeerTrade.js" />
         <option value="$PROJECT_DIR$/views/pages/PeerServiceInterest.ejs" />
-        <option value="$PROJECT_DIR$/views/pages/RespondPeerService.ejs" />
-        <option value="$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs" />
         <option value="$PROJECT_DIR$/routes/PeerInterest.js" />
         <option value="$PROJECT_DIR$/routes/AcceptPeerTrade.js" />
-        <option value="$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs" />
         <option value="$PROJECT_DIR$/views/pages/AcceptPeerServiceTrade.ejs" />
+        <option value="$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs" />
+        <option value="$PROJECT_DIR$/views/pages/RespondPeerService.ejs" />
+        <option value="$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs" />
       </list>
     </option>
   </component>
@@ -571,7 +565,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425860287831</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="At this stage, Group Trade is completed for both Product and Service offers  and Peer Trade is also completed for both product and service offers&#10;I am left with General Trade for Services&#10;&#10;Then implement the chat system&#10;">
+      <created>1425916819495</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1425916819495</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -657,7 +657,8 @@
     </option>
     <MESSAGE value="Updated the ViewOffersServices to prevent it from showing items posted by the login customer" />
     <MESSAGE value="Completed all offers and view transactions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed all offers and view transactions" />
+    <MESSAGE value="At this stage, Group Trade is completed for both Product and Service offers  and Peer Trade is also completed for both product and service offers&#10;I am left with General Trade for Services&#10;&#10;Then implement the chat system&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="At this stage, Group Trade is completed for both Product and Service offers  and Peer Trade is also completed for both product and service offers&#10;I am left with General Trade for Services&#10;&#10;Then implement the chat system&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -966,12 +967,12 @@
           <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
           <folding>
             <element signature="e#1026#1630#0" expanded="false" />
-            <element signature="e#1721#13947#0" expanded="false" />
+            <element signature="e#1721#13929#0" expanded="false" />
             <element signature="e#7977#8236#0" expanded="false" />
-            <element signature="e#12892#13135#0" expanded="false" />
-            <element signature="e#13299#13694#0" expanded="false" />
-            <element signature="e#14070#14290#0" expanded="false" />
-            <element signature="e#14375#14602#0" expanded="false" />
+            <element signature="e#12874#13117#0" expanded="false" />
+            <element signature="e#13281#13676#0" expanded="false" />
+            <element signature="e#14052#14272#0" expanded="false" />
+            <element signature="e#14357#14584#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1003,35 +1004,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.730769" vertical-offset="1219" max-vertical-offset="3638">
-          <caret line="82" column="147" selection-start-line="82" selection-start-column="147" selection-end-line="82" selection-end-column="147" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/RespondPeerService.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.3076923" vertical-offset="340" max-vertical-offset="1615">
-          <caret line="40" column="49" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
-          <folding>
-            <element signature="e#697#1413#0#HTML" expanded="false" />
-            <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/RespondPeerTrade.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1944" max-vertical-offset="2907">
           <caret line="260" column="41" selection-start-line="260" selection-start-column="41" selection-end-line="260" selection-end-column="41" />
           <folding>
-            <element signature="e#243#802#0" expanded="false" />
-            <element signature="e#1240#7357#0" expanded="false" />
+            <element signature="e#245#804#0" expanded="false" />
+            <element signature="e#1242#7361#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1087,36 +1066,57 @@
           <caret line="42" column="69" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
           <folding>
             <element signature="e#371#2433#0" expanded="false" />
-            <element signature="e#2505#6092#0" expanded="false" />
-            <element signature="e#5555#5755#0" expanded="false" />
-            <element signature="e#5783#5983#0" expanded="false" />
-            <element signature="e#6183#8361#0" expanded="false" />
-            <element signature="e#8435#12023#0" expanded="false" />
-            <element signature="e#11460#11673#0" expanded="false" />
-            <element signature="e#11701#11914#0" expanded="false" />
-            <element signature="e#12066#12307#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693" vertical-offset="3876" max-vertical-offset="4301">
-          <caret line="243" column="0" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
-          <folding>
-            <element signature="e#616#638#0#HTML" expanded="true" />
-            <element signature="e#671#693#0#HTML" expanded="true" />
+            <element signature="e#2505#6095#0" expanded="false" />
+            <element signature="e#5558#5758#0" expanded="false" />
+            <element signature="e#5786#5986#0" expanded="false" />
+            <element signature="e#6186#8364#0" expanded="false" />
+            <element signature="e#8438#12028#0" expanded="false" />
+            <element signature="e#11465#11678#0" expanded="false" />
+            <element signature="e#11706#11919#0" expanded="false" />
+            <element signature="e#12071#12312#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/AcceptPeerServiceTrade.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36533332" vertical-offset="2736" max-vertical-offset="3111">
-          <caret line="169" column="72" selection-start-line="169" selection-start-column="72" selection-end-line="169" selection-end-column="85" />
+        <state vertical-scroll-proportion="-1.3461539" vertical-offset="2753" max-vertical-offset="3128">
+          <caret line="164" column="29" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
           <folding>
             <element signature="e#616#638#0#HTML" expanded="true" />
-            <element signature="e#671#693#0#HTML" expanded="true" />
+            <element signature="e#672#694#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/RespondPeerTrade.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3846154" vertical-offset="3242" max-vertical-offset="3706">
+          <caret line="202" column="99" selection-start-line="202" selection-start-column="99" selection-end-line="202" selection-end-column="99" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/RespondPeerService.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="1513" max-vertical-offset="1972">
+          <caret line="101" column="95" selection-start-line="101" selection-start-column="95" selection-end-line="101" selection-end-column="95" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#li#2;n#ul#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18133333" vertical-offset="816" max-vertical-offset="4046">
+          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+          <folding>
+            <element signature="e#616#638#0#HTML" expanded="true" />
+            <element signature="e#672#694#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
