@@ -50,6 +50,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             ProductStatus = 'Available'
             Activity = 'Declined Offer from ' + SecondCustomerName
             var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
                 to: FirstCustomerEmail + ', ' + SecondCustomerEmail,// list of receivers
                 subject: 'Peer Trade Completed:Declined', // Subject line
                 html: 'Hello, <br><br> Your trade between <b>' + FirstCustomerName + ' </b> and <b>' + SecondCustomerName + '</b> was not accepted.Product/Item is still listed for <br>for other ' +
@@ -60,6 +61,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             ProductStatus = 'Traded Out'
             Activity = 'Accepted Offer from ' + FirstCustomerName
             var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
                 to: FirstCustomerEmail + ', ' + SecondCustomerEmail,// list of receivers
                 subject: 'Peer Trade Completed:Accepted', // Subject line
                 html: 'Hello, <br><br> Your trade between <b>' + FirstCustomerName + ' </b> and <b>' + SecondCustomerName + '</b> has successfully been completed.<br>Please ' +
@@ -168,6 +170,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             ServiceStatus = 'Available'
             Activity = 'Declined Offer from ' + SecondCustomerName
             var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
                 to: FirstCustomerEmail + ', ' + SecondCustomerEmail,// list of receivers
                 subject: 'Peer Trade Completed:Declined', // Subject line
                 html: 'Hello, <br><br> Your trade between <b>' + FirstCustomerName + ' </b> and <b>' + SecondCustomerName + '</b> was not accepted and/or declined.<br>Offer is still ' +
@@ -178,10 +181,11 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             ServiceStatus = 'Traded Out'
             Activity = 'Accepted Offer from ' + FirstCustomerName
             var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
                 to: FirstCustomerEmail + ', ' + SecondCustomerEmail,// list of receivers
                 subject: 'Peer Trade Completed:Accepted', // Subject line
                 html: 'Hello, <br><br> Your trade between <b>' + FirstCustomerName + ' </b> and <b>' + SecondCustomerName + '</b> has successfully been completed.<br>Please ' +
-                'be ready to accept and sign agreement for the transaction to processed.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+                'be ready to accept and sign agreement for the transaction to be processed.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
             };
         }
         // send mail with defined transport object

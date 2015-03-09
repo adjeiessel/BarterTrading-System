@@ -35,6 +35,14 @@
                     </tr>
                     <tr>
                         <td>
+                            <strong>Service Category</strong>:
+                        </td>
+                        <td>
+                            <%= serviceresults[i].ServiceCatName %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <strong>Published Date</strong>:
                         </td>
                         <td>
@@ -87,15 +95,12 @@
                 <%}else{%>
                 <tr>
                     <td></td>
-                    <td><a class="delete" href="/ping/<%=serviceresults[i].ServiceOfferID%>">Ping!</a></td>
+                    <td><a class="delete" href="/PingService/<%= serviceresults[i].ServiceOfferID %>">Ping!</a></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><a class="delete" href="/intalks/<%=serviceresults[i].ServiceOfferID%>">In Talks!</a></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><a class="delete" href="/PrivateMessages/<%=serviceresults[i].ServiceOfferID%>">Contact Trader!</a></td>
+                    <td><a class="delete" href="/ServiceMessages/<%= serviceresults[i].ServiceOfferID %>">Contact
+                            Trader!</a></td>
                 </tr>
                 <%}%>
             </div>

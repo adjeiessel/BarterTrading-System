@@ -2,14 +2,13 @@
  * Created by ESSEL on 26-Feb-15.
  */
 module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotification) {
-    var interestedCustomerEmail
-    var PostCustomerName
-    var InterestedCustomerName
-    var InterestedCustomerProduct
-    var PostedCusProductID
-    var InterCusProductID
-    var PostedCustomerProduct
-    var InterestedCustomerID
+    var interestedCustomerEmail, PostCustomerName, InterestedCustomerName, InterestedCustomerProduct;
+    var PostedCusProductID, InterCusProductID, PostedCustomerProduct, InterestedCustomerID;
+
+    var sInterestedCustomerEmail, sPostCustomerName, sInterestedCustomerName, sInterestedCustomerService;
+    var sPostedCusServiceID, sInterCusServiceID, sPostedCustomerService, sInterestedCustomerID;
+
+    //For Product
     app.get('/AcceptOffers/:id',isLoggedIn,function(req,res) {
         //Get the PingID and use it to show the offer both parties are looking at
         //use it to either accept or decline
@@ -22,9 +21,9 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
             }
             if(row){
                 for(var i in row){
-                    PostCustomerName=row[i].FirstName+' '+row[i].LastName+''+row[i].MiddleName
-                    PostedCusProductID=row[i].ProductOfferID
-                    PostedCustomerProduct=row[i].ProductName
+                    PostCustomerName = row[i].FirstName + ' ' + row[i].LastName + '' + row[i].MiddleName;
+                    PostedCusProductID = row[i].ProductOfferID;
+                    PostedCustomerProduct = row[i].ProductName;
                 }
             }
             //shows what the interested customer has to offer
@@ -34,41 +33,49 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
                 }
                 if(rows){
                     for(var i in rows){
-                        InterestedCustomerID=rows[i].InterestedCustomerID
-                       InterCusProductID=rows[i].InterestedProductID
+                        InterestedCustomerID = rows[i].InterestedCustomerID;
+                        InterCusProductID = rows[i].InterestedProductID;
                         interestedCustomerEmail=rows[i].EmailAddress;
-                        InterestedCustomerName=rows[i].FirstName+' '+rows[i].LastName+''+rows[i].MiddleName
+                        InterestedCustomerName = rows[i].FirstName + ' ' + rows[i].LastName + '' + rows[i].MiddleName;
                         InterestedCustomerProduct=rows[i].ProductName
                     }
                 }
                 res.render('pages/AcceptOffers', {FirstCustomerResults: row,SecondCustomerResults:rows});
             })
         })
-    })
+    });
     app.post('/AcceptOffers/:id',isLoggedIn,function(req,res) {
         //interested or decline offer
         var pingID = req.params.id;
-        var tradestatus,ProductStatus,Activity
+        var tradestatus, ProductStatus, Activity;
         if(req.body.Decline=='Declined'){
-          tradestatus='Declined'
-            ProductStatus='Available'
+            tradestatus = 'Declined';
+            ProductStatus = 'Available';
             Activity='Declined Offer from '+InterestedCustomerName
+            var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
+                to: interestedCustomerEmail,// list of receivers
+                subject: 'Peer Trade Completed:Declined', // Subject line
+                html: 'Hello, <br><br> Your trade between <b>' + InterestedCustomerName + ' </b> and <b>' + PostCustomerName + '</b> was not accepted and/or declined.<br>Offer is still ' +
+                'listed for other interested customer to see and contact you.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+            };
         }else{
-            tradestatus='Accepted'
-            ProductStatus='Traded Out'
+            tradestatus = 'Accepted';
+            ProductStatus = 'Traded Out';
             Activity='Accepted Offer from '+InterestedCustomerName
+            var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
+                to: interestedCustomerEmail, // list of receivers
+                subject: 'Peer Product Offer:Accepted', // Subject line
+                html: 'Hello ' + InterestedCustomerName + ',<br><br> ' + PostCustomerName + ' has accepted to trade with you ' + PostedCustomerProduct + ' for ' + InterestedCustomerProduct + '. Please ' +
+                'be ready to ship the item to the customer. Customer shipping address can be found under their profile.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+            };
         }
         var AcceptOffer={
             TradeStatus:tradestatus,
             DecisionDate:new Date()
-        }
-        var mailOptions = {
-            from: 'B-Commerce <adjeiessel@gmail.com',
-            to: interestedCustomerEmail, // list of receivers
-            subject: 'Peer Response', // Subject line
-            html:'Hello '+ InterestedCustomerName+',<br><br> '+  PostCustomerName +' has accepted to trade with you '+ PostedCustomerProduct +' for '+ InterestedCustomerProduct +'. Please ' +
-            'be ready to ship the item to the customer. Customer shipping address can be found under their profile.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
         };
+
         // send mail with defined transport object
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
@@ -76,33 +83,131 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
             } else {
                 console.log('Message sent:');
             }
-        })
+        });
         dbconnection.query('Update ProductOfferPings set? where PingID=?', [AcceptOffer,pingID], function (err) {
-            if(err) throw err
+            if (err) throw err;
             console.log('Trade Completed');
-        })
+        });
         //update product status for each offer in the productoffer
         dbconnection.query('Update ProductOffers set ProductStatus=? where ProductOfferID =?', [ProductStatus,PostedCusProductID], function (err) {
-            if(err) throw err
+            if (err) throw err;
             console.log('First Product Status Updated');
         })
         dbconnection.query('Update ProductOffers set ProductStatus=? where ProductOfferID =?', [ProductStatus,InterCusProductID], function (err) {
-            if(err) throw err
+            if (err) throw err;
             console.log('Second Product Status Updated');
-        })
+        });
         //save activity
-        SaveActivity(PostActivity={CustomerID:req.user.id,ActivityName:Activity ,ActivityDateTime:new Date()})
+        var PostActivity = {CustomerID: req.user.id, ActivityName: Activity, ActivityDateTime: new Date()}
+        SaveActivity(PostActivity);
         //Add notification
-        AddNotification(PostNotify={
-            CustomerID:req.user.id,
+        var PostNotify = {
+            CustomerID: req.user.id,
             NotificationDetails:'Accepted your offer',
             FlagAsShown:'0',
             ToCustomerID:InterestedCustomerID,
             NotificationDate:new Date()
-
-        })
+        };
+        AddNotification(PostNotify);
         res.redirect('/');
-    })
+    });
+
+    //For Service
+    app.get('/AcceptServiceOffers/:id', isLoggedIn, function (req, res) {
+        //Get the PingID and use it to show the offer both parties are looking at
+        //use it to either accept or decline
+        var pingID = req.params.id;
+        var tradestatus = 'Responded';
+        //shows the PostedCutomerID
+        dbconnection.query("Select * from ServiceOffers As S Join ServiceOfferPings As SP on S.ServiceOfferID=SP.ServiceOfferID Join Customers As C on C.CustomerID=SP.PostedCustomerID where ServicePingID=? and TradeStatus=?", [pingID, tradestatus], function (err, row) {
+            if (err) {
+                console.log(err);
+            }
+            if (row) {
+                for (var i in row) {
+                    sPostCustomerName = row[i].FirstName + ' ' + row[i].LastName + '' + row[i].MiddleName;
+                    sPostedCusServiceID = row[i].ServiceOfferID;
+                    sPostedCustomerService = row[i].ServiceName;
+                }
+            }
+            //shows what the interested customer has to offer
+            dbconnection.query("Select * from ServiceOffers As S Join ServiceOfferPings As SP on S.ServiceOfferID=So.InterestedServiceID Join Customers As C on C.CustomerID=SP.InterestedCustomerID where pingID=? and TradeStatus=?", [pingID, tradestatus], function (err, rows) {
+                if (err) {
+                    console.log(err);
+                }
+                if (rows) {
+                    for (var i in rows) {
+                        sInterestedCustomerID = rows[i].InterestedCustomerID;
+                        sInterCusServiceID = rows[i].InterestedServiceID;
+                        sInterestedCustomerEmail = rows[i].EmailAddress;
+                        sInterestedCustomerName = rows[i].FirstName + ' ' + rows[i].LastName + '' + rows[i].MiddleName;
+                        sInterestedCustomerService = rows[i].ServiceName
+                    }
+                }
+                res.render('pages/AcceptServiceOffers', {FirstCustomerResults: row, SecondCustomerResults: rows});
+            })
+        })
+    });
+    app.post('/AcceptServiceOffers/:id', isLoggedIn, function (req, res) {
+        //interested or decline offer
+        var pingID = req.params.id;
+        var tradestatus, ProductStatus, Activity;
+        if (req.body.Decline === 'Declined') {
+            tradestatus = 'Declined';
+            ProductStatus = 'Available';
+            Activity = 'Declined Offer from ' + sInterestedCustomerName
+        } else {
+            tradestatus = 'Accepted';
+            ProductStatus = 'Traded Out';
+            Activity = 'Accepted Offer from ' + sInterestedCustomerName
+        }
+        var AcceptOffer = {
+            TradeStatus: tradestatus,
+            DecisionDate: new Date()
+        };
+        var mailOptions = {
+            from: 'B-Commerce <adjeiessel@gmail.com',
+            to: sInterestedCustomerEmail, // list of receivers
+            subject: 'Peer Service Offer:Accepted', // Subject line
+            html: 'Hello ' + sInterestedCustomerName + ',<br><br> ' + sPostCustomerName + ' has accepted your service offer ' + sPostedCustomerService + ' for ' + sInterestedCustomerService + '. Please ' +
+            'be ready to accept and sign agreement for the transaction to be processed<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+        };
+        // send mail with defined transport object
+        transporter.sendMail(mailOptions, function (error) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Message sent:');
+            }
+        });
+        dbconnection.query('Update ServiceOfferPings set? where PingID=?', [AcceptOffer, pingID], function (err) {
+            if (err) throw err;
+            console.log('Service Trade Completed');
+        });
+        //update product status for each offer in the productoffer
+        dbconnection.query('Update ServiceOffers set ServiceStatus=? where ServiceOfferID =?', [ProductStatus, sPostedCusServiceID], function (err) {
+            if (err) throw err;
+            console.log('First Service Status Updated');
+        });
+        dbconnection.query('Update ServiceOffers set ServiceStatus=? where ServiceOfferID =?', [ProductStatus, sInterCusServiceID], function (err) {
+            if (err) throw err;
+            console.log('Second Service Status Updated');
+        });
+        //save activity
+        var PostActivity = {CustomerID: req.user.id, ActivityName: Activity, ActivityDateTime: new Date()};
+        SaveActivity(PostActivity);
+        //Add notification
+        var PostNotify = {
+            CustomerID: req.user.id,
+            NotificationDetails: 'Accepted service offer',
+            FlagAsShown: '0',
+            ToCustomerID: InterestedCustomerID,
+            NotificationDate: new Date()
+
+        };
+        AddNotification(PostNotify);
+        res.redirect('/');
+    });
     function isLoggedIn(req, res, next) {
         // if user is authenticated in the session, carry on
         if (req.isAuthenticated())
@@ -110,4 +215,4 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
         // if they aren't redirect them to the home page   res.redirect('/');
         res.redirect('/logins');
     }
-}
+};

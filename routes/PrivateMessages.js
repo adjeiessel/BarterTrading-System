@@ -30,6 +30,7 @@ module.exports = function(app,dbconnection,transporter) {
   app.get('/sendmessages', function (req, res) {
     // setup e-mail data with unicode symbols
     var mailOptions = {
+        from: 'B-Commerce <adjeiessel@gmail.com',
       to: req.query.to, // list of receivers
       subject: req.query.subject, // Subject line
       text: req.query.text,// plaintext body
@@ -48,21 +49,28 @@ module.exports = function(app,dbconnection,transporter) {
   });
   app.get('/PrivateMessages/:id', function (req, res) {
     var productID=req.params.id;
-    dbconnection.query('SELECT EmailAddress,FirstName from Customers As C Join ProductOffers As P on C.CustomerID=P.CustomerID Where ProductOfferID=?',[productID],function (err, rows) {
+      dbconnection.query('SELECT EmailAddress,FirstName,LastName,MiddleName from Customers As C Join ProductOffers As P on C.CustomerID=P.CustomerID Where ProductOfferID=?', [productID], function (err, rows) {
       if (err) throw err;
       var emaildata,name;
       for (i = 0; i < rows.length; i++) {
         emaildata=(rows[i].EmailAddress);
-        name=(rows[i].FirstName)
+          name = rows[i].FirstName + ' ' + rows[i].LastName + ' ' + rows[i].MiddleName;
       }
       res.render('pages/Messages',{Email:emaildata,Name:name});
     });
-  })
-  function AddActivityLog(activityData){
-    dbconnection.query('Insert  into ActivityLogs set? ', [activityData], function (err) {
-      if (err) throw err
-      console.log('Activity Saved');
-    })
-  }
-}
+  });
+
+    app.get('/ServiceMessages/:id', function (req, res) {
+        var serviceID = req.params.id;
+        dbconnection.query('SELECT EmailAddress,FirstName,LastName,MiddleName from Customers As C Join ServiceOffers As S on C.CustomerID=S.CustomerID Where ServiceOfferID=?', [serviceID], function (err, rows) {
+            if (err) throw err;
+            var emaildata, name;
+            for (i = 0; i < rows.length; i++) {
+                emaildata = (rows[i].EmailAddress);
+                name = rows[i].FirstName + ' ' + rows[i].LastName + ' ' + rows[i].MiddleName;
+            }
+            res.render('pages/Messages', {Email: emaildata, Name: name});
+        });
+    });
+};
 

@@ -3,9 +3,9 @@
 <% include ../partials/navigation %>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
 <script>
-    $(document).ready(function(){
-        $("#ChkDecline").click(function(){
-           document.getElementById('Decline').value="Declined";
+    $(document).ready(function () {
+        $("#ChkDecline").click(function () {
+            document.getElementById('Decline').value = "Declined";
         });
     });
 
@@ -15,13 +15,13 @@
     <div id="ProductContent" name="ProductContent" class="content">
         <form class="contact_form" method="POST" action="" name="contact_form" xmlns="http://www.w3.org/1999/html">
             <h1 style="color:  #00b7ff">Accept Offer</h1>
-            <%if(!FirstCustomerResults.length){%>
+            <% if(!FirstCustomerResults.length){ %>
             <div class="records">
                 <strong>Offer Completed</strong><br>
                 <span>Offer/Transaction Completed</span>
             </div>
-            <%}%>
-            <%for (var i in FirstCustomerResults){%>
+            <% } %>
+            <% for (var i in FirstCustomerResults){ %>
             <!--  <div class="member">-->
             <div class="member mem_format">
                 <h3 style="color: #000000"><%= FirstCustomerResults[i].FirstName %>'s Offer</h3>
@@ -31,7 +31,7 @@
                             <strong>Name</strong>:
                         </td>
                         <td class="format_name">
-                            <%=FirstCustomerResults[i].ProductName %>
+                            <%= FirstCustomerResults[i].ProductName %>
                         </td>
                     </tr>
                     <tr>
@@ -39,7 +39,7 @@
                             <strong>Offer Details</strong>:
                         </td>
                         <td>
-                            <%=FirstCustomerResults[i].OfferDetails  %>
+                            <%= FirstCustomerResults[i].OfferDetails %>
                         </td>
                     </tr>
                     <tr>
@@ -51,7 +51,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td >
+                        <td>
                             <strong>Condition</strong>:
                         </td>
                         <td class="format_con">
@@ -59,11 +59,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td >
+                        <td>
                             <strong>Product Value</strong>:
                         </td>
                         <td class="format_value">
-                            <%=FirstCustomerResults[i].ValueCurrency%>  <%= FirstCustomerResults[i].ProductValue %>
+                            <%= FirstCustomerResults[i].ValueCurrency %>  <%= FirstCustomerResults[i].ProductValue %>
                         </td>
                     </tr>
                     <tr>
@@ -71,7 +71,7 @@
                             <strong>Pro.Time</strong>:
                         </td>
                         <td>
-                            <%=FirstCustomerResults[i].ProcessingTime %>
+                            <%= FirstCustomerResults[i].ProcessingTime %>
                         </td>
                     </tr>
                     <tr>
@@ -79,7 +79,7 @@
                             <strong>Ships To:</strong>:
                         </td>
                         <td>
-                            <%=FirstCustomerResults[i].ShipsTo %>
+                            <%= FirstCustomerResults[i].ShipsTo %>
                         </td>
                     </tr>
                     <tr>
@@ -87,7 +87,7 @@
                             <strong>Ship Cost</strong>:
                         </td>
                         <td class="format_value">
-                            <%=FirstCustomerResults[i].shipCurrencyName%>  <%= FirstCustomerResults[i].ShippingCost %>
+                            <%= FirstCustomerResults[i].shipCurrencyName %>  <%= FirstCustomerResults[i].ShippingCost %>
                         </td>
                     </tr>
                 </table>
@@ -119,9 +119,9 @@
                     </li>
                 </ul>
             </div>
-            <%}%>
+            <% } %>
             <div class="swap"><img src="/images/swap.png" width="90" height="90"></div>
-            <%for (var i in SecondCustomerResults){%>
+            <% for (var i in SecondCustomerResults){ %>
             <div class="member mem_format">
                 <h3 style="color: #000000;;"><%= SecondCustomerResults[i].FirstName %>'s Offer</h3>
                 <table class="pro-detail">
@@ -130,7 +130,7 @@
                             <strong>Name</strong>:
                         </td>
                         <td class="format_name">
-                            <%=SecondCustomerResults[i].ProductName %>
+                            <%= SecondCustomerResults[i].ProductName %>
                         </td>
                     </tr>
                     <tr>
@@ -138,7 +138,7 @@
                             <strong>Offer Details</strong>:
                         </td>
                         <td>
-                            <%=SecondCustomerResults[i].OfferDetails  %>
+                            <%= SecondCustomerResults[i].OfferDetails %>
                         </td>
                     </tr>
                     <tr>
@@ -150,7 +150,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td >
+                        <td>
                             <strong>Condition</strong>:
                         </td>
                         <td class="format_con">
@@ -158,11 +158,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td >
+                        <td>
                             <strong>Product Value</strong>:
                         </td>
                         <td class="format_value">
-                            <%=SecondCustomerResults[i].ValueCurrency%>  <%= SecondCustomerResults[i].ProductValue %>
+                            <%= SecondCustomerResults[i].ValueCurrency %>  <%= SecondCustomerResults[i].ProductValue %>
                         </td>
                     </tr>
                     <tr>
@@ -170,7 +170,7 @@
                             <strong>Pro.Time</strong>:
                         </td>
                         <td>
-                            <%=SecondCustomerResults[i].ProcessingTime %>
+                            <%= SecondCustomerResults[i].ProcessingTime %>
                         </td>
                     </tr>
                     <tr>
@@ -178,7 +178,7 @@
                             <strong>Ships To:</strong>:
                         </td>
                         <td>
-                            <%=SecondCustomerResults[i].ShipsTo %>
+                            <%= SecondCustomerResults[i].ShipsTo %>
                         </td>
                     </tr>
                     <tr>
@@ -186,7 +186,7 @@
                             <strong>Ship Cost</strong>:
                         </td>
                         <td class="format_value">
-                            <%=SecondCustomerResults[i].shipCurrencyName%>  <%= SecondCustomerResults[i].ShippingCost %>
+                            <%= SecondCustomerResults[i].shipCurrencyName %>  <%= SecondCustomerResults[i].ShippingCost %>
                         </td>
                     </tr>
                 </table>
@@ -195,7 +195,7 @@
                     <li>
                         <img src="/images/<%= SecondCustomerResults[i].img0 %>" width="150px" height="100px"/>
                     <span> <!--span contains the popup image-->
-                    <img src="/images/<%=SecondCustomerResults[i].img0 %>" alt="Deckchairs"/>
+                    <img src="/images/<%= SecondCustomerResults[i].img0 %>" alt="Deckchairs"/>
                     </span>
                     </li>
                     <li>
@@ -218,13 +218,13 @@
                     </li>
                 </ul>
             </div>
-            <%}%>
+            <% } %>
             <div class="submit_offer">
                 <input type="text" value="" id="Decline" name="Decline" hidden="true">
-                <input type="submit" name="submit" id="submit" value="Accept Offer" />
-                <input type="submit" name="ChkDecline" id="ChkDecline" value="Decline Offer" />
+                <input type="submit" name="submit" id="submit" value="Accept Offer"/>
+                <input type="submit" name="ChkDecline" id="ChkDecline" value="Decline Offer"/>
             </div>
         </form>
     </div>
-    </div>
+</div>
 <% include ../partials/footer %>

@@ -20,6 +20,7 @@
       <w>reciepient</w>
       <w>resave</w>
       <w>sendemail</w>
+      <w>servicename</w>
       <w>serviceoffer</w>
       <w>serviceresults</w>
       <w>smtptransport</w>
