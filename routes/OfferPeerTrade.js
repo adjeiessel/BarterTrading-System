@@ -113,13 +113,13 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                                 console.log("products saved", prows);
                             }
                             //Save data(product) into the peerTrade table as well
-                            var ProducttoPeerData = {
+                            var ProductToPeerData = {
                                 FirstFriendProductOfferID: prows.insertId,
                                 FriendListID: PartnersID,
                                 TradeDate: new Date(),
                                 TradeStatus: "Pending"
                             };
-                            dbconnection.query('Insert into PeerTrade set?', [ProducttoPeerData], function (errs, peerrows) {
+                            dbconnection.query('Insert into PeerTrade set?', [ProductToPeerData], function (errs, peerrows) {
                                 if (errs) {
                                     console.log("Error Inserting data", errs);
                                 } else {
@@ -132,7 +132,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                                     //send mail
                                     var mailOptions = {
                                         to: Email, // list of receivers
-                                        subject: 'Peer Trade', // Subject line
+                                        subject: 'Peer Trade:Product', // Subject line
                                         html: 'Hello ' + PostData.FriendName + ',<br><br> ' + req.user.FN + ' wants to trade ' + PostProductData.ProductName + ' with you.' +
                                         '<br>Please open the link below to see if you are interested to trade any of your item(s)/product(s) with him for that offer.' +
                                         '<br><br><a href="' + urllink + '">Click to check offer from friend</a><br><br>Thank you!<br>Barter Trading Team </br>'
@@ -186,8 +186,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
                             ServiceCatID: SID,
                             StartDate: req.body.StartDate,
                             EndDate: req.body.EndDate,
-                            PreferredService: req.body.PreferredService,
-                            SuggestOffers: '0'
+                            PreferredService: req.body.PreferredService
                         }
                         dbconnection.query('Insert  into ServiceOffers set? ', [PostServiceData], function (err, rows) {
                             if (err) {
@@ -198,21 +197,21 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
 
                         //SAVE data into the peerTrade table as well
                             var ServiceToPeerData = {
-                            ServiceOfferID: rows.insertId,
-                            TradeDate: new Date(),
-                            TradeStatus: '0',
-                            TraderPartnersID: PartnersID
+                                FirstFriendServiceOfferID: rows.insertId,
+                                FriendListID: PartnersID,
+                                TradeDate: new Date(),
+                                TradeStatus: "Pending"
                             };
-                            dbconnection.query('Insert into PeerTrade set ', [ServiceToPeerData], function (errs, peerrows) {
+                            dbconnection.query('Insert into PeerTrade set?', [ServiceToPeerData], function (errs, servicerows) {
                             if (errs) {
                                 console.log("Error Inserting data", errs)
                             } else {
-                                console.log("Peer trade saved");
+                                console.log("Peer trade saved" + servicerows);
 
                                 //Get the just inserted ID and pass it to the URL to send to the friend
-                                var PeerTradeID = peerrows.insertId;
+                                var PeerTradeID = servicerows.insertId;
 
-                                var urllink = "http://" + req.get('host') + "/RespondPeerTrade/" + PeerTradeID;
+                                var urllink = "http://" + req.get('host') + "/RespondPeerService/" + PeerTradeID;
 
                                 //send mail
                                 var mailOptions = {
