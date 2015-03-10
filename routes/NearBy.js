@@ -12,4 +12,7 @@ module.exports = function (app, dbconnection, transporter, myio) {
             socket.broadcast.emit('load:coords', data);
         });
     });
+    app.get('/NearBy', function (req, res) {
+        res.render('pages/NearBy.ejs');
+    })
 };

@@ -13,7 +13,7 @@ $(function () {
     // custom marker's icon styles
     var tinyIcon = L.Icon.extend({
         options: {
-            shadowUrl: "../assets/marker-shadow.png",
+            shadowUrl: "../images/marker-shadow.png",
             iconSize: [25, 39],
             iconAnchor: [12, 36],
             shadowSize: [41, 41],
@@ -21,8 +21,8 @@ $(function () {
             popupAnchor: [0, -30]
         }
     });
-    var redIcon = new tinyIcon({iconUrl: "../assets/marker-red.png"});
-    var yellowIcon = new tinyIcon({iconUrl: "../assets/marker-yellow.png"});
+    var redIcon = new tinyIcon({iconUrl: "../images/marker-red.png"});
+    var yellowIcon = new tinyIcon({iconUrl: "../images/marker-yellow.png"});
 
     var sentData = {}
 
@@ -61,8 +61,8 @@ $(function () {
         map = L.map("map");
 
         // leaflet API key tiler
-        L.tileLayer("http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png", {
-            maxZoom: 18,
+        L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+            maxZoom: 50,
             detectRetina: true
         }).addTo(map);
 
@@ -70,6 +70,7 @@ $(function () {
         map.fitWorld();
         userMarker.addTo(map);
         userMarker.bindPopup("You are there! Your ID is " + userId + "").openPopup();
+        userMarker.bind
 
         // send coords on when user is active
         doc.on("mousemove", function () {
