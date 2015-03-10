@@ -4,7 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Completed General Offers As Well&#10;Service Offers Not Tested">
+    <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Completed all modules except chat">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BCommerce.iws" />
@@ -528,7 +528,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425951676268</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Completed all modules except chat">
+      <created>1425951712462</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1425951712462</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -553,7 +559,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3836276" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -617,7 +623,8 @@
     <MESSAGE value="At this stage, Group Trade is completed for both Product and Service offers  and Peer Trade is also completed for both product and service offers&#10;I am left with General Trade for Services&#10;&#10;Then implement the chat system&#10;" />
     <MESSAGE value="Tested Peer Trade for both Service and Product and is working perfectly&#10;Tested for both Accept and Declined and is working Perfectly&#10;At this stage, Group Trade is completed for both Product and Service offers  and Peer Trade is also completed for both product and service offers&#10;I am left with General Trade for Services&#10;&#10;Then implement the chat system&#10;" />
     <MESSAGE value="Completed General Offers As Well&#10;Service Offers Not Tested" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed General Offers As Well&#10;Service Offers Not Tested" />
+    <MESSAGE value="Completed all modules except chat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed all modules except chat" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
