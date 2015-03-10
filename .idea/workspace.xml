@@ -5,14 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Completed General Offers As Well&#10;Service Offers Not Tested">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pages/NearBy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/NearBy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/AcceptOffers.js" afterPath="$PROJECT_DIR$/routes/AcceptOffers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/PingResponse.js" afterPath="$PROJECT_DIR$/routes/PingResponse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/ServiceOffer.js" afterPath="$PROJECT_DIR$/routes/ServiceOffer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/ViewOffersServices.ejs" afterPath="$PROJECT_DIR$/views/pages/ViewOffersServices.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BCommerce.iws" />
@@ -40,8 +32,8 @@
       <file leaf-file-name="NearBy.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/NearBy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.153846" vertical-offset="323" max-vertical-offset="714">
-              <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+            <state vertical-scroll-proportion="-9.153846" vertical-offset="340" max-vertical-offset="731">
+              <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -60,8 +52,8 @@
       <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1044" max-vertical-offset="2193">
-              <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="2244">
+              <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -84,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/routes/NearBy.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5845272" vertical-offset="0" max-vertical-offset="349">
-              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="2" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -163,9 +155,9 @@
         <option value="$PROJECT_DIR$/routes/ServiceOffer.js" />
         <option value="$PROJECT_DIR$/views/pages/ViewOffersServices.ejs" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/routes/NearBy.js" />
         <option value="$PROJECT_DIR$/public/javascripts/application.js" />
         <option value="$PROJECT_DIR$/views/pages/NearBy.html" />
+        <option value="$PROJECT_DIR$/routes/NearBy.js" />
       </list>
     </option>
   </component>
@@ -530,7 +522,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425947472015</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Completed General Offers As Well&#10;Service Offers Not Tested">
+      <created>1425951676268</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1425951676268</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1037,8 +1035,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1044" max-vertical-offset="2193">
-          <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="2244">
+          <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1077,8 +1075,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/NearBy.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.153846" vertical-offset="323" max-vertical-offset="714">
-          <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+        <state vertical-scroll-proportion="-9.153846" vertical-offset="340" max-vertical-offset="731">
+          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -1086,7 +1084,7 @@
     <entry file="file://$PROJECT_DIR$/routes/NearBy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5845272" vertical-offset="0" max-vertical-offset="349">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="2" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
