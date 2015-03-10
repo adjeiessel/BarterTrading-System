@@ -38,7 +38,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                 }
                 //Prepare the update the productofferpings setting the tradestatus to responded
                 var PostPingResponse = {
-                    PostedCustomerID: RespondingCustomerID,
+                    //PostedCustomerID: RespondingCustomerID,
                     InterestedProductID: interestedproductID,
                     PingStatus: '1',
                     TradeStatus: 'Responded',
@@ -127,7 +127,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                 }
                 //Prepare the update the productofferpings setting the tradestatus to responded
                 var PostPingResponse = {
-                    PostedCustomerID: RespondingCustomerID,
+                    // PostedCustomerID: RespondingCustomerID,
                     InterestedServiceID: InterestedServiceID,
                     PingStatus: '1',
                     TradeStatus: 'Responded',

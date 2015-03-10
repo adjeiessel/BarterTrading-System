@@ -155,23 +155,31 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
         if (req.body.Decline === 'Declined') {
             tradestatus = 'Declined';
             ProductStatus = 'Available';
-            Activity = 'Declined Offer from ' + sInterestedCustomerName
+            Activity = 'Declined Offer from ' + sInterestedCustomerName;
+            var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
+                to: interestedCustomerEmail,// list of receivers
+                subject: 'Peer Trade Completed:Declined', // Subject line
+                html: 'Hello, <br><br> Your trade between <b>' + InterestedCustomerName + ' </b> and <b>' + PostCustomerName + '</b> was not accepted and/or declined.<br>Offer is still ' +
+                'listed for other interested customer to see and contact you.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+            };
         } else {
             tradestatus = 'Accepted';
             ProductStatus = 'Traded Out';
-            Activity = 'Accepted Offer from ' + sInterestedCustomerName
+            Activity = 'Accepted Offer from ' + sInterestedCustomerName;
+            var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
+                to: sInterestedCustomerEmail, // list of receivers
+                subject: 'Peer Service Offer:Accepted', // Subject line
+                html: 'Hello ' + sInterestedCustomerName + ',<br><br> ' + sPostCustomerName + ' has accepted your service offer ' + sPostedCustomerService + ' for ' + sInterestedCustomerService + '. Please ' +
+                'be ready to accept and sign agreement for the transaction to be processed<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+            };
         }
         var AcceptOffer = {
             TradeStatus: tradestatus,
             DecisionDate: new Date()
         };
-        var mailOptions = {
-            from: 'B-Commerce <adjeiessel@gmail.com',
-            to: sInterestedCustomerEmail, // list of receivers
-            subject: 'Peer Service Offer:Accepted', // Subject line
-            html: 'Hello ' + sInterestedCustomerName + ',<br><br> ' + sPostCustomerName + ' has accepted your service offer ' + sPostedCustomerService + ' for ' + sInterestedCustomerService + '. Please ' +
-            'be ready to accept and sign agreement for the transaction to be processed<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
-        };
+
         // send mail with defined transport object
         transporter.sendMail(mailOptions, function (error) {
             if (error) {
@@ -180,7 +188,7 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
                 console.log('Message sent:');
             }
         });
-        dbconnection.query('Update ServiceOfferPings set? where PingID=?', [AcceptOffer, pingID], function (err) {
+        dbconnection.query('Update ServiceOfferPings set? where ServicePingID=?', [AcceptOffer, pingID], function (err) {
             if (err) throw err;
             console.log('Service Trade Completed');
         });

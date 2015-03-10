@@ -3,7 +3,7 @@
  */
 module.exports=function(app,dbconnection){
 
-    app.get('/ServiceOffer/:sid',isLoggedIn,function(req,res){
+    app.get('/ServiceOffers/:sid', isLoggedIn, function (req, res) {
         var id = req.params.sid;
         dbconnection.query("Select * from ServiceOffers As S Join Customers As C on S.CustomerID=C.CustomerID Join ServiceCategory As SC on SC.ServiceCatID=S.ServiceCatID where ServiceOfferID=?", [id], function (err, srows) {
             if (err) {

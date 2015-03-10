@@ -136,7 +136,8 @@
                 <li>
                     <p class="nameService">
                     <div class="product-detail">
-                        <a href="/ServiceOffer/<%= ServiceData[i].ServiceOfferID %>"><h3><%= ServiceData[i].ServiceName %></h3></a>
+                        <a href="/ServiceOffers/<%= ServiceData[i].ServiceOfferID %>">
+                            <h3><%= ServiceData[i].ServiceName %></h3></a>
                         <span><%= ServiceData[i].ServiceDescription %></span>
                         <span><%= ServiceData[i].ServiceCatName %></span>
                         <span>Preferred Service:<%=ServiceData[i].PreferredService %></span>

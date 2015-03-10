@@ -122,6 +122,8 @@ require('./routes/GroupOffer')(app, dbconnection, transporter, SaveActivity);
 require('./routes/GroupMemberOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/AcceptMemberOffer')(app, dbconnection, transporter, SaveActivity, AddNotification);
 require('./routes/ViewTransaction')(app, dbconnection, transporter, SaveActivity, AddNotification);
+require('./routes/NearBy')(app, dbconnection, transporter, myio);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
