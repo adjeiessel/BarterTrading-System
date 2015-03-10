@@ -248,11 +248,12 @@
                 <%}else{%>
                 <tr>
                     <td></td>
-                    <td><a class="delete" href="/ping/<%=serviceresults[i].ServiceOfferID%>">Ping!</a></td>
+                    <td><a class="delete" href="/PingService/<%= serviceresults[i].ServiceOfferID %>">Ping!</a></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><a class="delete" href="/PrivateMessages/<%=serviceresults[i].ServiceOfferID%>">Contact Trader!</a></td>
+                    <td><a class="delete" href="/ServiceMessages/<%= serviceresults[i].ServiceOfferID %>">Contact
+                            Trader!</a></td>
                 </tr>
                 <%}%>
             </div>
