@@ -45,7 +45,7 @@ module.exports = function (app, dbconnection) {
                 });
             });
     });
-    app.get('/ ServiceOffer/:id', isLoggedIn, function (req, res) {
+    app.get('/ServiceOffer/:id', isLoggedIn, function (req, res) {
         //based on his/her ID
         //shows the pingoffers form instead, that's where the other customer can respond
         var PingID = req.params.id;

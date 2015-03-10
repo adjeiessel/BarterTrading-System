@@ -150,7 +150,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                         subject: 'Notification of possible service trade', // Subject line
                         html: 'Hello ' + fname + ',<br><br> ' + req.user.FN + ' is interested in your service offer <b>' + ServiceName + '.</b><br> Please ' +
                         'follow the link to check if there are available service from customer to warrant to trade.' +
-                        '<br><br><a href="' + urllink + '">Products</a><br><br>Thank you!<br>Barter Trading Team </br>'
+                        '<br><br><a href="' + urllink + '">Service</a><br><br>Thank you!<br>Barter Trading Team </br>'
                     };
 
                     // send mail with defined transport object

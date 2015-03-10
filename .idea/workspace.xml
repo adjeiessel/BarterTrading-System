@@ -4,23 +4,13 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Tested Peer Trade for both Service and Product and is working perfectly&#10;Tested for both Accept and Declined and is working Perfectly&#10;At this stage, Group Trade is completed for both Product and Service offers  and Peer Trade is also completed for both product and service offers&#10;I am left with General Trade for Services&#10;&#10;Then implement the chat system&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pages/AcceptServiceOffers.ejs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/pages/PingServiceOffers.ejs" />
-      <change type="MOVED" beforePath="C:\Users\ESSEL\.WebStorm9\BCommerce\views\pages\PingOffers.ejs" afterPath="$PROJECT_DIR$/views/pages/PingProductOffers.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/AcceptOffers.ejs" afterPath="$PROJECT_DIR$/views/pages/AcceptOffers.ejs" />
+    <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Completed General Offers As Well&#10;Service Offers Not Tested">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/AcceptOffers.js" afterPath="$PROJECT_DIR$/routes/AcceptOffers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/AcceptPeerTrade.js" afterPath="$PROJECT_DIR$/routes/AcceptPeerTrade.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/ESSEL.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ESSEL.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/Messages.ejs" afterPath="$PROJECT_DIR$/views/pages/Messages.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/MyGroups.ejs" afterPath="$PROJECT_DIR$/views/pages/MyGroups.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/AcceptServiceOffers.ejs" afterPath="$PROJECT_DIR$/views/pages/AcceptServiceOffers.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/Offers.js" afterPath="$PROJECT_DIR$/routes/Offers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/PingOffers.js" afterPath="$PROJECT_DIR$/routes/PingOffers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/PingResponse.js" afterPath="$PROJECT_DIR$/routes/PingResponse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/PrivateMessages.js" afterPath="$PROJECT_DIR$/routes/PrivateMessages.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/ServiceDetails.ejs" afterPath="$PROJECT_DIR$/views/pages/ServiceDetails.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/ViewOffersServices.ejs" afterPath="$PROJECT_DIR$/views/pages/ViewOffersServices.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/ViewOffersServices.js" afterPath="$PROJECT_DIR$/routes/ViewOffersServices.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/PingServiceOffers.ejs" afterPath="$PROJECT_DIR$/views/pages/PingServiceOffers.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BCommerce.iws" />
@@ -48,8 +38,8 @@
       <file leaf-file-name="Offers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/Offers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1309">
-              <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1309">
+              <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
               <folding>
                 <element signature="e#183#992#0" expanded="false" />
               </folding>
@@ -60,12 +50,12 @@
       <file leaf-file-name="PingOffers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/PingOffers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2305" max-vertical-offset="3298">
-              <caret line="127" column="32" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2193" max-vertical-offset="3298">
+              <caret line="143" column="96" selection-start-line="143" selection-start-column="96" selection-end-line="143" selection-end-column="96" />
               <folding>
-                <element signature="e#10070#10284#0" expanded="false" />
-                <marker date="1425934321061" expanded="true" signature="617:737" placeholder="..." />
-                <marker date="1425934321061" expanded="true" signature="5516:5636" placeholder="..." />
+                <element signature="e#10083#10297#0" expanded="false" />
+                <marker date="1425945283635" expanded="true" signature="617:737" placeholder="..." />
+                <marker date="1425945283635" expanded="true" signature="5527:5647" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -74,24 +64,21 @@
       <file leaf-file-name="PingResponse.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/PingResponse.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2170" max-vertical-offset="3213">
-              <caret line="137" column="69" selection-start-line="137" selection-start-column="58" selection-end-line="137" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2234" max-vertical-offset="3281">
+              <caret line="147" column="157" selection-start-line="147" selection-start-column="157" selection-end-line="147" selection-end-column="157" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AcceptOffers.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AcceptOffers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/AcceptOffers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="1530">
-              <caret line="55" column="57" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
+            <state vertical-scroll-proportion="-0.21428572" vertical-offset="633" max-vertical-offset="2091">
+              <caret line="133" column="116" selection-start-line="133" selection-start-column="116" selection-end-line="133" selection-end-column="116" />
               <folding>
-                <element signature="e#596#2531#0" expanded="false" />
-                <element signature="e#6013#7976#0" expanded="false" />
-                <element signature="e#8048#10760#0" expanded="false" />
-                <element signature="e#10467#10689#0" expanded="false" />
-                <element signature="e#10803#11044#0" expanded="false" />
+                <element signature="e#606#2569#0" expanded="false" />
+                <element signature="e#2634#5997#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -100,14 +87,13 @@
       <file leaf-file-name="AcceptPeerTrade.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/AcceptPeerTrade.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+            <state vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="986">
               <caret line="42" column="69" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
               <folding>
                 <element signature="e#371#2433#0" expanded="false" />
                 <element signature="e#2505#6211#0" expanded="false" />
                 <element signature="e#5674#5874#0" expanded="false" />
                 <element signature="e#5902#6102#0" expanded="false" />
-                <element signature="e#6302#8480#0" expanded="false" />
                 <element signature="e#8554#12263#0" expanded="false" />
                 <element signature="e#11700#11913#0" expanded="false" />
                 <element signature="e#11941#12154#0" expanded="false" />
@@ -120,8 +106,8 @@
       <file leaf-file-name="AcceptServiceOffers.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/AcceptServiceOffers.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3995">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.1923075" vertical-offset="918" max-vertical-offset="2805">
+              <caret line="65" column="80" selection-start-line="65" selection-start-column="80" selection-end-line="65" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -130,8 +116,8 @@
       <file leaf-file-name="PingProductOffers.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/PingProductOffers.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-77.15385" vertical-offset="0" max-vertical-offset="2261">
-              <caret line="118" column="17" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
+            <state vertical-scroll-proportion="-77.15385" vertical-offset="17" max-vertical-offset="2278">
+              <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -140,17 +126,17 @@
       <file leaf-file-name="PingServiceOffers.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/PingServiceOffers.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.3461537" vertical-offset="1196" max-vertical-offset="1530">
-              <caret line="77" column="67" selection-start-line="77" selection-start-column="51" selection-end-line="77" selection-end-column="70" />
+            <state vertical-scroll-proportion="-8.269231" vertical-offset="1094" max-vertical-offset="1581">
+              <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrivateMessages.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PrivateMessages.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/PrivateMessages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53636366" vertical-offset="1064" max-vertical-offset="1394">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1064" max-vertical-offset="1394">
               <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
               <folding />
             </state>
@@ -170,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/pages/GroupMemberOffer.ejs" />
         <option value="$PROJECT_DIR$/routes/GroupMemberOffer.js" />
         <option value="$PROJECT_DIR$/views/pages/AcceptServiceOffer.ejs" />
         <option value="$PROJECT_DIR$/routes/AcceptMemberOffer.js" />
@@ -213,14 +198,15 @@
         <option value="$PROJECT_DIR$/views/pages/AcceptOffers.ejs" />
         <option value="$PROJECT_DIR$/views/pages/Messages.ejs" />
         <option value="$PROJECT_DIR$/views/pages/ServiceDetails.ejs" />
-        <option value="$PROJECT_DIR$/views/pages/PingServiceOffers.ejs" />
-        <option value="$PROJECT_DIR$/routes/Offers.js" />
-        <option value="$PROJECT_DIR$/routes/PingOffers.js" />
-        <option value="$PROJECT_DIR$/routes/PingResponse.js" />
         <option value="$PROJECT_DIR$/routes/AcceptServiceOffers.js" />
-        <option value="$PROJECT_DIR$/routes/AcceptOffers.js" />
         <option value="$PROJECT_DIR$/routes/AcceptPeerTrade.js" />
         <option value="$PROJECT_DIR$/routes/PrivateMessages.js" />
+        <option value="$PROJECT_DIR$/routes/PingOffers.js" />
+        <option value="$PROJECT_DIR$/routes/Offers.js" />
+        <option value="$PROJECT_DIR$/views/pages/PingServiceOffers.ejs" />
+        <option value="$PROJECT_DIR$/routes/PingResponse.js" />
+        <option value="$PROJECT_DIR$/routes/AcceptOffers.js" />
+        <option value="$PROJECT_DIR$/views/pages/AcceptServiceOffers.ejs" />
       </list>
     </option>
   </component>
@@ -573,7 +559,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425918873329</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Completed General Offers As Well&#10;Service Offers Not Tested">
+      <created>1425944382547</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1425944382547</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -613,7 +605,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22023809" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39807382" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40449437" sideWeight="0.50818455" order="2" side_tool="true" content_ui="tabs" x="-11" y="443" width="1344" height="231" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39486358" sideWeight="0.50818455" order="2" side_tool="true" content_ui="tabs" x="-11" y="443" width="1344" height="231" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -661,7 +653,8 @@
     <MESSAGE value="Completed all offers and view transactions" />
     <MESSAGE value="At this stage, Group Trade is completed for both Product and Service offers  and Peer Trade is also completed for both product and service offers&#10;I am left with General Trade for Services&#10;&#10;Then implement the chat system&#10;" />
     <MESSAGE value="Tested Peer Trade for both Service and Product and is working perfectly&#10;Tested for both Accept and Declined and is working Perfectly&#10;At this stage, Group Trade is completed for both Product and Service offers  and Peer Trade is also completed for both product and service offers&#10;I am left with General Trade for Services&#10;&#10;Then implement the chat system&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tested Peer Trade for both Service and Product and is working perfectly&#10;Tested for both Accept and Declined and is working Perfectly&#10;At this stage, Group Trade is completed for both Product and Service offers  and Peer Trade is also completed for both product and service offers&#10;I am left with General Trade for Services&#10;&#10;Then implement the chat system&#10;" />
+    <MESSAGE value="Completed General Offers As Well&#10;Service Offers Not Tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed General Offers As Well&#10;Service Offers Not Tested" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -937,8 +930,8 @@
         <state vertical-scroll-proportion="0.18133333" vertical-offset="816" max-vertical-offset="4046">
           <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
           <folding>
-            <element signature="e#616#638#0#HTML" expanded="true" />
-            <element signature="e#672#694#0#HTML" expanded="true" />
+            <element signature="e#616#638#0#HTML" expanded="false" />
+            <element signature="e#672#694#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -982,7 +975,7 @@
           <folding>
             <element signature="e#610#633#0#HTML" expanded="true" />
             <element signature="e#1042#1064#0#HTML" expanded="true" />
-            <element signature="e#5555#5579#0#HTML" expanded="true" />
+            <element signature="e#5557#5581#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1035,71 +1028,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/Offers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1309">
-          <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
-          <folding>
-            <element signature="e#183#992#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/PingProductOffers.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-77.15385" vertical-offset="0" max-vertical-offset="2261">
-          <caret line="118" column="17" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
+        <state vertical-scroll-proportion="-77.15385" vertical-offset="17" max-vertical-offset="2278">
+          <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/PingServiceOffers.ejs">
+    <entry file="file://$PROJECT_DIR$/routes/PrivateMessages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3461537" vertical-offset="1196" max-vertical-offset="1530">
-          <caret line="77" column="67" selection-start-line="77" selection-start-column="51" selection-end-line="77" selection-end-column="70" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1064" max-vertical-offset="1394">
+          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/PingOffers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1802">
-          <caret line="127" column="32" selection-start-line="127" selection-start-column="32" selection-end-line="127" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2193" max-vertical-offset="3298">
+          <caret line="143" column="96" selection-start-line="143" selection-start-column="96" selection-end-line="143" selection-end-column="96" />
           <folding>
-            <element signature="e#10070#10284#0" expanded="false" />
-            <marker date="1425934321061" expanded="true" signature="617:737" placeholder="..." />
-            <marker date="1425934321061" expanded="true" signature="5516:5636" placeholder="..." />
+            <element signature="e#10083#10297#0" expanded="false" />
+            <marker date="1425945283635" expanded="true" signature="617:737" placeholder="..." />
+            <marker date="1425945283635" expanded="true" signature="5527:5647" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/Offers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1309">
+          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+          <folding>
+            <element signature="e#183#992#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/PingServiceOffers.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.269231" vertical-offset="1094" max-vertical-offset="1581">
+          <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/PingResponse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2170" max-vertical-offset="3213">
-          <caret line="137" column="69" selection-start-line="137" selection-start-column="58" selection-end-line="137" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2234" max-vertical-offset="3281">
+          <caret line="147" column="157" selection-start-line="147" selection-start-column="157" selection-end-line="147" selection-end-column="157" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/AcceptServiceOffers.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3995">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/AcceptOffers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="1530">
-          <caret line="55" column="57" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
-          <folding>
-            <element signature="e#596#2531#0" expanded="false" />
-            <element signature="e#6013#7976#0" expanded="false" />
-            <element signature="e#8048#10760#0" expanded="false" />
-            <element signature="e#10467#10689#0" expanded="false" />
-            <element signature="e#10803#11044#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1112,7 +1091,6 @@
             <element signature="e#2505#6211#0" expanded="false" />
             <element signature="e#5674#5874#0" expanded="false" />
             <element signature="e#5902#6102#0" expanded="false" />
-            <element signature="e#6302#8480#0" expanded="false" />
             <element signature="e#8554#12263#0" expanded="false" />
             <element signature="e#11700#11913#0" expanded="false" />
             <element signature="e#11941#12154#0" expanded="false" />
@@ -1121,11 +1099,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/PrivateMessages.js">
+    <entry file="file://$PROJECT_DIR$/views/pages/AcceptServiceOffers.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53636366" vertical-offset="1064" max-vertical-offset="1394">
-          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="918" max-vertical-offset="2805">
+          <caret line="65" column="80" selection-start-line="65" selection-start-column="80" selection-end-line="65" selection-end-column="80" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/AcceptOffers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.21428572" vertical-offset="633" max-vertical-offset="2091">
+          <caret line="133" column="116" selection-start-line="133" selection-start-column="116" selection-end-line="133" selection-end-column="116" />
+          <folding>
+            <element signature="e#606#2569#0" expanded="false" />
+            <element signature="e#2634#5997#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

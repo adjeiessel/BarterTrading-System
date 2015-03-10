@@ -8,18 +8,18 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
         //Update the productPingOffers
         //respond to customer pings or interests
         var PingID = req.params.id;
-        var interestedproductID = req.params.pid
+        var interestedproductID = req.params.pid;
         //Get the ID of the product the responding Customer is interested in
-        var productOfferID
+        var productOfferID;
         //Get the ID of the Responding Customer
-        var RespondingCustomerID = req.user.id
+        var RespondingCustomerID = req.user.id;
         dbconnection.query("Select ProductOfferID from ProductOfferPings where PingID=?", [PingID], function (err, pingrows) {
             if (err) {
                 console.log(err);
             }
             if (pingrows) {
                 for (var i in pingrows) {
-                    productOfferID = pingrows[i].ProductOfferID
+                    productOfferID = pingrows[i].ProductOfferID;
 
                 }
             }
@@ -27,10 +27,10 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             // responding customer is interested in)
             var EmailAdd, fname, productname, PostedCustomerID, urllink;
             dbconnection.query('Select EmailAddress,FirstName,ProductName, P.CustomerID As ID from Customers As C Join ProductOffers As P on C.CustomerID=P.CustomerID where ProductOfferID=?', [interestedproductID], function (err, rows) {
-                if (err) throw err
+                if (err) throw err;
                 if (rows) {
                     for (var i in rows) {
-                        PostedCustomerID = rows[i].ID
+                        PostedCustomerID = rows[i].ID;
                         EmailAdd = rows[i].EmailAddress;
                         fname = rows[i].FirstName;
                         productname = rows[i].ProductName;
@@ -43,46 +43,49 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                     PingStatus: '1',
                     TradeStatus: 'Responded',
                     ResponseDate: new Date()
-                }
+                };
                 dbconnection.query('Update ProductOfferPings set? where InterestedCustomerID=? and ProductOfferID=? ', [PostPingResponse, PostedCustomerID, productOfferID], function (err, rows) {
-                    if (err) throw err
+                    if (err) throw err;
                     console.log('Customer Responded to ping');
-                })
+                });
 
-                urllink = "http://" + req.get('host') + "/AcceptOffers/" +PingID
+                urllink = "http://" + req.get('host') + "/AcceptOffers/" + PingID;
 
                 var mailOptions = {
+                    from: 'B-Commerce <adjeiessel@gmail.com',
                     to: EmailAdd, // list of receivers
                     subject: 'Customer Response:Product', // Subject line
                     html: 'Hello ' + req.user.FN + ',<br><br> ' + fname + ' has responded to your ping and is also interested in this product of yours <b>' + productname + '.</b><br> Please ' +
-                    'accept or decline offer if you do not wish to trade your item for such an offer.<br><br><a href="' + urllink + '">Accept Offer</a><br><br>Thank you!<br>Barter Trading Team </br>'
+                    'accept or decline offer if you do not wish to trade your item for such an offer.<br><br><a href="' + urllink + '">Accept Product Offer</a><br><br>Thank you!<br>Barter Trading Team </br>'
                 };
                 // send mail with defined transport object
-                transporter.sendMail(mailOptions, function (error, info) {
+                transporter.sendMail(mailOptions, function (error) {
                     if (error) {
                         console.log(error);
                     } else {
                         console.log('Message sent:');
                     }
-                })
+                });
                 //Add activity
                 //save activity
-                SaveActivity(PostActivity = {
+                var PostActivity = {
                     CustomerID: req.user.id,
                     ActivityName: 'You responded to customer ping/interested in your product',
                     ActivityDateTime: new Date()
-                })
+                };
+                SaveActivity(PostActivity);
                 //Add notification
-                AddNotification(PostNotify = {
+                var PostNotify = {
                     CustomerID: req.user.id,
                     NotificationDetails: 'Responded your ping,please check details from your email adddress',
                     FlagAsShown: '0',
                     ToCustomerID: PostedCustomerID,
                     NotificationDate: new Date()
 
-                })
+                };
+                AddNotification(PostNotify);
             })
-        })
+        });
         res.redirect('/ViewOffersServices');
     });
 
@@ -113,7 +116,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             // responding customer is interested in)
             var EmailAdd, fname, servicename, PostedCustomerID, urllink;
             dbconnection.query('Select EmailAddress,FirstName,ServiceName, S.CustomerID As ID from Customers As C Join ServiceOffers As S on C.CustomerID=S.CustomerID where ServiceOfferID=?', [InterestedServiceID], function (err, rows) {
-                if (err) throw err
+                if (err) throw err;
                 if (rows) {
                     for (var i in rows) {
                         PostedCustomerID = rows[i].ID;
@@ -130,21 +133,22 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                     TradeStatus: 'Responded',
                     ResponseDate: new Date()
                 };
-                dbconnection.query('Update ServiceOfferPings set? where InterestedCustomerID=? and ServiceOfferID=? ', [PostPingResponse, PostedCustomerID, serviceofferID], function (err, rows) {
-                    if (err) throw err
+                dbconnection.query('Update ServiceOfferPings set? where InterestedCustomerID=? and ServiceOfferID=? ', [PostPingResponse, PostedCustomerID, serviceofferID], function (err) {
+                    if (err) throw err;
                     console.log('Customer Responded to ping');
                 });
 
                 urllink = "http://" + req.get('host') + "/AcceptServiceOffers/" + PingID;
 
                 var mailOptions = {
+                    from: 'B-Commerce <adjeiessel@gmail.com',
                     to: EmailAdd, // list of receivers
                     subject: 'Customer Response:Service', // Subject line
                     html: 'Hello ' + req.user.FN + ',<br><br> ' + fname + ' has responded to your ping and is also interested in this service  <b>' + servicename + '.</b><br> Please ' +
-                    'accept or decline offer if you do not wish to offer such servce for what is offered you.<br><br><a href="' + urllink + '">Accept Offer</a><br><br>Thank you!<br>Barter Trading Team </br>'
+                    'accept or decline offer if you do not wish to offer such servce for what is offered you.<br><br><a href="' + urllink + '">Accept Service Offer</a><br><br>Thank you!<br>Barter Trading Team </br>'
                 };
                 // send mail with defined transport object
-                transporter.sendMail(mailOptions, function (error, info) {
+                transporter.sendMail(mailOptions, function (error) {
                     if (error) {
                         console.log(error);
                     } else {
@@ -181,4 +185,4 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
         // if they aren't redirect them to the home page
         res.redirect('/');
     }
-}
+};

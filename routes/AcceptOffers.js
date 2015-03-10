@@ -131,7 +131,7 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
                 }
             }
             //shows what the interested customer has to offer
-            dbconnection.query("Select * from ServiceOffers As S Join ServiceOfferPings As SP on S.ServiceOfferID=So.InterestedServiceID Join Customers As C on C.CustomerID=SP.InterestedCustomerID where pingID=? and TradeStatus=?", [pingID, tradestatus], function (err, rows) {
+            dbconnection.query("Select * from ServiceOffers As S Join ServiceOfferPings As SP on S.ServiceOfferID=SP.InterestedServiceID Join Customers As C on C.CustomerID=SP.InterestedCustomerID where ServicePingID=? and TradeStatus=?", [pingID, tradestatus], function (err, rows) {
                 if (err) {
                     console.log(err);
                 }

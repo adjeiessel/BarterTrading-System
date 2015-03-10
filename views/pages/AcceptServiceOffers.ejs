@@ -28,96 +28,61 @@
                 <table class="pro-detail">
                     <tr>
                         <td>
-                            <strong>Name</strong>:
+                            <strong>Service Name</strong>:
                         </td>
                         <td class="format_name">
-                            <%= FirstCustomerResults[i].ProductName %>
+                            <%= FirstCustomerResults[i].ServiceName %>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>Offer Details</strong>:
+                            <strong>Service Descriptioin</strong>:
                         </td>
                         <td>
-                            <%= FirstCustomerResults[i].OfferDetails %>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Offer Date</strong>:
-                        </td>
-                        <td>
-                            <%= FirstCustomerResults[i].OfferDate.toDateString() %>
+                            <%= FirstCustomerResults[i].ServiceDescription %>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>Condition</strong>:
+                            <strong>Published Date</strong>:
+                        </td>
+                        <td>
+                            <%= FirstCustomerResults[i].PublishedDate.toDateString() %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Duration</strong>:
                         </td>
                         <td class="format_con">
-                            <%= FirstCustomerResults[i].Condition %>
+                            <%= FirstCustomerResults[i].Duration %>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>Product Value</strong>:
+                            <strong>Start Date</strong>:
                         </td>
                         <td class="format_value">
-                            <%= FirstCustomerResults[i].ValueCurrency %>  <%= FirstCustomerResults[i].ProductValue %>
+                            <%= FirstCustomerResults[i].StartDate.toDateString() %>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>Pro.Time</strong>:
+                            <strong>End Date</strong>:
                         </td>
                         <td>
-                            <%= FirstCustomerResults[i].ProcessingTime %>
+                            <%= FirstCustomerResults[i].EndDate.toDateString() %>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>Ships To:</strong>:
+                            <strong>Preferred Service:</strong>:
                         </td>
                         <td>
-                            <%= FirstCustomerResults[i].ShipsTo %>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Ship Cost</strong>:
-                        </td>
-                        <td class="format_value">
-                            <%= FirstCustomerResults[i].shipCurrencyName %>  <%= FirstCustomerResults[i].ShippingCost %>
+                            <%= FirstCustomerResults[i].PreferredService %>
                         </td>
                     </tr>
                 </table>
-                <ul class="enlarge">
-                    <!--We give the list a class so that we can style it seperately from other unordered lists-->
-                    <li>
-                        <img src="/images/<%= FirstCustomerResults[i].img0 %>" width="150px" height="100px"/>
-                    <span> <!--span contains the popup image-->
-                    <img src="/images/<%= FirstCustomerResults[i].img0 %>" alt="Deckchairs"/>
-                    </span>
-                    </li>
-                    <li>
-                        <img src="/images/<%= FirstCustomerResults[i].img1 %>" width="150px" height="100px"/>
-                         <span> <!--span contains the popup image-->
-                    <img src="/images/<%= FirstCustomerResults[i].img1 %>" alt="Deckchairs"/>
-                    </span>
-                    </li>
-                    <li>
-                        <img src="/images/<%= FirstCustomerResults[i].img2 %>" width="150px" height="100px"/>
-                     <span> <!--span contains the popup image-->
-                    <img src="/images/<%= FirstCustomerResults[i].img2 %>" alt="Deckchairs"/>
-                    </span>
-                    </li>
-                    <li>
-                        <img src="/images/<%= FirstCustomerResults[i].img3 %>" width="150px" height="100px"/>
-                         <span> <!--span contains the popup image-->
-                    <img src="/images/<%= FirstCustomerResults[i].img3 %>" alt="Deckchairs"/>
-                    </span>
-                    </li>
-                </ul>
             </div>
             <% } %>
             <div class="swap"><img src="/images/swap.png" width="90" height="90"></div>
@@ -130,93 +95,58 @@
                             <strong>Name</strong>:
                         </td>
                         <td class="format_name">
-                            <%= SecondCustomerResults[i].ProductName %>
+                            <%= SecondCustomerResults[i].ServiceName %>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>Offer Details</strong>:
+                            <strong>Service Description</strong>:
                         </td>
                         <td>
-                            <%= SecondCustomerResults[i].OfferDetails %>
+                            <%= SecondCustomerResults[i].ServiceDescription %>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>Offer Date</strong>:
+                            <strong>Published Date</strong>:
                         </td>
                         <td>
-                            <%= SecondCustomerResults[i].OfferDate.toDateString() %>
+                            <%= SecondCustomerResults[i].PublishedDate.toDateString() %>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>Condition</strong>:
-                        </td>
-                        <td class="format_con">
-                            <%= SecondCustomerResults[i].Condition %>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Product Value</strong>:
+                            <strong>Duration</strong>:
                         </td>
                         <td class="format_value">
-                            <%= SecondCustomerResults[i].ValueCurrency %>  <%= SecondCustomerResults[i].ProductValue %>
+                            <%= SecondCustomerResults[i].Duration %>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>Pro.Time</strong>:
+                            <strong>Start Date</strong>:
                         </td>
                         <td>
-                            <%= SecondCustomerResults[i].ProcessingTime %>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Ships To:</strong>:
-                        </td>
-                        <td>
-                            <%= SecondCustomerResults[i].ShipsTo %>
+                            <%= SecondCustomerResults[i].StartDate.toDateString() %>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <strong>Ship Cost</strong>:
+                            <strong>End Date:</strong>:
+                        </td>
+                        <td>
+                            <%= SecondCustomerResults[i].EndDate.toDateString() %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Preferred Service</strong>:
                         </td>
                         <td class="format_value">
-                            <%= SecondCustomerResults[i].shipCurrencyName %>  <%= SecondCustomerResults[i].ShippingCost %>
+                            <%= SecondCustomerResults[i].PreferredService %>
                         </td>
                     </tr>
                 </table>
-                <ul class="enlarge">
-                    <!--We give the list a class so that we can style it seperately from other unordered lists-->
-                    <li>
-                        <img src="/images/<%= SecondCustomerResults[i].img0 %>" width="150px" height="100px"/>
-                    <span> <!--span contains the popup image-->
-                    <img src="/images/<%= SecondCustomerResults[i].img0 %>" alt="Deckchairs"/>
-                    </span>
-                    </li>
-                    <li>
-                        <img src="/images/<%= SecondCustomerResults[i].img1 %>" width="150px" height="100px"/>
-                         <span> <!--span contains the popup image-->
-                    <img src="/images/<%= SecondCustomerResults[i].img1 %>" alt="Deckchairs"/>
-                    </span>
-                    </li>
-                    <li>
-                        <img src="/images/<%= SecondCustomerResults[i].img2 %>" width="150px" height="100px"/>
-                     <span> <!--span contains the popup image-->
-                    <img src="/images/<%= SecondCustomerResults[i].img2 %>" alt="Deckchairs"/>
-                    </span>
-                    </li>
-                    <li>
-                        <img src="/images/<%= SecondCustomerResults[i].img3 %>" width="150px" height="100px"/>
-                         <span> <!--span contains the popup image-->
-                    <img src="/images/<%= SecondCustomerResults[i].img3 %>" alt="Deckchairs"/>
-                    </span>
-                    </li>
-                </ul>
             </div>
             <% } %>
             <div class="submit_offer">
