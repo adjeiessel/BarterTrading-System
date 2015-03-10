@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%include ../partials/header %>
 <%include ../partials/navigation %>
+<head>
+    <title>Edit Product Offers</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -66,13 +68,14 @@
         document.getElementById("contact").reset();
     }
 </script>
+</head>
     <div class="content">
         <%for (var i in AllProducts){%>
         <form class="contact_form" id="contact" method="Post" action="/EditOfferProduct" enctype="multipart/form-data">
 
         <ul>
             <li>
-                <h1>Edit Offer</h1>
+                <h1 style="color: #00b7ff">Edit Offer</h1>
                 <span class="required">All the fields marked with * are required </span>
                 <input type="text" name="ProductID" value="<%=AllProducts[i].ProductOfferID%>" hidden="true"/>
             </li>

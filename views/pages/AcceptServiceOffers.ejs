@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <% include ../partials/header %>
 <% include ../partials/navigation %>
+<head>
+    <title></title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
 <script>
     $(document).ready(function () {
@@ -8,9 +10,8 @@
             document.getElementById('Decline').value = "Declined";
         });
     });
-
 </script>
-<div class="content">
+</head>
     <!--for showing product offers-->
     <div id="ProductContent" name="ProductContent" class="content">
         <form class="contact_form" method="POST" action="" name="contact_form" xmlns="http://www.w3.org/1999/html">
@@ -156,5 +157,4 @@
             </div>
         </form>
     </div>
-</div>
 <% include ../partials/footer %>

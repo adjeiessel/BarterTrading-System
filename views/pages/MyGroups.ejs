@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <% include ../partials/header %>
 <% include ../partials/navigation %>
+<head>
+    <title>My Groups</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+</head>
 <div class="content">
     <form class="data_details" method="Get" action="/MyGroups" name="contact_form" xmlns="http://www.w3.org/1999/html">
-        <h1>My Groups</h1>
+        <h1 style="color: #00b7ff">My Groups</h1>
     <% if(data.length) {
     for(var i = 0;i < data.length;i++) { %>
         <div class="product-detail">

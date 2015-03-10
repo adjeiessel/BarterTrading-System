@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%include ../partials/header %>
 <%include ../partials/navigation %>
+<head>
+    <title>Edit Service Offers</title>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script>
@@ -29,12 +31,13 @@
         document.getElementById("contact").reset();
     }
 </script>
+</head>
 <div class="content">
     <%for (var i in AllService){%>
     <form id="contact" class="contact_form" method="post" action="/EditOfferService">
     <ul>
         <li>
-            <h1>Edit Service Offer</h1>
+            <h1 style="color: #00b7ff">Edit Service Offer</h1>
             <span class="required">All the fields marked with * are required </span>
         </li>
         <li>

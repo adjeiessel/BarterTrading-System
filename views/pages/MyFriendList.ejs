@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <% include ../partials/header %>
 <% include ../partials/navigation %>
+<head>
+    <title>My Friend List</title>
+</head>
 <div class="content">
     <form class="data_details" method="Get" action="/MyFriendList" name="contact_form" xmlns="http://www.w3.org/1999/html">
-     <h1>My Friend List</h1>
+        <h1 style="color: #00b7ff">My Friend List</h1>
     <% if(data.length) {
     for(var i = 0;i < data.length;i++) { %>
         <div class="product-detail">

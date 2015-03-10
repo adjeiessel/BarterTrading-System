@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%include ../partials/header %>
 <%include ../partials/navigation %>
+<head>
+    <title>Create Group</title>
 <script>
     function PreviewImage() {
         var oFReader = new FileReader();
@@ -11,14 +13,16 @@
 
     };
 </script>
+</head>
 <div class="content">
 <form id="contact" class="contact_form"method="post" action="/AddGroup" enctype="multipart/form-data">
     <ul>
-        <h1>Add Group</h1>
+        <h7 style="color: #00b7ff">Add Group</h7>
         <li>
             <label for="name">Group Name:</label>
             <input type="text" name="GroupName">
         </li>
+        <br>
         <li>
             <label for="AddPhoto">Add Photo</label>
             <img id="goupimg" style="width: 100px; height: 100px;" />

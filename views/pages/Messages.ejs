@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%include ../partials/header %>
 <%include ../partials/navigation %>
+<head>
+    <title>Message</title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script  type="text/javascript" src="/javascripts/typeahead.min.js"></script>
@@ -60,13 +62,14 @@
         document.getElementById("contact").reset();
     }
 </script>
+</head>
 <div class="content">
     <form class="contact_form">
     <ul>
         <li>
-            <h1>Private Message</h1>
+            <h1 style="color: #00b7ff">Private Message</h1>
 
-            <h3 style="color: #00a5ff">Contacting... <%= Name %></h3>
+            <h3 style="color: orangered">Contacting... <%= Name %></h3>
         </li>
         <li class="bs-example">
             <label for="tags" style="color:green;">Recipient Name*:</label>

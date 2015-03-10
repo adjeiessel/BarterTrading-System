@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%include ../partials/header %>
 <%include ../partials/navigation %>
+<head>
+    <title>Add Friends</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script  type="text/javascript" src="/javascripts/typeahead.min.js"></script>
     <script type="text/javascript">
@@ -15,12 +17,12 @@
         document.getElementById("contact").reset();
     }
 </script>
-
+</head>
 <div class="content">
 <form id="contact" class="contact_form"method="Post" action="/FriendRequest">
     <ul class="frn_rq">
         <li>
-            <h1>Add Friends</h1>
+            <h1 style="color: #00b7ff">Add Friends</h1>
         </li>
         <li class="bs-example">
                 <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for Customer">

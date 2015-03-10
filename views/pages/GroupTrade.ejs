@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <% include ../partials/header %>
 <% include ../partials/navigation %>
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js" xmlns="http://www.w3.org/1999/html"></script>
+<head>
+    <title>Group Trading</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"
+            xmlns="http://www.w3.org/1999/html"></script>
 <script type="text/javascript" src="/javascripts/notifyme.js"></script>
 <script type="text/javascript" src="/javascripts/typeahead.min.js"></script>
 <script type="text/javascript">
@@ -57,6 +60,7 @@
     }
 
 </script>
+</head>
 <div class="content">
     <ul class="rd_trade">
         <li>
@@ -72,9 +76,9 @@
     <div id="ProductContent" name="ProductContent" class="content">
         <form id="contact" class="contact_form" method="post" action="/GroupTrade">
             <fieldset>
-                <h1>Group Trade</h1>
+                <h1 style="color: #00b7ff">Group Trade</h1>
                 <li>
-                    <h2>Offer Product</h2>
+                    <h3 style="color:#ff0000">Offer Product</h3>
                 </li>
 
                 <li class="bs-example">
@@ -111,10 +115,10 @@
     <!--for service-->
     <div id="ServiceContent" name="ServiceContent" class="content">
         <form id="contact" class="contact_form" method="post" action="/GroupTrade">
-            <h1>Group Trade</h1>
-
-            <h2>Offer Service</h2>
-
+            <h1 style="color: #00b7ff">Group Trade</h1>
+            <li>
+                <h3 style="color: #ff0000">Offer Service</h3>
+            </li>
             <span class="required">Please select a group</span>
             <li class="bs-example">
                 <label for="typeahead" style="color:#00b7ff;">Search Service:</label>
@@ -145,3 +149,4 @@
         </form>
     </div>
 </div>
+<% include ../partials/footer %>

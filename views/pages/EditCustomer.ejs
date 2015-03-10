@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <% include ../partials/header %>
 <% include ../partials/navigation %>
+<head>
+    <title>Edit Customer</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -71,12 +73,13 @@
         document.getElementById("contact").reset();
     }
 </script>
+</head>
 <div class="content">
     <form class="contact_form" id="contact" method="post" action="/EditCustomer" onsubmit="return checkForm(this)"enctype="multipart/form-data">
         <%for (var i in result){%>
         <ul>
             <li>
-                <h1>Edit Details</h1>
+                <h6 style="color: #00b7ff">Edit Details</h6>
                 <span class="required">All the fields marked with * are required </span>
             </li>
             <li>

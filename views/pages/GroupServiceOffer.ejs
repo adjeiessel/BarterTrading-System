@@ -1,5 +1,8 @@
+<!DOCTYPE html>
 <% include ../partials/header %>
 <% include ../partials/navigation %>
+<head>
+    <title>Group Service Offer</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
 <script>
     $(document).ready(function () {
@@ -8,12 +11,13 @@
         });
     });
 </script>
+</head>
 <div class="content">
     <!--for showing Group product offers-->
     <div id="ServiceContent" name="ServiceContent" class="content">
         <form class="contact_form" method="POST" action="" name="contact_form"
               xmlns="http://www.w3.org/1999/html">
-            <h1>Group Offer</h1>
+            <h1 style="color: #00b7ff">Group Offer</h1>
             <% if(!GroupTrade.length){ %>
             <div class="records">
                 <strong>Offer Completed</strong><br>
