@@ -4,7 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Added NearBy Trading&#10;Completed all modules except chat">
+    <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Almost done with nearby trading&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/OfferService.ejs" afterPath="$PROJECT_DIR$/views/pages/OfferService.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/Offers.ejs" afterPath="$PROJECT_DIR$/views/pages/Offers.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/PeerInterest.ejs" afterPath="$PROJECT_DIR$/views/pages/PeerInterest.ejs" />
@@ -32,34 +32,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PrivateMessages.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PrivateMessages.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/PrivateMessages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40117994" vertical-offset="0" max-vertical-offset="339">
-              <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1020">
+              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
               <folding>
                 <element signature="e#106#170#0" expanded="false" />
                 <element signature="e#216#662#0" expanded="false" />
                 <element signature="e#713#1135#0" expanded="false" />
-                <element signature="e#1187#2444#0" expanded="false" />
                 <element signature="e#2503#3102#0" expanded="false" />
                 <element signature="e#3154#3744#0" expanded="false" />
                 <element signature="e#3803#4466#0" expanded="false" />
                 <element signature="e#4521#5012#0" expanded="false" />
-                <element signature="e#5067#5559#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupTrading.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/GroupTrading.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="3179">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#202#763#0" expanded="false" />
-                <element signature="e#817#1397#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -68,35 +53,104 @@
       <file leaf-file-name="NearByMessages.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/NearByMessages.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.384615" vertical-offset="564" max-vertical-offset="1819">
-              <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+            <state vertical-scroll-proportion="-5.5" vertical-offset="571" max-vertical-offset="1292">
+              <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
               <folding>
+                <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#h1#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h3#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#li#3;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#4;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#li#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h3#0;n#li#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#li#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#li#3;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#4;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SendMessage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SendMessage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/SendMessage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1632">
-              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+            <state vertical-scroll-proportion="1.2615385" vertical-offset="236" max-vertical-offset="1309">
+              <caret line="96" column="15" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
+              <folding>
+                <element signature="e#157#275#0" expanded="false" />
+                <element signature="e#348#464#0" expanded="false" />
+                <element signature="e#525#1091#0" expanded="false" />
+                <element signature="e#1164#1683#0" expanded="false" />
+                <element signature="e#1753#2322#0" expanded="false" />
+                <element signature="e#3038#3331#0" expanded="false" />
+                <element signature="n#!!block;n#clearFormService#0" expanded="false" />
+                <element signature="n#!!block;n#clearForm#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewTransactions.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/ViewTransactions.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="6.8076925" vertical-offset="3135" max-vertical-offset="3570">
+              <caret line="234" column="13" selection-start-line="234" selection-start-column="13" selection-end-line="234" selection-end-column="13" />
+              <folding>
+                <element signature="e#150#1716#0#HTML" expanded="false" />
+                <element signature="e#1717#2270#0#HTML" expanded="false" />
+                <element signature="e#3251#3277#0#HTML" expanded="true" />
+                <element signature="e#3496#3522#0#HTML" expanded="true" />
+                <element signature="e#3845#3867#0#HTML" expanded="true" />
+                <element signature="e#5753#5775#0#HTML" expanded="true" />
+                <element signature="e#7626#7648#0#HTML" expanded="true" />
+                <element signature="e#9435#9457#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Notifications.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/Notifications.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="13.730769" vertical-offset="357" max-vertical-offset="1020">
+              <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NearBy.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pages/NearBy.ejs">
+      <file leaf-file-name="logins.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/logins.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923" vertical-offset="323" max-vertical-offset="748">
-              <caret line="21" column="79" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+            <state vertical-scroll-proportion="-0.65384614" vertical-offset="323" max-vertical-offset="833">
+              <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/all.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.068966" vertical-offset="14838" max-vertical-offset="25228">
+              <caret line="890" column="14" selection-start-line="890" selection-start-column="14" selection-end-line="890" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityLog.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/ActivityLog.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.576923" vertical-offset="153" max-vertical-offset="1190">
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -107,53 +161,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.5" vertical-offset="1241" max-vertical-offset="1751">
               <caret line="86" column="177" selection-start-line="86" selection-start-column="132" selection-end-line="86" selection-end-column="177" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Offers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/Offers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="512" max-vertical-offset="867">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#183#992#0" expanded="false" />
-                <element signature="e#2433#3661#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PingOffers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/PingOffers.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="970" max-vertical-offset="1904">
-              <caret line="152" column="30" selection-start-line="152" selection-start-column="22" selection-end-line="152" selection-end-column="118" />
-              <folding>
-                <element signature="e#215#5038#0" expanded="false" />
-                <marker date="1425945283635" expanded="true" signature="617:737" placeholder="..." />
-                <marker date="1425945283635" expanded="true" signature="5527:5647" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Offers.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pages/Offers.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.653846" vertical-offset="4042" max-vertical-offset="4573">
-              <caret line="251" column="21" selection-start-line="251" selection-start-column="21" selection-end-line="251" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceDetails.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pages/ServiceDetails.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.269231" vertical-offset="1501" max-vertical-offset="2023">
-              <caret line="104" column="59" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -172,14 +179,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/views/pages/AcceptOffers.ejs" />
         <option value="$PROJECT_DIR$/views/pages/AcceptPeerTrade.ejs" />
         <option value="$PROJECT_DIR$/views/pages/AcceptServiceOffer.ejs" />
         <option value="$PROJECT_DIR$/views/pages/AcceptPeerServiceTrade.ejs" />
         <option value="$PROJECT_DIR$/views/pages/AcceptServiceOffers.ejs" />
         <option value="$PROJECT_DIR$/views/pages/AddGroupMembers.ejs" />
         <option value="$PROJECT_DIR$/views/partials/navigation.ejs" />
-        <option value="$PROJECT_DIR$/views/pages/ActivityLog.ejs" />
         <option value="$PROJECT_DIR$/views/pages/EditCustomer.ejs" />
         <option value="$PROJECT_DIR$/views/pages/EditOfferProduct.ejs" />
         <option value="$PROJECT_DIR$/views/pages/EditOfferService.ejs" />
@@ -194,7 +199,6 @@
         <option value="$PROJECT_DIR$/views/pages/MyGroups.ejs" />
         <option value="$PROJECT_DIR$/views/pages/MyMembers.ejs" />
         <option value="$PROJECT_DIR$/views/pages/MyWishList.ejs" />
-        <option value="$PROJECT_DIR$/views/pages/Notifications.ejs" />
         <option value="$PROJECT_DIR$/views/pages/OfferProduct.ejs" />
         <option value="$PROJECT_DIR$/views/pages/OfferService.ejs" />
         <option value="$PROJECT_DIR$/views/pages/PeerInterest.ejs" />
@@ -210,7 +214,6 @@
         <option value="$PROJECT_DIR$/views/pages/Shipping.ejs" />
         <option value="$PROJECT_DIR$/views/pages/signup.ejs" />
         <option value="$PROJECT_DIR$/views/pages/ViewOffersServices.ejs" />
-        <option value="$PROJECT_DIR$/views/pages/ViewTransactions.ejs" />
         <option value="$PROJECT_DIR$/views/pages/WishList.ejs" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/views/pages/GroupTrade.ejs" />
@@ -220,9 +223,13 @@
         <option value="$PROJECT_DIR$/views/pages/Offers.ejs" />
         <option value="$PROJECT_DIR$/views/pages/NearBy.ejs" />
         <option value="$PROJECT_DIR$/views/pages/Messages.ejs" />
-        <option value="$PROJECT_DIR$/public/javascripts/SendMessage.js" />
         <option value="$PROJECT_DIR$/routes/PrivateMessages.js" />
+        <option value="$PROJECT_DIR$/views/pages/ActivityLog.ejs" />
+        <option value="$PROJECT_DIR$/views/pages/Notifications.ejs" />
         <option value="$PROJECT_DIR$/views/pages/NearByMessages.ejs" />
+        <option value="$PROJECT_DIR$/public/stylesheets/all.css" />
+        <option value="$PROJECT_DIR$/views/pages/ViewTransactions.ejs" />
+        <option value="$PROJECT_DIR$/public/javascripts/SendMessage.js" />
       </list>
     </option>
   </component>
@@ -230,10 +237,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="x" value="-1" />
+    <option name="width" value="1366" />
+    <option name="height" value="738" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -336,6 +342,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BCommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BCommerce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -641,7 +665,13 @@
       <option name="project" value="LOCAL" />
       <updated>1425990736417</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Almost done with nearby trading&#10;">
+      <created>1426014663060</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1426014663060</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -665,7 +695,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-1" y="0" width="1366" height="738" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5014881" order="7" side_tool="false" content_ui="tabs" />
@@ -674,9 +704,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3354735" sideWeight="0.5014881" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21669106" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21925926" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41021672" sideWeight="0.5036603" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4117647" sideWeight="0.49633968" order="2" side_tool="true" content_ui="tabs" x="-11" y="443" width="1344" height="231" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43968254" sideWeight="0.49633968" order="2" side_tool="true" content_ui="tabs" x="-11" y="443" width="1344" height="231" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32744783" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40449437" sideWeight="0.49181548" order="10" side_tool="false" content_ui="tabs" />
@@ -732,7 +762,8 @@
     <MESSAGE value="Completed General Offers As Well&#10;Service Offers Not Tested" />
     <MESSAGE value="Completed all modules except chat" />
     <MESSAGE value="Added NearBy Trading&#10;Completed all modules except chat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added NearBy Trading&#10;Completed all modules except chat" />
+    <MESSAGE value="Almost done with nearby trading&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost done with nearby trading&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -742,45 +773,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="221" />
+      <option name="time" value="222" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/pages/ActivityLog.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="340">
-          <caret line="19" column="103" selection-start-line="19" selection-start-column="103" selection-end-line="19" selection-end-column="103" />
-          <folding>
-            <element signature="e#286#523#0#HTML" expanded="false" />
-            <element signature="e#630#1466#0#HTML" expanded="false" />
-            <element signature="e#743#765#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/EditCustomer.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.769231" vertical-offset="45" max-vertical-offset="1105">
-          <caret line="81" column="59" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
-          <folding>
-            <element signature="e#209#2764#0#HTML" expanded="false" />
-            <element signature="e#3025#3047#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/EditOfferProduct.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="2822">
-          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-          <folding>
-            <element signature="n#script#1;n#head#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#h1#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/EditOfferService.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="1207">
@@ -857,16 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/logins.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="629">
-          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
-          <folding>
-            <element signature="e#256#458#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/MyFriendList.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8076925" vertical-offset="2" max-vertical-offset="714">
@@ -899,14 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="612">
           <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/Notifications.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="612">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1047,16 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/ViewTransactions.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="3213">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="e#150#1716#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/ViewOffersServices.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="2295">
@@ -1130,11 +1099,6 @@
         <state vertical-scroll-proportion="-23.423077" vertical-offset="156" max-vertical-offset="1343">
           <caret line="118" column="21" selection-start-line="117" selection-start-column="11" selection-end-line="122" selection-end-column="17" />
           <folding>
-            <element signature="e#512#646#0#HTML" expanded="false" />
-            <element signature="e#691#823#0#HTML" expanded="false" />
-            <element signature="e#871#1397#0#HTML" expanded="false" />
-            <element signature="e#1451#2110#0#HTML" expanded="false" />
-            <element signature="e#2224#2283#0#HTML" expanded="false" />
             <element signature="e#2771#4561#0#HTML" expanded="false" />
           </folding>
         </state>
@@ -1189,19 +1153,8 @@
           <caret line="152" column="30" selection-start-line="152" selection-start-column="22" selection-end-line="152" selection-end-column="118" />
           <folding>
             <element signature="e#215#5038#0" expanded="false" />
-            <marker date="1425945283635" expanded="true" signature="617:737" placeholder="..." />
-            <marker date="1425945283635" expanded="true" signature="5527:5647" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/GroupTrading.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3655">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#202#763#0" expanded="false" />
-            <element signature="e#817#1397#0" expanded="false" />
+            <marker date="1425945283635" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425945283635" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1222,43 +1175,129 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/ActivityLog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/ActivityLog.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923" vertical-offset="153" max-vertical-offset="1190">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/logins.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="323" max-vertical-offset="833">
+          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/GroupTrading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.57366073" vertical-offset="563" max-vertical-offset="3179">
+          <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+          <folding>
+            <element signature="e#202#763#0" expanded="false" />
+            <element signature="e#817#1397#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/PrivateMessages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="e#106#170#0" expanded="false" />
+            <element signature="e#216#662#0" expanded="false" />
+            <element signature="e#713#1135#0" expanded="false" />
+            <element signature="e#2503#3102#0" expanded="false" />
+            <element signature="e#3154#3744#0" expanded="false" />
+            <element signature="e#3803#4466#0" expanded="false" />
+            <element signature="e#4521#5012#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/Notifications.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="13.730769" vertical-offset="357" max-vertical-offset="1020">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/all.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.068966" vertical-offset="14838" max-vertical-offset="25228">
+          <caret line="890" column="14" selection-start-line="890" selection-start-column="14" selection-end-line="890" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/ViewTransactions.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.8076925" vertical-offset="3135" max-vertical-offset="3570">
+          <caret line="234" column="13" selection-start-line="234" selection-start-column="13" selection-end-line="234" selection-end-column="13" />
+          <folding>
+            <element signature="e#150#1716#0#HTML" expanded="false" />
+            <element signature="e#1717#2270#0#HTML" expanded="false" />
+            <element signature="e#3251#3277#0#HTML" expanded="true" />
+            <element signature="e#3496#3522#0#HTML" expanded="true" />
+            <element signature="e#3845#3867#0#HTML" expanded="true" />
+            <element signature="e#5753#5775#0#HTML" expanded="true" />
+            <element signature="e#7626#7648#0#HTML" expanded="true" />
+            <element signature="e#9435#9457#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/NearByMessages.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.384615" vertical-offset="564" max-vertical-offset="1819">
-          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+        <state vertical-scroll-proportion="-5.5" vertical-offset="571" max-vertical-offset="1292">
+          <caret line="83" column="21" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="21" />
           <folding>
+            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#h1#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#li#0;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#li#3;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#4;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#li#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#li#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#li#0;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#label#0;n#li#1;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#li#3;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#3;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#4;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#5;n#ul#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/SendMessage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1632">
-          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/PrivateMessages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40117994" vertical-offset="0" max-vertical-offset="339">
-          <caret line="98" column="52" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
+        <state vertical-scroll-proportion="1.2615385" vertical-offset="236" max-vertical-offset="1309">
+          <caret line="96" column="15" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
           <folding>
-            <element signature="e#106#170#0" expanded="false" />
-            <element signature="e#216#662#0" expanded="false" />
-            <element signature="e#713#1135#0" expanded="false" />
-            <element signature="e#1187#2444#0" expanded="false" />
-            <element signature="e#2503#3102#0" expanded="false" />
-            <element signature="e#3154#3744#0" expanded="false" />
-            <element signature="e#3803#4466#0" expanded="false" />
-            <element signature="e#4521#5012#0" expanded="false" />
-            <element signature="e#5067#5559#0" expanded="false" />
+            <element signature="e#157#275#0" expanded="false" />
+            <element signature="e#348#464#0" expanded="false" />
+            <element signature="e#525#1091#0" expanded="false" />
+            <element signature="e#1164#1683#0" expanded="false" />
+            <element signature="e#1753#2322#0" expanded="false" />
+            <element signature="e#3038#3331#0" expanded="false" />
+            <element signature="n#!!block;n#clearFormService#0" expanded="false" />
+            <element signature="n#!!block;n#clearForm#0" expanded="false" />
           </folding>
         </state>
       </provider>
