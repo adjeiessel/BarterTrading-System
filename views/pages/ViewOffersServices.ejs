@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <% include ../partials/header %>
 <% include ../partials/navigation %>
+<head>
+    <title>View Offers</title>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/javascripts/typeahead.min.js"></script>
 <script src="http://listjs.com/no-cdn/list.js"></script>
 <script src="http://listjs.com/no-cdn/list.pagination.js"></script>
 <script type="application/javascript">
     $(document).ready(function () {
+        //create a dynamic url
+        var host = location.protocol + '//' + location.host + '/productsearch?key=%QUERY';
 //       configure listPagnitation for product offers
         var monkeyList = new List('test-list', {
             valueNames: ['name'],
@@ -21,7 +25,7 @@
         });
         $('input.typeahead').typeahead({
             name: 'countries',
-            remote: 'http://localhost:7000/productsearch?key=%QUERY',
+            remote: host,
             limit: 10
         });
 
@@ -43,6 +47,7 @@
         $("#ServiceContent").hide();
     });
 </script>
+</head>
 <div class="content">
     <ul class="rd_btn1">
         <li>

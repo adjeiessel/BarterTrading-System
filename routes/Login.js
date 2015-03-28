@@ -28,30 +28,33 @@ module.exports = function(app, passport,dbconnection) {
     }));
 
     // LOGOUT ==============================
-    app.get('/logout', function(req, res) {
+    app.get('/logout', isLoggedIn, function (req, res) {
+
             console.log('You are logging out customer ' + req.user.id);
             //save activity log
-            AddActivityLog(PostActivity = {
-                CustomerID: req.user.id,
-                ActivityName: 'Logout from system:',
-                ActivityDateTime: new Date()
-            })
+        var PostActivity = {
+            CustomerID: req.user.id,
+            ActivityName: 'Logout from system:',
+            ActivityDateTime: new Date()
+        };
+        AddActivityLog(PostActivity);
             var Status = {
                 LoginStatus: 0
             };
             //update customer login status to off
             dbconnection.query("update Customers set ? where CustomerID=?", [Status, req.user.id], function (err) {
-                if (err) throw err
+                if (err) throw err;
                 console.log("Updated login status : %s ");
 
-            })
+            });
+        //will remove the req.user property and clear the login session (if any).
             req.logout();
             res.redirect('/');
 
 
     });
 
-function AddActivityLog(activityData){
+    function AddActivityLog(activityData) {
     dbconnection.query('Insert  into ActivityLogs set? ', [activityData], function (err) {
         if (err) throw err
         console.log('Activity Saved');
@@ -64,4 +67,4 @@ function AddActivityLog(activityData){
         // if they aren't redirect them to the home page
         res.redirect('/');
     }
-}
+};

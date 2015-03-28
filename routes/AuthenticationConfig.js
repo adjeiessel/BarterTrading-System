@@ -18,6 +18,7 @@ module.exports = function(passport,dbconnection,myio) {
                     FullName= rows[i].FirstName + " " + rows[i].LastName + " " + rows[i].MiddleName;
                 }
             }
+
                 // all is well, return successful user
             done(err, {id:cusID, name:Cususername,FN:FullName});
         });
@@ -29,6 +30,7 @@ module.exports = function(passport,dbconnection,myio) {
     },
         function (req, username, password, done) {
             var hashpassword;
+            var fullname;
             dbconnection.query("select * from customers where EmailAddress=? or UserName=?", [username,username], function (err, rows) {
                 if (err)
                     return done(err, false, console.log( err));
@@ -37,12 +39,12 @@ module.exports = function(passport,dbconnection,myio) {
                     for (var i in rows) {
                         CID = rows[i].CustomerID;
                         hashpassword = rows[i].Password;
+                        fullname = rows[i].FirstName + ' ' + rows[i].LastName + ' ' + rows[i].MiddleName;
                     }
                     bcrypt.compare(password, hashpassword, function (err, hashmatch) {
                         if (hashmatch) {
                             //update login status when user login
                             UpdateLoginStatus();
-                            AddUserToChatList(CID);
                             AddActivityLog(PostActivity={CustomerID:CID,ActivityName:'Logged into system:',ActivityDateTime:new Date()})
                             return done(null, {id: CID});
                             //all is well, return successful user
@@ -110,23 +112,12 @@ module.exports = function(passport,dbconnection,myio) {
                 });
             }
         });
-    }))
+        }));
     function AddActivityLog(activityData){
         dbconnection.query('Insert  into ActivityLogs set? ', [activityData], function (err) {
             if (err) throw err
             console.log('Activity Saved');
         })
-    }
-    function AddUserToChatList(userID){
-        var id = userID;
-        var currentUser = [];
-        dbconnection.query('SELECT CONCAT(FirstName," ",LastName," ",MiddleName) As FullName from Customers where LoginStatus=? and CustomerID', [1, id], function (err, rows) {
-            if (err) throw err;
-            for (var i = 0; i < rows.length; i++) {
-                currentUser.push(rows[i].FullName);
-                myio.sockets.emit('newCustomerList', currentUser);
-            }
-        });
     }
     function UpdateLoginStatus(){
         var Status={
@@ -138,6 +129,7 @@ module.exports = function(passport,dbconnection,myio) {
             }
             })
     }
+
 };
 
 

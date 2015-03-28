@@ -146,6 +146,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
 
                     //send the posted customer an email about possible trade and link to check other customers's item
                     var mailOptions = {
+                        from: 'B-Commerce <adjeiessel@gmail.com',
                         to: EmailAdd, // list of receivers
                         subject: 'Notification of possible service trade', // Subject line
                         html: 'Hello ' + fname + ',<br><br> ' + req.user.FN + ' is interested in your service offer <b>' + ServiceName + '.</b><br> Please ' +

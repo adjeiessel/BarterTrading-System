@@ -9,15 +9,18 @@
 <script type="text/javascript" src="/javascripts/typeahead.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        //create a dynamic url
+        var hostproduct = location.protocol + '//' + location.host + '/searchproduct?key=%QUERY';
+        var hostservice = location.protocol + '//' + location.host + '/searchservice?key=%QUERY';
         $('#typeahead').typeahead({
             name: 'countries',
-            remote: 'http://localhost:7000/searchproduct?key=%QUERY',
+            remote: hostproduct,
             limit: 10
         });
 
         $('#typeaheadservice').typeahead({
             name: 'service',
-            remote: 'http://localhost:7000/searchservice?key=%QUERY',
+            remote: hostservice,
             limit: 10
         })
 
@@ -76,11 +79,8 @@
     <div id="ProductContent" name="ProductContent" class="content">
         <form id="contact" class="contact_form" method="post" action="/GroupTrade">
             <fieldset>
-                <h1 style="color: #00b7ff">Group Trade</h1>
-                <li>
+                <h1>Group Trade</h1>
                     <h3 style="color:#ff0000">Offer Product</h3>
-                </li>
-
                 <li class="bs-example">
                     <label for="tags" style="color:#00b7ff;">Search Product:</label>
                     <input type="text" ID="typeahead" name="typeahead" class="typeahead tt-query" autocomplete="off"
@@ -115,10 +115,8 @@
     <!--for service-->
     <div id="ServiceContent" name="ServiceContent" class="content">
         <form id="contact" class="contact_form" method="post" action="/GroupTrade">
-            <h1 style="color: #00b7ff">Group Trade</h1>
-            <li>
+            <h1>Group Trade</h1>
                 <h3 style="color: #ff0000">Offer Service</h3>
-            </li>
             <span class="required">Please select a group</span>
             <li class="bs-example">
                 <label for="typeahead" style="color:#00b7ff;">Search Service:</label>

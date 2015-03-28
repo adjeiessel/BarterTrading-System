@@ -22,7 +22,7 @@
                 <strong>Offer Completed</strong><br>
                 <span>Offer/Transaction Completed</span>
             </div>
-            <%}%>
+            <% }else{ %>
             <%for (var i in FirstCustomerResults){%>
             <!--  <div class="member">-->
             <div class="member mem_format">
@@ -122,7 +122,7 @@
                 </ul>
             </div>
             <%}%>
-            <div class="swap"><img src="/images/swap.png" width="90" height="90"></div>
+            <div class="swap"><img src="/images/favicon.png" width="90" height="90"></div>
             <%for (var i in SecondCustomerResults){%>
             <div class="member mem_format">
                 <h3 style="color: #000000;;"><%= SecondCustomerResults[i].FirstName %>'s Offer</h3>
@@ -226,6 +226,7 @@
                 <input type="submit" name="submit" id="submit" value="Accept Offer" />
                 <input type="submit" name="ChkDecline" id="ChkDecline" value="Decline Offer" />
             </div>
+            <% } %>
         </form>
     </div>
     </div>

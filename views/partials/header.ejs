@@ -4,9 +4,30 @@
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/javascripts/notifyme.js"></script>
 <script type="application/javascript">
-    /* setInterval(notify,10000);
+    $(function () {
+        var active = $.now();
+        var doc = $(document);
+        doc.on("mousemove", function () {
+            active = $.now();
+        });
+
+        //check user activity on the site
+        setInterval(function () {
+            if ($.now() - active > 300000) {
+                var host = location.protocol + '//' + location.host + '/logout';
+                window.open(host, "_self");
+            }
+        }, 300000);
+
+    });
+    window.onbeforeunload = function () {
+        myUnloadEvent();
+    }
+    //create a dynamic url
+    var host = location.protocol + '//' + location.host + '/notification/';
+    setInterval(notify, 300000);
     function notify(){
-           $.get("http://localhost:7000/notify", function (data) {
+        $.get(host, function (data) {
             if (typeof(data.Name)!=='undefined'){
                 $(this).notifyMe(
                         'top', // Position
@@ -18,7 +39,7 @@
                 )
             }
         });
-     }*/
+    }
 </script>
 <div id="header">
     <div class="header-holder">

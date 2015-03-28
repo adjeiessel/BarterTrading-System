@@ -55,7 +55,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                     from: 'B-Commerce <adjeiessel@gmail.com',
                     to: EmailAdd, // list of receivers
                     subject: 'Customer Response:Product', // Subject line
-                    html: 'Hello ' + req.user.FN + ',<br><br> ' + fname + ' has responded to your ping and is also interested in this product of yours <b>' + productname + '.</b><br> Please ' +
+                    html: 'Hello ' + fname + ',<br><br> ' + req.user.FN + ' has responded to your ping and is also interested in this product of yours <b>' + productname + '.</b><br> Please ' +
                     'accept or decline offer if you do not wish to trade your item for such an offer.<br><br><a href="' + urllink + '">Accept Product Offer</a><br><br>Thank you!<br>Barter Trading Team </br>'
                 };
                 // send mail with defined transport object
@@ -144,7 +144,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                     from: 'B-Commerce <adjeiessel@gmail.com',
                     to: EmailAdd, // list of receivers
                     subject: 'Customer Response:Service', // Subject line
-                    html: 'Hello ' + req.user.FN + ',<br><br> ' + fname + ' has responded to your ping and is also interested in this service  <b>' + servicename + '.</b><br> Please ' +
+                    html: 'Hello ' + fname + ',<br><br> ' + req.user.FN + ' has responded to your ping and is also interested in this service  <b>' + servicename + '.</b><br> Please ' +
                     'accept or decline offer if you do not wish to offer such servce for what is offered you.<br><br><a href="' + urllink + '">Accept Service Offer</a><br><br>Thank you!<br>Barter Trading Team </br>'
                 };
                 // send mail with defined transport object

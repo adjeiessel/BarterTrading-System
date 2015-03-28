@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <% include ../partials/header %>
 <% include ../partials/navigation %>
+<head>
+    <title>Respond Peer Product Offer</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/javascripts/typeahead.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        //create a dynamic url
+        var host = location.protocol + '//' + location.host + '/searchpeer?key=%QUERY';
         $('input.typeahead').typeahead({
             name: 'countries',
-            remote: 'http://localhost:7000/searchpeer?key=%QUERY',
+            remote: host,
             limit: 10
         });
         $("#uploadPreview0").click(function () {
@@ -73,6 +77,7 @@
         document.getElementById("contact").reset();
     }
 </script>
+</head>
 <div class="content">
 
     <div id="ProductContent" name="ProductContent" class="content">

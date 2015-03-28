@@ -3,23 +3,36 @@
     <words>
       <w>avaliable</w>
       <w>dbconnection</w>
+      <w>errornotify</w>
       <w>fname</w>
       <w>friendrows</w>
       <w>groupownername</w>
       <w>hashpassword</w>
+      <w>hostproduct</w>
+      <w>hostservice</w>
+      <w>ident</w>
       <w>interestedproduct</w>
+      <w>linktype</w>
       <w>logincustomer</w>
       <w>loginuser</w>
       <w>multer</w>
       <w>myio</w>
       <w>newcustomer</w>
       <w>nodemailer</w>
+      <w>onlineusers</w>
+      <w>ousers</w>
       <w>prefered</w>
       <w>productname</w>
       <w>productoffer</w>
+      <w>productservice</w>
       <w>reciepient</w>
       <w>resave</w>
+      <w>searchemail</w>
+      <w>searchproduct</w>
+      <w>searchservice</w>
       <w>sendemail</w>
+      <w>sendmessages</w>
+      <w>senduser</w>
       <w>servicename</w>
       <w>serviceoffer</w>
       <w>serviceresults</w>
@@ -28,6 +41,8 @@
       <w>typeahead</w>
       <w>typeaheadservice</w>
       <w>urllink</w>
+      <w>validateform</w>
+      <w>validateserviceform</w>
     </words>
   </dictionary>
 </component>

@@ -57,21 +57,21 @@ var transporter = nodemailer.createTransport("SMTP", {
 //function AddActivityLog (activityData) {
 var SaveActivity = function (activityData) {
     dbconnection.query('Insert  into ActivityLogs set? ', [activityData], function (err) {
-    if (err) throw err
+        if (err) throw err;
     console.log('Activity Saved');
 })
-}
+};
 //function to save Notifications
 var AddNotification=function(notifyData) {
     dbconnection.query('Insert  into notifications set? ', [notifyData], function (err) {
-        if (err) throw err
+        if (err) throw err;
         console.log('Customer notified');
     })
 }
 //Server port declaration and settings
-app.set('port', process.env.PORT || 7000);
+app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), function() {
+var server = app.listen(app.get('port'), '0.0.0.0', function () {
     console.log('Express server listening on port ' + server.address().port);
 });
 //Bind the server to the socket IO

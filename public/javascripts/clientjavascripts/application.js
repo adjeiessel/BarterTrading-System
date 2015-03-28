@@ -1,12 +1,16 @@
 /**
  * Created by ESSEL on 10-Mar-15.
  */
+
 $(function () {
-    // generate unique user id
-    var userId = Math.random().toString(16).substring(2, 15);
+    //Id from the external users
+    var MyID = 0;
     var socket = io.connect("/");
     var map;
-
+    // get user name
+    var username = document.getElementById("uname").value;
+    //get userID
+    var userId = document.getElementById("uID").value;
     var info = $("#infobox");
     var doc = $(document);
 
@@ -23,19 +27,20 @@ $(function () {
     });
     var redIcon = new tinyIcon({iconUrl: "../images/marker-red.png"});
     var yellowIcon = new tinyIcon({iconUrl: "../images/marker-yellow.png"});
-
+    //Prepare an object to contain the data to be sent over to the socket server side
     var sentData = {}
-
+    //connected users
     var connects = {};
     var markers = {};
     var active = false;
 
+
+    // for loading user coordinates
     socket.on("load:coords", function (data) {
         // remember users id to show marker only once
         if (!(data.id in connects)) {
             setMarker(data);
         }
-
         connects[data.id] = data;
         connects[data.id].updated = $.now(); // shorthand for (new Date).getTime()
     });
@@ -44,7 +49,7 @@ $(function () {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(positionSuccess, positionError, {enableHighAccuracy: true});
     } else {
-        $(".map").text("Your browser is out of fashion, there\'s no geolocation!");
+        $(".map").text("Sorry!your browser is not supported, there\'s no geolocation!");
     }
 
     function positionSuccess(position) {
@@ -69,14 +74,16 @@ $(function () {
         // set map bounds
         map.fitWorld();
         userMarker.addTo(map);
-        userMarker.bindPopup("You are there! Your ID is " + userId + "").openPopup();
-        userMarker.bind
+        userMarker.bindPopup(username + " is here!").openPopup();
+        userMarker.bind;
+        userMarker.on('dblclick', doubleClick);
 
         // send coords on when user is active
         doc.on("mousemove", function () {
             active = true;
 
             sentData = {
+                username: username,
                 id: userId,
                 active: active,
                 coords: [{
@@ -94,13 +101,21 @@ $(function () {
     });
 
     // showing markers for connections
+//variable for other users
+    var marker = '';
+
     function setMarker(data) {
-        for (i = 0; i < data.coords.length; i++) {
-            var marker = L.marker([data.coords[i].lat, data.coords[i].lng], {icon: yellowIcon}).addTo(map);
-            marker.bindPopup("One more external user is here!");
+        for (var i = 0; i < data.coords.length; i++) {
+            marker = L.marker([data.coords[i].lat, data.coords[i].lng], {icon: yellowIcon}).addTo(map);
+            marker.bindPopup(data.username + " is here!").openPopup();
             markers[data.id] = marker;
+            MyID = data.id;
+            marker.bind;
+            marker.on('dblclick', doubleClick1);
         }
+
     }
+
 
     // handle geolocation api errors
     function positionError(error) {
@@ -116,13 +131,26 @@ $(function () {
         info.addClass("error").text(msg);
     }
 
-    // delete inactive users every 15 sec
+    //open message
+    function doubleClick(e) {
+        //allow customer to contact the person
+        var host = location.protocol + '//' + location.host + '/Messages/' + userId;
+        window.open(host, "_self");
+
+    }
+
+    function doubleClick1(e) {
+        var host1 = location.protocol + '//' + location.host + '/Messages/' + MyID;
+        window.open(host1, "_self");
+    }
+
+    // delete inactive users every 5 mins
     setInterval(function () {
-        for (ident in connects) {
+        for (var ident in connects) {
             if ($.now() - connects[ident].updated > 15000) {
                 delete connects[ident];
                 map.removeLayer(markers[ident]);
             }
         }
-    }, 15000);
+    }, 300000);
 });

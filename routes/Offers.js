@@ -4,11 +4,12 @@ module.exports = function (app, dbconnection) {
     app.get('/Offers', isLoggedIn, function (req, res) {
 //based on his/her ID customerID
         var id = req.user.id;
-        dbconnection.query("Select * from ProductOffers As P Join Customers As C on P.CustomerID=C.CustomerID Join ProductCategories As PC on PC.CategoryID=P.CategoryID where P.CustomerID=?", [id], function (err, rows) {
+        var offerstatus = "Available";
+        dbconnection.query("Select * from ProductOffers As P Join Customers As C on P.CustomerID=C.CustomerID Join ProductCategories As PC on PC.CategoryID=P.CategoryID where P.CustomerID=? and ProductStatus=?", [id, offerstatus], function (err, rows) {
             if (err) {
                 console.log(err);
             }
-            dbconnection.query("Select * from ServiceOffers As S Join Customers As C on S.CustomerID=C.CustomerID Join ServiceCategory As SC on SC.ServiceCatID=S.ServiceCatID where C.CustomerID=?", [id], function (err, srows) {
+            dbconnection.query("Select * from ServiceOffers As S Join Customers As C on S.CustomerID=C.CustomerID Join ServiceCategory As SC on SC.ServiceCatID=S.ServiceCatID where C.CustomerID=? and ServiceStatus=?", [id, offerstatus], function (err, srows) {
                 if (err) {
                     console.log(err);
                 }

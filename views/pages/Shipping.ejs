@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%include ../partials/header %>
 <%include ../partials/navigation %>
+<head>
+    <title>Shipping:Address</title>
 <script type="text/javascript">
     function myMobileNumber() {
         var str1 = document.getElementById("PrefixNumber").value;
@@ -17,6 +19,7 @@
         document.getElementById("fullothernumber").value = res;
     }
 </script>
+</head>
 <div class="content">
     <form id="contact" class="contact_form" method="post" action="/Shipping">
     <ul>

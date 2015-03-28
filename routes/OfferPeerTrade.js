@@ -4,7 +4,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
 
     //Get product and service categories
     app.get('/OfferPeerTrade', isLoggedIn, function (req, res) {
-        var LogincustomerID = req.user.id;
+
         //get all product categories from db into the select optionBox
         dbconnection.query("Select * from productcategories", function (err, rows) {
             if (err) {
@@ -24,7 +24,7 @@ module.exports = function (app, dbconnection, transporter, AddNotification, Save
 
     //Perform Ajax search of friend/peer
     app.get('/searchpeer', function (req, res) {
-        dbconnection.query('Select FirstName,LastName,MiddleName from FriendsList  As F Join Customers As C on F.FriendID=C.CustomerID where ( Status="' + 1 + '" and F.CustomerID="' + req.user.id + '" )and FirstName like "%' + req.query.key + '%"', function (err, rows) {
+        dbconnection.query('Select FirstName,LastName,MiddleName from FriendsList  As F Join Customers As C on C.CustomerID=F.FriendID where ( Status="' + 1 + '" and F.CustomerID="' + req.user.id + '" )and FirstName like "%' + req.query.key + '%"', function (err, rows) {
             if (err) throw err;
             var data = [];
             for (var i = 0; i < rows.length; i++) {

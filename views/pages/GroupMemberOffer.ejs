@@ -8,14 +8,17 @@
 <script type="text/javascript" src="/javascripts/typeahead.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        //create a dynamic url
+        var hostproduct = location.protocol + '//' + location.host + '/searchproduct?key=%QUERY';
+        var hostservice = location.protocol + '//' + location.host + '/searchservice?key=%QUERY';
         $('#typeahead').typeahead({
             name: 'countries',
-            remote: 'http://localhost:7000/searchproduct?key=%QUERY',
+            remote: hostproduct,
             limit: 10
         });
         $('#typeaheadservice').typeahead({
             name: 'service',
-            remote: 'http://localhost:7000/searchservice?key=%QUERY',
+            remote: hostservice,
             limit: 10
         })
         $('#submit').on('click', function () {

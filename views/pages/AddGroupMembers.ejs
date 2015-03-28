@@ -6,9 +6,11 @@
 <script  type="text/javascript" src="/javascripts/typeahead.min.js"></script>
     <script>
     $(document).ready(function(){
+        //create a dynamic url
+        var host = location.protocol + '//' + location.host + '/searchgroup?key=%QUERY';
         $('input.typeahead').typeahead({
             name: 'countries',
-            remote: 'http://localhost:7000/searchgroup?key=%QUERY',
+            remote: host,
             limit: 10
         });
     });

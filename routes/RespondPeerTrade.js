@@ -45,6 +45,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                 });
                 //send mail
                 var mailOptions = {
+                    from: 'B-Commerce <adjeiessel@gmail.com',
                     to: FirstCustomerEmail, // list of receivers
                     subject: 'Peer Trade Response:Product', // Subject line
                     html: 'Hello ' + FullName + ',<br><br> ' + req.user.FN + ' is not interested in your product offer.' +
@@ -96,6 +97,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                             console.log('Peer Interested');
                             //send mail
                             var mailOptions = {
+                                from: 'B-Commerce <adjeiessel@gmail.com',
                                 to: FirstCustomerEmail, // list of receivers
                                 subject: 'Peer Trade Response:Product', // Subject line
                                 html: 'Hello ' + FullName + ',<br><br> ' + req.user.FN + ' is interested in your product offer and will be sending' +

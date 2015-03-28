@@ -57,7 +57,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
                         }
                     }
                     //Get Member name
-                    dbconnection.query("Select FirstName,LastName,MiddleName,EmailAddress from Customers As C Join GroupMemberOffer As GM on GM.CustomerID=C.CustomerID where memberOfferID=?", [memberID], function (error, memrows) {
+                    dbconnection.query("Select FirstName,LastName,MiddleName,EmailAddress from Customers As C Join ProductOffers AS P on C.CustomerID=P.CustomerID Join GroupMemberOffer As GM on GM.ProductOfferID=P.ProductOfferID where memberOfferID=?", [memberID], function (error, memrows) {
                         if (error) {
                             console.log(error);
                         }

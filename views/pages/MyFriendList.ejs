@@ -17,9 +17,13 @@
             <span>Neutral (+/-):  <%= data[i].NeutralReputation %></span><br>
             <span>Negative  (-):  <%= data[i].NegReputation %></span>
             <% if(data[i].Status==0){ %>
-            <span class="spl-chr">Date Added:  <%= data[i].DateAdded.toDateString() %></span><span class="friendlist_edit"><a class="edit"  href="/MyFriendList/<%=data[i].FriendListID%>">Delete</a><a class="edit"  href="/AcceptFriend/<%=data[i].FriendListID%>">Accept</a></span>
+            <span class="spl-chr">Date Added:  <%= data[i].DateAdded.toDateString() %></span><span
+                    class="friendlist_edit"><a class="edit" href="/MyFriendList/<%= data[i].FriendID %>">Delete</a><a
+                        class="edit" href="/AcceptFriend/<%= data[i].FriendID %>">Accept</a></span>
           <%  }else{ %>
-            <span class="spl-chr">Date Added:  <%= data[i].DateAdded.toDateString() %></span><span class="friendlist_edit"><a class="edit"  href="/MyFriendList/<%=data[i].FriendListID%>">Delete</a></span>
+            <span class="spl-chr">Date Added:  <%= data[i].DateAdded.toDateString() %></span><span
+                    class="friendlist_edit"><a class="edit"
+                                               href="/MyFriendList/<%= data[i].FriendID %>">Delete</a></span>
             <% } %>
         </div>
         </div>

@@ -43,14 +43,24 @@ module.exports = function(app,myio,dbconnection,AddNotification,SaveActivity) {
                     res.send("Sorry !,Please you cannot add yourself");
                     return;
                 }
-                var AddFriends = {
+                var AddFriends1 = {
                     CustomerID: LogincustomerID,
                     FriendID: SelectCustomerID,
                     DateAdded: new Date,
                     RequestDate: new Date,
-                    Status: 0
+                    Status: 0,
+                    Initiator: 1
                 }
-                saveData(AddFriends);
+                var AddFriends2 = {
+                    CustomerID: SelectCustomerID,
+                    FriendID: LogincustomerID,
+                    DateAdded: new Date,
+                    RequestDate: new Date,
+                    Status: 0,
+                    Initiator: 0
+                }
+                saveData(AddFriends1);
+                saveData(AddFriends2);
                 //save activity log
                 SaveActivity(PostActivity={CustomerID:LogincustomerID,ActivityName:'Sent a friend request to: '+req.body.typeahead,ActivityDateTime:new Date()})
                 //Notify friend
