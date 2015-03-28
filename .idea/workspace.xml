@@ -4,7 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="chat">
+    <list default="true" id="59344c78-3181-4b27-8b8d-a9ce314ec5df" name="Default" comment="Completed All Modules">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BCommerce.iws" />
@@ -86,8 +86,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2" vertical-offset="612" max-vertical-offset="2720">
-              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.34285715" vertical-offset="612" max-vertical-offset="2720">
+              <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -663,7 +663,13 @@
       <option name="project" value="LOCAL" />
       <updated>1427547954051</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="chat">
+      <created>1427548012295</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1427548012295</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -737,7 +743,8 @@
     <MESSAGE value="Done with everything except chat" />
     <MESSAGE value="Done with everything except chat&#10;corrected errors" />
     <MESSAGE value="chat" />
-    <option name="LAST_COMMIT_MESSAGE" value="chat" />
+    <MESSAGE value="Completed All Modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed All Modules" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1118,8 +1125,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2" vertical-offset="612" max-vertical-offset="2720">
-          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.34285715" vertical-offset="612" max-vertical-offset="2720">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
           <folding />
         </state>
       </provider>
