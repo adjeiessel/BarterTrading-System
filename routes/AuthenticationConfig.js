@@ -1,6 +1,6 @@
 var LocalStrategy   = require('passport-local').Strategy;
 var bcrypt = require('bcrypt');
-module.exports = function(passport,dbconnection,myio) {
+module.exports = function (passport, dbconnection) {
     var CID;
     passport.serializeUser(function(user, done) {
         // use the user ID returned from the db to serialize to the session to create
@@ -63,6 +63,7 @@ module.exports = function(passport,dbconnection,myio) {
 
             });
         }));
+
     passport.use('UserSignUp',new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
         usernameField : 'username',

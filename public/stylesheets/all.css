@@ -1228,9 +1228,9 @@ display: block;
     width: 431px;
 }
 .pro_format{
-width: 502px;
 display: block;
 margin-bottom: 10px;
+    padding: 10px;
 }
 .records{
 	width: 712px;
@@ -1459,6 +1459,31 @@ table.altrowstable td {
 	font-weight: bold;
 	width: 120px;
 	float: left;
+}
+
+.head {
+    font: "Lucida Console";
+    color: darkslategray;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.head1 {
+    color: #FF0000;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.head2 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.head3 {
+    font-size: 11px;
+    font-weight: bold;
+    color: #003333;
 }
  .article strong{
 	font-size: 16px;

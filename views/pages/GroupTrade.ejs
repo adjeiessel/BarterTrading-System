@@ -5,6 +5,7 @@
     <title>Group Trading</title>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"
             xmlns="http://www.w3.org/1999/html"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/javascripts/notifyme.js"></script>
 <script type="text/javascript" src="/javascripts/typeahead.min.js"></script>
 <script type="text/javascript">
@@ -85,7 +86,8 @@
                     <label for="tags" style="color:#00b7ff;">Search Product:</label>
                     <input type="text" ID="typeahead" name="typeahead" class="typeahead tt-query" autocomplete="off"
                            spellcheck="false"
-                           placeholder="Search for your products" required="true" title="No product searched">
+                           placeholder="Search for your products" required="true"
+                           title="Please search and select any of your products you want to offer">
 
                 </li>
                 <br>
@@ -122,7 +124,8 @@
                 <label for="typeahead" style="color:#00b7ff;">Search Service:</label>
                 <input type="text" id="typeaheadservice" name="typeaheadservice" class="typeahead tt-query"
                        autocomplete="off" spellcheck="false"
-                       placeholder="Search for your services">
+                       placeholder="Search for your services" required="true"
+                       title="Please search and select any of your services you want to offer">
             </li>
             <br>
             <li>

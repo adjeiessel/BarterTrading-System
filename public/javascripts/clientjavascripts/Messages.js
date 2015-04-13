@@ -2,15 +2,20 @@
  * Created by ESSEL on 12-Mar-15.
  */
 $(document).ready(function () {
+
+    var searchcustomer = location.protocol + '//' + location.host + '/search?key=%QUERY';
+    var searchemail = location.protocol + '//' + location.host + '/searchemail';
+    var host = location.protocol + '//' + location.host + '/sendmessages';
+    var to, subject, text;
     $('input.typeahead').typeahead({
         order: "asc",
         name: 'countries',
-        remote: 'http://localhost:7000/search?key=%QUERY',
+        remote: searchcustomer,
         limit: 10
     });
     $("#typeahead").keyup(function () {
         customername = $("#typeahead").val();
-        $.get("http://localhost:7000/searchemail", {name: customername}, function (data) {
+        $.get(searchemail, {name: customername}, function (data) {
             if (data) {
                 $("#to").val(data);
             }
@@ -18,14 +23,12 @@ $(document).ready(function () {
     });
     $("#typeahead").mouseleave(function () {
         customername = $("#typeahead").val();
-        $.get("http://localhost:7000/searchemail", {name: customername}, function (data) {
+        $.get(searchemail, {name: customername}, function (data) {
             if (data) {
                 $("#to").val(data);
             }
         })
     });
-    var to, subject, text;
-    var host = location.protocol + '//' + location.host + '/sendmessages';
     $("#send_email").click(function () {
         if (validateform() == false) {
             return;

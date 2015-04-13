@@ -2,12 +2,15 @@
   <dictionary name="ESSEL">
     <words>
       <w>avaliable</w>
+      <w>categoy</w>
+      <w>customerid</w>
       <w>dbconnection</w>
       <w>errornotify</w>
       <w>fname</w>
       <w>friendrows</w>
       <w>groupownername</w>
       <w>hashpassword</w>
+      <w>hostpeer</w>
       <w>hostproduct</w>
       <w>hostservice</w>
       <w>ident</w>
@@ -22,17 +25,21 @@
       <w>onlineusers</w>
       <w>ousers</w>
       <w>prefered</w>
+      <w>prodcut</w>
+      <w>producthost</w>
       <w>productname</w>
       <w>productoffer</w>
       <w>productservice</w>
       <w>reciepient</w>
       <w>resave</w>
       <w>searchemail</w>
+      <w>searchpeer</w>
       <w>searchproduct</w>
       <w>searchservice</w>
       <w>sendemail</w>
       <w>sendmessages</w>
       <w>senduser</w>
+      <w>servicehost</w>
       <w>servicename</w>
       <w>serviceoffer</w>
       <w>serviceresults</w>

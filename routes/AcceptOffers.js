@@ -56,7 +56,7 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
             var mailOptions = {
                 from: 'B-Commerce <adjeiessel@gmail.com',
                 to: PostedCustomerEmail + ',' + interestedCustomerEmail,// list of receivers
-                subject: 'Peer Trade Completed:Declined', // Subject line
+                subject: 'Product Trade:Declined', // Subject line
                 html: 'Hello, <br><br> Your trade between <b>' + InterestedCustomerName + ' </b> and <b>' + PostCustomerName + '</b> was not accepted and/or declined.<br>Offer is still ' +
                 'listed for other interested customer to see and contact you.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
             };
@@ -67,7 +67,7 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
             var mailOptions = {
                 from: 'B-Commerce <adjeiessel@gmail.com',
                 to: PostedCustomerEmail + ',' + interestedCustomerEmail, // list of receivers
-                subject: 'Peer Product Offer:Accepted', // Subject line
+                subject: 'Product Trade:Accepted', // Subject line
                 html: 'Hello ' + PostCustomerName + ',<br><br> ' + InterestedCustomerName + ' has accepted to trade with you ' + PostedCustomerProduct + ' for ' + InterestedCustomerProduct + '. Please ' +
                 'be ready to ship the item to the customer. Customer shipping address can be found under their profile.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
             };
@@ -161,8 +161,8 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
             var mailOptions = {
                 from: 'B-Commerce <adjeiessel@gmail.com',
                 to: sPostedCustomerEmail,// list of receivers
-                subject: 'Peer Trade Completed:Declined', // Subject line
-                html: 'Hello, <br><br> Your trade between <b>' + InterestedCustomerName + ' </b> and <b>' + PostCustomerName + '</b> was not accepted and/or declined.<br>Offer is still ' +
+                subject: 'Service Trade:Declined', // Subject line
+                html: 'Hello, <br><br> Your trade between <b>' + sInterestedCustomerName + ' </b> and <b>' + sPostCustomerName + '</b> was not accepted and/or declined.<br>Offer is still ' +
                 'listed for other interested customer to see and contact you.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
             };
         } else {
@@ -172,7 +172,7 @@ module.exports = function(app,dbconnection,transporter,SaveActivity,AddNotificat
             var mailOptions = {
                 from: 'B-Commerce <adjeiessel@gmail.com',
                 to: sPostedCustomerEmail, // list of receivers
-                subject: 'Peer Service Offer:Accepted', // Subject line
+                subject: 'Service Trade:Accepted', // Subject line
                 html: 'Hello ' + sInterestedCustomerName + ',<br><br> ' + sPostCustomerName + ' has accepted your service offer ' + sPostedCustomerService + ' for ' + sInterestedCustomerService + '. Please ' +
                 'be ready to accept and sign agreement for the transaction to be processed<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
             };

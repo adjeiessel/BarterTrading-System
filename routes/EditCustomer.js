@@ -12,15 +12,29 @@ module.exports = function(app,dbconnection) {
         })
     });
     app.post('/EditCustomer',function(req,res){
-    var data = {
-        FirstName: req.body.FirstName,
-        LastName: req.body.LastName,
-        MiddleName:req.body.MiddleName,
-        DateOfBirth:req.body.DOB,
-        EmailAddress:req.body.email,
-        Gender:req.body.Gender,
-        ProfilePicture:req.files.myPhoto0.name
-    };
+        if (!req.files.myPhoto0) {
+            var data = {
+                FirstName: req.body.FirstName,
+                LastName: req.body.LastName,
+                MiddleName: req.body.MiddleName,
+                DateOfBirth: req.body.DOB,
+                EmailAddress: req.body.email,
+                Gender: req.body.Gender
+
+            };
+        } else {
+            var data = {
+                FirstName: req.body.FirstName,
+                LastName: req.body.LastName,
+                MiddleName: req.body.MiddleName,
+                DateOfBirth: req.body.DOB,
+                EmailAddress: req.body.email,
+                Gender: req.body.Gender,
+                ProfilePicture: req.files.myPhoto0.name
+
+            };
+        }
+
     dbconnection.query("UPDATE customers set ? WHERE CustomerID = ? ",[data,req.user.id], function(err, rows)
     {
         if (err){

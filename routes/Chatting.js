@@ -34,27 +34,24 @@ module.exports = function(app,myio,dbconnection) {
     }
 
     myio.sockets.on('connection', function (socket) {
-
         // when the client emits 'sendchat', this listens and executes
         // socket.on('sendchat', function (data) {
         // we tell the client to execute 'updatechat' with 2 parameters
         //io.sockets.emit('updatechat', socket.username, data);
-
         //modification
         socket.on('sendchat', function (message, recipient, sender, err) {
-            if ((!recipient) || (recipient == '') || (onlineClients[recipient] != recipient)) {
+            if ((!recipient || recipient == '' || (!onlineClients.hasOwnProperty(recipient)))) {
                 return
             } else {
                 // we tell the client to execute 'updatechat' with 2 parameters
                 var id = Object.keys(onlineClients);
                 console.log(id);
-                //io.sockets.emit('updatechat',sender, message);
                 onlineClients[recipient].emit('updatechat', sender, message)
             }
         });
         socket.on('usertyping', function (text, recipient, sender) {
-            if ((!recipient) || (recipient == '') || onlineClients[recipient] != recipient) {
-                socket.broadcast.emit('updatechat', 'SERVER', 'No reciepient');
+            if ((!recipient || recipient == '' || (!onlineClients.hasOwnProperty(recipient)))) {
+                socket.broadcast.emit('updatechat', 'SERVER', 'Customer is either offline or no reciepient');
                 return;
             } else {
                 onlineClients[recipient].emit('typingmsg', sender, text)
@@ -94,7 +91,7 @@ module.exports = function(app,myio,dbconnection) {
             // update list of users in chat, client-side
             myio.sockets.emit('updateusers', usernames);
             // echo globally that this client has left
-            // socket.broadcast.emit('updatechat', 'SERVER', socket.username + ' has disconnected');
+            //socket.broadcast.emit('updatechat', 'SERVER', socket.username + ' has disconnected');
         });
 
     });

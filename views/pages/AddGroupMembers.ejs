@@ -26,7 +26,7 @@
         <h2>Add Group Members</h2>
         <li>
             <label for="name">Select Group:</label>
-            <select name="GroupName">
+            <select name="GroupName" required="true" title="Please select a group">
                 <%for (var i in YourGroups){%>
                 <option><%=YourGroups[i]%>
                     <%}%>
@@ -35,7 +35,9 @@
         <br>
         <li class="bs-example">
             <label for="SelectFriend">Add Friends:</label>
-            <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for Customer">
+            <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false"
+                   placeholder="Search for Customer" required="true"
+                   title="No friend selected. Please search and add friend to select group">
         </li>
         <br>
         <li class="submit">

@@ -22,7 +22,8 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             host = req.get('host');
 
             //Get the Details(customerID, email and the firstname of the customer who posted the item)
-            dbconnection.query('Select C.CustomerID,EmailAddress,FirstName,ProductName from Customers As C Join ProductOffers As P on C.CustomerID=P.CustomerID where ProductOfferID=?', [productID], function (err, rows) {
+            dbconnection.query('Select C.CustomerID,EmailAddress,FirstName,ProductName from Customers As C Join ProductOffers' +
+            ' As P on C.CustomerID=P.CustomerID where ProductOfferID=?', [productID], function (err, rows) {
                 if (err) throw err
                 if (rows) {
                     for (var i in rows) {

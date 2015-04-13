@@ -23,12 +23,13 @@ module.exports = function(app,dbconnection) {
       });
     });
   });
-  app.post('/EditOfferService', function (req,res) {
+    app.post('/EditOfferService/:id', function (req, res) {
+        var ServiceID = req.params.id;
     var SID;
     var LogincustomerID=req.user.id;
     var PostData={
       CategoryName:req.body.ServiceCatName
-    }
+    };
     dbconnection.query('select ServiceCatID from ServiceCategory where ServiceCatName=?',[PostData.CategoryName],function(errs,results) {
       if (errs) {
         console.log(errs);
@@ -52,14 +53,14 @@ module.exports = function(app,dbconnection) {
         PreferredService:req.body.PreferredService
 
       }
-      dbconnection.query("Update  ServiceOffers set? where ServiceOfferID=?", [PostServiceData,SID],function(err){
+        dbconnection.query("Update  ServiceOffers set? where ServiceOfferID=?", [PostServiceData, ServiceID], function (err) {
         if(err)
         {
           console.log("Error updating data",err)
         }
         else
         {
-          console.log('Saved Successfully');
+            console.log('updated Successfully');
           //save activity log
           AddActivityLog(PostActivity={CustomerID:PostData.CustomerID,ActivityName:'updated a service details:'+PostData.ServiceName,ActivityDateTime:new Date()});
 

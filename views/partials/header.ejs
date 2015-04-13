@@ -13,11 +13,11 @@
 
         //check user activity on the site
         setInterval(function () {
-            if ($.now() - active > 300000) {
+            if ($.now() - active > 600000) {
                 var host = location.protocol + '//' + location.host + '/logout';
                 window.open(host, "_self");
             }
-        }, 300000);
+        }, 600000);
 
     });
     window.onbeforeunload = function () {

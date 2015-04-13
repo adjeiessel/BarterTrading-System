@@ -4,8 +4,15 @@
 <head>
     <title>Edit Product Offers</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/javascripts/notifyme.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
+        //load images into gloabl variables
+        var img0 = document.getElementById("uploadPreview0").src;
+        var img1 = document.getElementById("uploadPreview1").src;
+        var img2 = document.getElementById("uploadPreview2").src;
+        var img3 = document.getElementById("uploadPreview1").src;
         $("#uploadPreview0").click(function ()
         {
             $("input[id='uploadImage0']").click();
@@ -27,7 +34,48 @@
          allVals.push($(this).val());
          $("#SelectedAreas").val(allVals);
          });
+
+        $('#submit').on('click', function () {
+
+            if (document.getElementById("SelectedAreas").value == "") {
+                errornotify()
+                return false
+            } else if ((document.getElementById("newphoto").checked) && (document.getElementById("uploadImage0").value == "")) {
+                errornotify();
+                return false
+            } else if ((document.getElementById("newphoto").checked) && (document.getElementById("uploadImage1").value == "")) {
+                errornotify();
+                return false
+            } else if ((document.getElementById("newphoto").checked) && (document.getElementById("uploadImage2").value == "")) {
+                errornotify();
+                return false
+            } else if ((document.getElementById("newphoto").checked) && (document.getElementById("uploadImage3").value == "")) {
+                errornotify();
+                return false
+            }
+            else {
+                return true
+            }
+
+        })
+
+        $('#newphoto').click(function () {
+            if (document.getElementById("newphoto").checked) {
+                document.getElementById("uploadPreview0").src = "";
+                document.getElementById("uploadPreview1").src = "";
+                document.getElementById("uploadPreview2").src = "";
+                document.getElementById("uploadPreview3").src = "";
+            } else {
+                document.getElementById("uploadPreview0").src = img0;
+                document.getElementById("uploadPreview1").src = img1;
+                document.getElementById("uploadPreview2").src = img2;
+                document.getElementById("uploadPreview3").src = img3;
+            }
+
+
+        });
     });
+
     function PreviewImage0() {
         var oFReader = new FileReader();
         oFReader.readAsDataURL(document.getElementById("uploadImage0").files[0]);
@@ -36,16 +84,17 @@
             document.getElementById("uploadPreview0").src = oFREvent.target.result;
         };
 
-    };
+    }
     function PreviewImage1() {
         var oFReader = new FileReader();
         oFReader.readAsDataURL(document.getElementById("uploadImage1").files[0]);
 
         oFReader.onload = function (oFREvent) {
             document.getElementById("uploadPreview1").src = oFREvent.target.result;
+
         };
 
-    };
+    }
     function PreviewImage2() {
         var oFReader = new FileReader();
         oFReader.readAsDataURL(document.getElementById("uploadImage2").files[0]);
@@ -54,7 +103,7 @@
             document.getElementById("uploadPreview2").src = oFREvent.target.result;
         };
 
-    };
+    }
     function PreviewImage3() {
         var oFReader = new FileReader();
         oFReader.readAsDataURL(document.getElementById("uploadImage3").files[0]);
@@ -63,21 +112,31 @@
             document.getElementById("uploadPreview3").src = oFREvent.target.result;
         };
 
-    };
+    }
     function clearForm() {
         document.getElementById("contact").reset();
+    }
+    function errornotify() {
+        $(this).notifyMe(
+                'bottom', // Position
+                'error', // Type
+                'Required Field *', // Title
+                'Product update cannot be completed.Please complete all required fields marked with (*) and upload all images.', // Description
+                200,// Velocity of notification
+                2000 // (optional) Time of delay to close automatically
+        );
     }
 </script>
 </head>
     <div class="content">
         <%for (var i in AllProducts){%>
-        <form class="contact_form" id="contact" method="Post" action="/EditOfferProduct" enctype="multipart/form-data">
+        <form class="contact_form" id="contact" method="Post" action="" enctype="multipart/form-data"
+              onsubmit="return validateform()">>
 
         <ul>
             <li>
                 <h1 style="color: #00b7ff">Edit Offer</h1>
                 <span class="required">All the fields marked with * are required </span>
-                <input type="text" name="ProductID" value="<%=AllProducts[i].ProductOfferID%>" hidden="true"/>
             </li>
 
             <li>
@@ -105,14 +164,15 @@
                   <option><%=AllProducts[i].CategoryName%></option>
                   <%for (var i in ProCategories){%>
                   <option><%=ProCategories[i].CategoryName%></option>
-                      <%}%>
+                  <% } %>
               </select>
             </li>
+            <% for(var i in AllProducts){ %>
             <li class="value">
                 <label for="ProductValue">Item/Product Value: *</label>
-                <input type="number" name="ProductValue" required="required" title="Please Specify the value of your item/product" min="1" max="100000">
+                <input type="number" name="ProductValue" value="<%= AllProducts[i].ProductValue %>" required="required"
+                       title="Please Specify the value of your item/product" min="1" max="100000">
                 <select name="CurrencyName" required="required" title="Specify currency">
-                  <%for(var i in AllProducts){%>
                     <option><%=AllProducts[i].ValueCurrency%></option>
                     <option>EUR €</option>
                     <option>USD $</option>
@@ -166,13 +226,15 @@
                 <label for="ShippingCost">Shipping/Postal Cost: *</label>
                 <input type="number" name="ShippingCost" value="<%=AllProducts[i].ShippingCost%>" required="required" title="Please Specify the Shipping Cost">
                 <select name="shipCurrencyName" required="required" title="Specify currency">
-                    <%for(var i in AllProducts){%>
                     <option><%=AllProducts[i].shipCurrencyName%></option>
                     <option>EUR €</option>
                     <option>USD $</option>
                     <option>GBP £</option>
-                    <%}%>
                 </select>
+            </li>
+            <li class="sg-chk">
+                <label for="newphoto">Upload New Photo:</label>
+                <input type="checkbox" name="newphoto" id="newphoto" value="NewPhoto">
             </li>
             <li>
                 <span class="required_pht">Click to upload product images,first image will be use as product preview</span>
@@ -200,8 +262,8 @@
                 <% }else{ %>
                 <img src="/images/<%= AllProducts[i].img3 %>" id="uploadPreview3" style="width: 100px; height: 100px;"/>
                 <% } %>
-                <input id="uploadImage0" type="file" name="myPhoto0" style="display: none;" onchange="PreviewImage0();"
-                       required="required" title="Please upload an image of Photograph of Product"/>
+                <input id="uploadImage0" type="file" name="myPhoto0" style="display: none;"
+                       onchange="PreviewImage0();"/>
                 <input id="uploadImage1" type="file" name="myPhoto1" style="display: none;"
                        onchange="PreviewImage1();"/>
                 <input id="uploadImage2" type="file" name="myPhoto2" style="display: none;"

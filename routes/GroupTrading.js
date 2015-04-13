@@ -18,7 +18,6 @@ module.exports = function (app, dbconnection, SaveActivity, transporter) {
             res.render('pages/GroupTrade', {YourGroups: GroupName});
         });
     });
-
     app.get('/searchproduct', function (req, res) {
         var ProductStatus = 'Available';
         var CustomerId = req.user.id;

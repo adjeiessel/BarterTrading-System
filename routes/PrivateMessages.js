@@ -4,7 +4,7 @@ module.exports = function(app,dbconnection,transporter) {
         res.render('pages/Messages', {Email: '', Name: ''});
     });
     //search for customer
-    app.get('/search', isLoggedIn, function (req, res) {
+    app.get('/searchcustomer', isLoggedIn, function (req, res) {
         //Search for customer
     dbconnection.query('SELECT FirstName,LastName,MiddleName from customers where FirstName like "%' + req.query.key + '%"', function (err, rows) {
       if (err) throw err;

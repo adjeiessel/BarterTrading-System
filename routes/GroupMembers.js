@@ -74,6 +74,7 @@ module.exports = function(app,dbconnection,transporter,AddNotification,SaveActiv
                         AddGroupMember(GroupData);
                         // setup e-mail data with unicode symbols
                         var mailOptions = {
+                            from: 'B-Commerce <adjeiessel@gmail.com',
                             to: FriendEmail, // list of receivers
                             subject: 'Added to Group', // Subject line
                             html: '<br> Hello '+PostData.FriendName +',<br> Your friend <b>'+ req.user.FN +'</b> has added you their group: <b>' +PostData.GroupName +'</b>.You can now trade with friends within the group<br><br> Thank you<br><br>Barter Trading Team '// plaintext body

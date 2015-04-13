@@ -83,26 +83,36 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
     app.post('/MemberOffer/:id', isLoggedIn, function (req, res) {
         //interested or decline offer
         var memberID = req.params.id;
-        var tradestatus, ProductStatus, Activity
+        var tradestatus, ProductStatus, Activity;
         if (req.body.Decline == 'Declined') {
-            tradestatus = 'Declined'
-            ProductStatus = 'Available'
-            Activity = 'Declined Offer from ' + MemberName
+            tradestatus = 'Declined';
+            ProductStatus = 'Available';
+            Activity = 'Declined Offer from ' + MemberName;
+            //put decline message code here
+
+            var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
+                to: MemberEmail, // list of receivers
+                subject: 'Group Trade Completed', // Subject line
+                html: 'Hello ' + MemberName + ',<br><br> <b>' + GroupOwner + '</b> has declined the offer made and/or is not to trade <b>' + GroupOwnerProductOffer + '</b> for <b>' + MemberProductOffer + '</b>. Please ' +
+                'your offer is made available for other interested customer to contact you.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+            };
         } else {
-            tradestatus = 'Accepted'
-            ProductStatus = 'Traded Out'
-            Activity = 'Accepted Offer from ' + MemberName
+            tradestatus = 'Accepted';
+            ProductStatus = 'Traded Out';
+            Activity = 'Accepted Offer from ' + MemberName;
+            //put accept message code here
+            var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
+                to: MemberEmail, // list of receivers
+                subject: 'Group Trade Completed', // Subject line
+                html: 'Hello ' + MemberName + ',<br><br> <b>' + GroupOwner + '</b> has accepted to trade with you <b>' + GroupOwnerProductOffer + '</b> for <b>' + MemberProductOffer + '</b>. Please ' +
+                'be ready to ship the item to the customer. Customer shipping address can be found under their profile.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+            };
         }
         var AcceptOffer = {
             TradeStatus: tradestatus,
             DecisionDate: new Date()
-        }
-        var mailOptions = {
-            from: 'B-Commerce <adjeiessel@gmail.com',
-            to: MemberEmail, // list of receivers
-            subject: 'Group Trade Completed', // Subject line
-            html: 'Hello ' + MemberName + ',<br><br> <b>' + GroupOwner + '</b> has accepted to trade with you <b>' + GroupOwnerProductOffer + '</b> for <b>' + MemberProductOffer + '</b>. Please ' +
-            'be ready to ship the item to the customer. Customer shipping address can be found under their profile.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
         };
         // send mail with defined transport object
         transporter.sendMail(mailOptions, function (error, info) {
@@ -111,20 +121,20 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             } else {
                 console.log('Message sent:');
             }
-        })
+        });
         dbconnection.query('Update GroupTrade set? where GroupTradeID=?', [AcceptOffer, TradeID], function (err) {
-            if (err) throw err
+            if (err) throw err;
             console.log('Group Trade Completed');
         });
         //update product status for each offer in the productoffer
         dbconnection.query('Update ProductOffers set ProductStatus=? where ProductOfferID =?', [ProductStatus, GroupOwnerProductID], function (err) {
-            if (err) throw err
+            if (err) throw err;
             console.log('First Product Status Updated');
-        })
+        });
         dbconnection.query('Update ProductOffers set ProductStatus=? where ProductOfferID =?', [ProductStatus, MemberProductID], function (err) {
-            if (err) throw err
+            if (err) throw err;
             console.log('Member Product Status Updated');
-        })
+        });
         //save activity
         SaveActivity(PostActivity = {CustomerID: req.user.id, ActivityName: Activity, ActivityDateTime: new Date()})
         //Add notification
@@ -135,7 +145,7 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             ToCustomerID: GroupOwnerID,
             NotificationDate: new Date()
 
-        })
+        });
         res.redirect('/');
 
     });
@@ -222,21 +232,30 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
             tradestatus = 'Declined';
             serviceStatus = 'Available';
             Activity = 'Declined Offer from ' + MemberName;
+            //post deline message here
+            var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
+                to: MemberEmail, // list of receivers
+                subject: 'Group trade completed for service', // Subject line
+                html: 'Hello ' + MemberName + ',<br><br> <b>' + GroupOwner + '</b> has declined the service offer made and/or is not to trade <b>' + GroupOwnerServiceOffer + '</b> for <b>' + MemberProductOffer + '</b>. Please ' +
+                'be ready to sign or make an agreement with customer or group member for service.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+            };
         } else {
             tradestatus = 'Accepted';
             serviceStatus = 'Traded Out';
             Activity = 'Accepted Offer from ' + MemberName;
+            //post message code here
+            var mailOptions = {
+                from: 'B-Commerce <adjeiessel@gmail.com',
+                to: MemberEmail, // list of receivers
+                subject: 'Group trade completed for service', // Subject line
+                html: 'Hello ' + MemberName + ',<br><br> <b>' + GroupOwner + '</b> has accepted to trade with you <b>' + GroupOwnerServiceOffer + '</b> for <b>' + MemberProductOffer + '</b>. Please ' +
+                'your service offer is made available for other interested customer to contact you.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
+            };
         }
         var AcceptOffer = {
             TradeStatus: tradestatus,
             DecisionDate: new Date()
-        };
-        var mailOptions = {
-            from: 'B-Commerce <adjeiessel@gmail.com',
-            to: MemberEmail, // list of receivers
-            subject: 'Group trade completed for service', // Subject line
-            html: 'Hello ' + MemberName + ',<br><br> <b>' + GroupOwner + '</b> has accepted to trade with you <b>' + GroupOwnerServiceOffer + '</b> for <b>' + MemberProductOffer + '</b>. Please ' +
-            'be ready to sign or make an agreement with customer or group member for service.<br><br>Thank you for using our service!<br>Barter Trading Team!</br>'
         };
         // send mail with defined transport object
         transporter.sendMail(mailOptions, function (error, info) {
@@ -281,4 +300,4 @@ module.exports = function (app, dbconnection, transporter, SaveActivity, AddNoti
         // if they aren't redirect them to the home page   res.redirect('/');
         res.redirect('/logins');
     }
-}
+};

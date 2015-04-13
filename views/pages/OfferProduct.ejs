@@ -4,6 +4,8 @@
 <head>
     <title>Product Offer</title>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/javascripts/notifyme.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $("#uploadPreview0").click(function ()
@@ -27,6 +29,29 @@
          allVals.push($(this).val());
          $("#SelectedAreas").val(allVals);
          });
+        $('#submit').on('click', function () {
+
+            if (document.getElementById("SelectedAreas").value == "") {
+                errornotify('Please select or specify shipping locations')
+                return false
+            } else if ((document.getElementById("uploadImage0").value == "")) {
+                errornotify('Please check and upload product first image  and photo.');
+                return false
+            } else if ((document.getElementById("uploadImage1").value == "")) {
+                errornotify('Please check and upload product second image  and photo.');
+                return false
+            } else if ((document.getElementById("uploadImage2").value == "")) {
+                errornotify('Please check and upload product third image  and photo.');
+                return false
+            } else if ((document.getElementById("uploadImage3").value == "")) {
+                errornotify('Please check and upload product last image  and photo.');
+                return false
+            }
+            else {
+                return true
+            }
+
+        })
     });
     function PreviewImage0() {
         var oFReader = new FileReader();
@@ -66,6 +91,16 @@
     };
     function clearForm() {
         document.getElementById("contact").reset();
+    }
+    function errornotify(errmsg) {
+        $(this).notifyMe(
+                'bottom', // Position
+                'error', // Type
+                'Required Field *', // Title
+                errmsg, // Description
+                200,// Velocity of notification
+                2000 // (optional) Time of delay to close automatically
+        );
     }
 </script>
 </head>
@@ -168,7 +203,8 @@
             <img id="uploadPreview1" style="width: 100px; height: 100px;" />
             <img id="uploadPreview2" style="width: 100px; height: 100px;" />
             <img id="uploadPreview3" style="width: 100px; height: 100px;" />
-            <input id="uploadImage0" type="file" name="myPhoto0" style="display: none;"  onchange="PreviewImage0();" required="required" title="Please upload an image of Photograph of Product" />
+                <input id="uploadImage0" type="file" name="myPhoto0" style="display: none;"
+                       onchange="PreviewImage0();"/>
             <input id="uploadImage1" type="file" name="myPhoto1" style="display: none;"  onchange="PreviewImage1();" />
             <input id="uploadImage2" type="file" name="myPhoto2" style="display: none;"  onchange="PreviewImage2();" />
             <input id="uploadImage3" type="file" name="myPhoto3" style="display: none;"  onchange="PreviewImage3();" />
